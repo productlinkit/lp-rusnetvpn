@@ -3,7 +3,7 @@ export default function Account() {
     <>
       <div className="account" id="account" role="dialog" aria-modal="true" aria-labelledby="ac-title">
         <div className="ac-top">
-          <a href="#top" className="brand" data-ac-close="" aria-label="RusNetVPN, back to site">
+          <a href="#top" className="brand" data-ac-close="" aria-label="RusnetVPN, back to site">
             <svg className="brand-logo" viewBox="0 1 214 40" aria-hidden="true">
               <use href="#logo-rusnetvpn" />
             </svg>
@@ -175,7 +175,7 @@ export default function Account() {
               </div>
               <div className="ac-card dark" style={{ marginTop: "14px" }}>
                 <h3>
-                  Get RusNetVPN on this device
+                  Get RusnetVPN on this device
                 </h3>
                 <p className="sub" style={{ marginTop: "6px", maxWidth: "52ch" }}>
                   One account covers five devices at once. Windows, macOS, Android, iOS and Linux, all from the same login.

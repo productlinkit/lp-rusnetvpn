@@ -14,11 +14,11 @@ export default function Apps() {
               <h2 style={{ marginTop: "18px" }}>
                 Download & Browse Freely{" "}
                 <span className="serif">
-                  with RusNetVPN
+                  with RusnetVPN
                 </span>
               </h2>
               <p className="lead" style={{ marginTop: "16px" }}>
-                Protect your online activities with RusNetVPN — the VPN crafted in Russia to ensure global privacy and security.
+                Protect your online activities with RusnetVPN — the VPN crafted in Russia to ensure global privacy and security.
               </p>
               <div className="tabs" id="apptabs" role="tablist" aria-label="App feature" style={{ marginTop: "26px" }}>
                 <button type="button" role="tab" id="apptab-0" data-app="0" aria-selected="true" aria-controls="appcopy" tabIndex={0} className="on">
@@ -61,7 +61,7 @@ export default function Apps() {
                       </svg>
                     </span>
                     <span>
-                      RusNetVPN is committed to independent, no-log auditing — that audit is in progress.
+                      RusnetVPN is committed to independent, no-log auditing — that audit is in progress.
                     </span>
                   </li>
                   <li>
@@ -187,13 +187,13 @@ export default function Apps() {
             <div className="phones" id="phones">
               {/* src comes from the baked-in SHOT map, so there is nothing to keep beside the file */}
               <div className="phone p-side">
-                <img id="ph-l" alt="RusNetVPN app screen" />
+                <img id="ph-l" alt="RusnetVPN app screen" />
               </div>
               <div className="phone p-main">
-                <img id="ph-m" alt="RusNetVPN connected screen" />
+                <img id="ph-m" alt="RusnetVPN connected screen" />
               </div>
               <div className="phone p-side">
-                <img id="ph-r" alt="RusNetVPN app screen" />
+                <img id="ph-r" alt="RusnetVPN app screen" />
               </div>
             </div>
           </div>

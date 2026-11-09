@@ -60,7 +60,7 @@ export default function Faq() {
               <div className="qinline" id="qans-1" role="region" aria-labelledby="qbtn-1">
                 <div>
                   <p>
-                    RusNetVPN is committed to independent, no-log auditing — that audit is in progress. We don’t store your browsing activity, traffic logs, DNS queries, or connection history tied to your account. We are a no-log VPN meaning that we don’t store any of your traffic logs.
+                    RusnetVPN is committed to independent, no-log auditing — that audit is in progress. We don’t store your browsing activity, traffic logs, DNS queries, or connection history tied to your account. We are a no-log VPN meaning that we don’t store any of your traffic logs.
                   </p>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function Faq() {
                 </span>
                 {" "}
                 <span className="qt">
-                  Who owns and runs RusNetVPN?
+                  Who owns and runs RusnetVPN?
                 </span>
                 {" "}
                 <span className="qc">
@@ -119,7 +119,7 @@ export default function Faq() {
               <div className="qinline" id="qans-3" role="region" aria-labelledby="qbtn-3">
                 <div>
                   <p>
-                    RusNetVPN is run and owned by local people that care about internet privacy and security in Russia. No shadowy megacorporation abroad involvement. Owned and operated in-house, following strict Russian security standards.
+                    RusnetVPN is run and owned by local people that care about internet privacy and security in Russia. No shadowy megacorporation abroad involvement. Owned and operated in-house, following strict Russian security standards.
                   </p>
                 </div>
               </div>
@@ -131,7 +131,7 @@ export default function Faq() {
                 </span>
                 {" "}
                 <span className="qt">
-                  Will RusNetVPN slow my connection down?
+                  Will RusnetVPN slow my connection down?
                 </span>
                 {" "}
                 <span className="qc">
@@ -366,7 +366,7 @@ export default function Faq() {
               <div className="qinline" id="qans-13" role="region" aria-labelledby="qbtn-13">
                 <div>
                   <p>
-                    Not yet, and we would rather say so than imply otherwise. We run RusNetVPN as a no-log service — no traffic logs, no DNS query logs, no connection timestamps tied to an account — and we have committed to having that claim examined by an outside firm instead of asking you to take our word for it. No auditor has been appointed yet and no report exists, so we do not describe the service as audited anywhere on this site. The scope to be assessed and the current state of the work are set out under “Independent audit — status”, linked in the footer, and that is where the report will be published in full when there is one, including any findings against us.
+                    Not yet, and we would rather say so than imply otherwise. We run RusnetVPN as a no-log service — no traffic logs, no DNS query logs, no connection timestamps tied to an account — and we have committed to having that claim examined by an outside firm instead of asking you to take our word for it. No auditor has been appointed yet and no report exists, so we do not describe the service as audited anywhere on this site. The scope to be assessed and the current state of the work are set out under “Independent audit — status”, linked in the footer, and that is where the report will be published in full when there is one, including any findings against us.
                   </p>
                 </div>
               </div>

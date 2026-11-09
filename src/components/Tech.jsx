@@ -117,7 +117,7 @@ export default function Tech() {
             <span className="more">
               <div>
                 <p>
-                  RusNetVPN is committed to independent, no-log auditing — that audit is in progress. We don’t store your browsing activity, traffic logs, DNS queries, or connection history tied to your account.
+                  RusnetVPN is committed to independent, no-log auditing — that audit is in progress. We don’t store your browsing activity, traffic logs, DNS queries, or connection history tied to your account.
                 </p>
               </div>
             </span>
@@ -144,7 +144,7 @@ export default function Tech() {
             <span className="more">
               <div>
                 <p>
-                  RusNetVPN is a privacy-focused VPN with a strict no-logs policy, built from the ground up locally in Russia.
+                  RusnetVPN is a privacy-focused VPN with a strict no-logs policy, built from the ground up locally in Russia.
                 </p>
               </div>
             </span>
@@ -173,7 +173,7 @@ export default function Tech() {
             <span className="more">
               <div>
                 <p>
-                  RusNetVPN is run and owned by local people that care about internet privacy and security in Russia. No shadowy megacorporation abroad involvement.
+                  RusnetVPN is run and owned by local people that care about internet privacy and security in Russia. No shadowy megacorporation abroad involvement.
                 </p>
               </div>
             </span>

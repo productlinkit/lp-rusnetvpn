@@ -34,7 +34,7 @@ export default function Hero() {
             <div className="hero-cta">
               <a href="#" className="btn btn-red" data-buy="">
                 <span>
-                  Get RusNetVPN
+                  Get RusnetVPN
                 </span>
                 <span className="arw">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -56,7 +56,7 @@ export default function Hero() {
         </div>
         <div className="stage up" style={{ "--d": "200ms" }}>
           <figure className="media shot">
-            <img src={heroImg} alt="Two people smiling and holding phones with RusNetVPN open" onError={(e) => e.currentTarget.remove()} />
+            <img src={heroImg} alt="Two people smiling and holding phones with RusnetVPN open" onError={(e) => e.currentTarget.remove()} />
             {" "}
             <span className="ph">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -109,7 +109,7 @@ export default function Hero() {
                       states below are real design work: it opens on "Connecting", settles on
                       "Connected", and the failure path with its retry is built rather than
                       pretended away. */}
-          <div className="conn is-connecting" id="conn" role="img" aria-label="RusNetVPN app, connected to Frankfurt from Moscow at 12 milliseconds.">
+          <div className="conn is-connecting" id="conn" role="img" aria-label="RusnetVPN app, connected to Frankfurt from Moscow at 12 milliseconds.">
             <div className="row1">
               <span className="st is-connecting" id="conn-st">
                 <i className="pulse amber" id="conn-dot" />

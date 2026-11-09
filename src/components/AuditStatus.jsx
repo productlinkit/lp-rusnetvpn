@@ -31,7 +31,7 @@ export default function AuditStatus() {
               <b>
                 No independent audit has been completed yet.
               </b>
-              {" "}We run RusNetVPN as a no-log service — no traffic logs, no DNS query logs, no connection timestamps tied to an account — and we have committed to having that claim examined by an outside firm rather than asking you to take our word for it.
+              {" "}We run RusnetVPN as a no-log service — no traffic logs, no DNS query logs, no connection timestamps tied to an account — and we have committed to having that claim examined by an outside firm rather than asking you to take our word for it.
             </p>
             <p>
               Until a report exists and is published here in full, we do not describe the service as “audited”. A claim you cannot check is not evidence, and a seal with nothing behind it is worth less than saying so plainly.
