@@ -14,11 +14,11 @@ export default function Apps() {
               <h2 style={{ marginTop: "18px" }}>
                 Download & Browse Freely{" "}
                 <span className="serif">
-                  with VesperVPN
+                  with RusNetVPN
                 </span>
               </h2>
               <p className="lead" style={{ marginTop: "16px" }}>
-                Protect your online activities with VesperVPN — the VPN crafted in Russia to ensure global privacy and security.
+                Protect your online activities with RusNetVPN — the VPN crafted in Russia to ensure global privacy and security.
               </p>
               <div className="tabs" id="apptabs" role="tablist" aria-label="App feature" style={{ marginTop: "26px" }}>
                 <button type="button" role="tab" id="apptab-0" data-app="0" aria-selected="true" aria-controls="appcopy" tabIndex={0} className="on">
@@ -61,7 +61,7 @@ export default function Apps() {
                       </svg>
                     </span>
                     <span>
-                      VesperVPN is committed to independent, no-log auditing — that audit is in progress.
+                      RusNetVPN is committed to independent, no-log auditing — that audit is in progress.
                     </span>
                   </li>
                   <li>
@@ -187,13 +187,13 @@ export default function Apps() {
             <div className="phones" id="phones">
               {/* src comes from the baked-in SHOT map, so there is nothing to keep beside the file */}
               <div className="phone p-side">
-                <img id="ph-l" alt="VesperVPN app screen" />
+                <img id="ph-l" alt="RusNetVPN app screen" />
               </div>
               <div className="phone p-main">
-                <img id="ph-m" alt="VesperVPN connected screen" />
+                <img id="ph-m" alt="RusNetVPN connected screen" />
               </div>
               <div className="phone p-side">
-                <img id="ph-r" alt="VesperVPN app screen" />
+                <img id="ph-r" alt="RusNetVPN app screen" />
               </div>
             </div>
           </div>

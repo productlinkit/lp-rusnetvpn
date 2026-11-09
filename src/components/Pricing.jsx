@@ -42,7 +42,7 @@ export default function Pricing() {
             </div>
           </div>
           <p className="aside up" style={{ "--d": "100ms" }}>
-            Every plan gets the full service. VesperVPN is a privacy-focused VPN with a strict no-logs policy, built from the ground up locally in Russia.
+            Every plan gets the full service. RusNetVPN is a privacy-focused VPN with a strict no-logs policy, built from the ground up locally in Russia.
           </p>
         </div>
         <div className="price-grid up">
@@ -145,7 +145,7 @@ export default function Pricing() {
                     <b>
                       Choose what goes through the VPN.
                     </b>
-                    {" "}Route your browser through VesperVPN while your banking app or local printer keeps using the normal connection.
+                    {" "}Route your browser through RusNetVPN while your banking app or local printer keeps using the normal connection.
                   </span>
                 </span>
               </li>
@@ -178,7 +178,7 @@ export default function Pricing() {
             {/* data-buy, like every other purchase CTA. One delegated handler owns
                           them all, so a new buy button cannot be added without the behaviour. */}
             <a href="#" className="btn btn-red" style={{ marginTop: "34px" }} id="p-cta" data-buy="">
-              Get VesperVPN
+              Get RusNetVPN
               <span className="arw">
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 12L12 4M6 4h6v6" />
@@ -261,7 +261,7 @@ export default function Pricing() {
                 </span>
               </div>
               <a href="#" className="btn btn-white" style={{ marginTop: "26px" }} data-buy="">
-                Get VesperVPN
+                Get RusNetVPN
                 <span className="arw">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 12L12 4M6 4h6v6" />

@@ -3,9 +3,9 @@ export default function Header() {
     <>
       <header id="hdr">
         <nav className="nav" aria-label="Main">
-          <a href="#top" className="brand" aria-label="VesperVPN, back to top">
-            <svg className="brand-logo" viewBox="0 1 196 40" aria-hidden="true">
-              <use href="#logo-vespervpn" />
+          <a href="#top" className="brand" aria-label="RusNetVPN, back to top">
+            <svg className="brand-logo" viewBox="0 1 214 40" aria-hidden="true">
+              <use href="#logo-rusnetvpn" />
             </svg>
           </a>
           <div className="navlinks">
@@ -86,7 +86,7 @@ export default function Header() {
             {" "}
             <a href="#" className="btn btn-primary btn-sm" data-buy="">
               <span>
-                Get VesperVPN
+                Get RusNetVPN
               </span>
               <span className="arw">
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -187,7 +187,7 @@ export default function Header() {
           {" "}
           <a href="#" className="btn btn-red" data-buy="">
             <span>
-              Get VesperVPN
+              Get RusNetVPN
             </span>
             <span className="arw">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

@@ -13,7 +13,7 @@ export default function Why() {
               Benefits
             </span>
             <h2>
-              Why Choose VesperVPN?
+              Why Choose RusNetVPN?
             </h2>
           </div>
           <p className="aside up" style={{ "--d": "100ms" }}>
@@ -23,7 +23,7 @@ export default function Why() {
         <div className="rail up" id="rail">
           <button className="rcard is-open" data-i="0" aria-expanded="true">
             <figure className="media">
-              <img src={benefit1Img} alt="VesperVPN app connected to an optimized streaming server" />
+              <img src={benefit1Img} alt="RusNetVPN app connected to an optimized streaming server" />
             </figure>
             <span className="veil" />
             {" "}
@@ -63,7 +63,7 @@ export default function Why() {
           {" "}
           <button className="rcard" data-i="1" aria-expanded="false">
             <figure className="media">
-              <img src={benefit2Img} alt="VesperVPN app screen showing the no-logs policy" />
+              <img src={benefit2Img} alt="RusNetVPN app screen showing the no-logs policy" />
             </figure>
             <span className="veil" />
             {" "}
@@ -88,7 +88,7 @@ export default function Why() {
                 Strict No-Logs Policy
               </h3>
               <p>
-                VesperVPN is committed to independent, no-log auditing — that audit is in progress. We don’t store your browsing activity, traffic logs, DNS queries, or connection history tied to your account.
+                RusNetVPN is committed to independent, no-log auditing — that audit is in progress. We don’t store your browsing activity, traffic logs, DNS queries, or connection history tied to your account.
               </p>
               <span className="pill">
                 <span>
@@ -103,7 +103,7 @@ export default function Why() {
           {" "}
           <button className="rcard" data-i="2" aria-expanded="false">
             <figure className="media">
-              <img src={benefit3Img} alt="VesperVPN server list, run on locally owned servers" />
+              <img src={benefit3Img} alt="RusNetVPN server list, run on locally owned servers" />
             </figure>
             <span className="veil" />
             {" "}
@@ -128,7 +128,7 @@ export default function Why() {
                 100% Independent Local Provider Server
               </h3>
               <p>
-                VesperVPN is run and owned by local people that care about internet privacy and security in Russia. No shadowy megacorporation abroad involvement.
+                RusNetVPN is run and owned by local people that care about internet privacy and security in Russia. No shadowy megacorporation abroad involvement.
               </p>
               <span className="pill">
                 <span>
@@ -143,7 +143,7 @@ export default function Why() {
           {" "}
           <button className="rcard" data-i="3" aria-expanded="false">
             <figure className="media">
-              <img src={benefit4Img} alt="VesperVPN app browsing content without restrictions" />
+              <img src={benefit4Img} alt="RusNetVPN app browsing content without restrictions" />
             </figure>
             <span className="veil" />
             {" "}

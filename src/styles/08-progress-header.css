@@ -32,6 +32,10 @@ header.small::before{opacity:1;}
 .navlinks{display:flex;align-items:center;gap:2px;margin-left:6px;flex-wrap:nowrap;min-width:0;}
 .navlinks a{font-size:var(--fs-300);font-weight:500;color:var(--body);padding:9px 13px;border-radius:999px;white-space:nowrap;transition:color .25s,background .25s;}
 .navlinks a:hover{color:var(--ink);background:rgba(14,18,22,.05);}
+/* the RusNetVPN mark and CTA are wider, so just above the burger breakpoint the
+   links lose a little padding instead of running into the language pill. */
+@media(max-width:1320px){.navlinks a{padding-inline:10px;}}
+@media(max-width:1260px){.navlinks a{padding-inline:7px;}}
 .navact{margin-left:auto;display:flex;align-items:center;gap:var(--space-2);flex:0 0 auto;}
 .navact .signin{font-size:var(--fs-300);font-weight:500;padding:9px 14px;color:var(--body);white-space:nowrap;}
 .navact .signin:hover{color:var(--ink);}
@@ -50,8 +54,9 @@ body.menu-open .burger span:nth-child(1){transform:translateY(4.5px) rotate(45de
 body.menu-open .burger span:nth-child(2){opacity:0;}
 body.menu-open .burger span:nth-child(3){transform:translateY(-4.5px) rotate(-45deg);}
 /* six links + a button + the language picker stop fitting well before 1080,
-   which is where they used to spill. collapse earlier instead. */
-@media(max-width:1180px){
+   which is where they used to spill. collapse earlier instead — 1220, since the
+   RusNetVPN mark and CTA leave no room below that. */
+@media(max-width:1220px){
   .navlinks{display:none;}
   .navact .signin{display:none;}
   .burger{display:grid;}

@@ -719,7 +719,7 @@ var SHOT = {
 var APP = [
   { m:'connected', l:'tooltip', r:'freehome',
     c:['We are a no-log VPN meaning that we don’t store any of your traffic logs.',
-       'VesperVPN is committed to independent, no-log auditing — that audit is in progress.',
+       'RusNetVPN is committed to independent, no-log auditing — that audit is in progress.',
        'No third-party access to your VPN traffic. All data is securely managed from Moscow, free from Western interference.'] },
   { m:'servers', l:'serversPrem', r:'freeServers',
     c:['700+ servers worldwide, spanning North America, South America, Europe, Asia, Africa, and Oceania.',
@@ -804,7 +804,7 @@ var PLANS = [
 /* One primary CTA, so it is one string rather than a per-plan field that five
    rows have to keep agreeing on. The plan is already named in the card above
    the button; the button says what pressing it does. */
-var BUY_CTA = 'Get VesperVPN';
+var BUY_CTA = 'Get RusNetVPN';
 var BASE_PLAN = 1;                                   /* the 1-month rate */
 var money = function(n){ return '$' + n.toFixed(2); };
 PLANS.forEach(function(p){
@@ -1339,11 +1339,11 @@ var AUTH_COPY = {
         hint:'The link is good for <b>60 minutes</b>. If it expires, just ask for another one.',
         fine:'Remembered it? <button type="button" class="lnk" data-view="in">Back to sign in</button>' },
 
-  newpw: { title:'Set a new password', sub:'Almost done. Pick a password you have not used on VesperVPN before.',
+  newpw: { title:'Set a new password', sub:'Almost done. Pick a password you have not used on RusNetVPN before.',
         submit:'Save new password',
         fields:{ pass:1, confirm:1 },
         passLabel:'New password', passHold:'At least 6 characters', passAuto:'new-password',
-        passHint:'At least 6 characters, and not one you have used on VesperVPN before.',
+        passHint:'At least 6 characters, and not one you have used on RusNetVPN before.',
         confirmLabel:'Confirm new password', confirmHold:'Type it once more',
         hint:'Signing out of every device you are currently logged in on.',
         fine:'<button type="button" class="lnk" data-view="in">Back to sign in</button>' }
@@ -1425,7 +1425,7 @@ function checkAuth(key){
   if(!d.fields[key]) return null;                    /* not on screen in this view */
   var v = AUTH_F[key].input.value;
   if(key === 'email'){
-    if(!v.trim()) return 'Enter the email address you use for VesperVPN';
+    if(!v.trim()) return 'Enter the email address you use for RusNetVPN';
     if(!EMAIL_RE.test(v.trim())) return 'That is not a complete email address — check for a missing @ or a typo after the dot';
   }
   if(key === 'pass'){
@@ -1582,7 +1582,7 @@ window.addEventListener('popstate', function(){
 });
 
 document.addEventListener('click', function(e){
-  /* Every purchase CTA lands here — the pricing button and both "Try VesperVPN
+  /* Every purchase CTA lands here — the pricing button and both "Try RusNetVPN
      Now" buttons. They used to carry data-auth="up", which meant that once you
      were signed in, asking to buy re-opened a *registration* form: the page was
      inviting someone who already had an account to make a second one. */
@@ -2020,7 +2020,7 @@ aForm.addEventListener('submit', function(e){
         'We have sent a verification email to <b>' + mail + '</b>. Please check your inbox and click the verification link to activate your account.');
     } else {
       showDone('Sign in as',
-        'Signed in as <b>' + mail + '</b>. An email to download the VesperVPN has been sent to you.');
+        'Signed in as <b>' + mail + '</b>. An email to download the RusNetVPN has been sent to you.');
     }
   }, RM ? 0 : 850);
 });
@@ -2029,7 +2029,7 @@ $('#auth-google').addEventListener('click', function(){
   var mail = aEmail.value.trim() || 'you@gmail.com';
   signInAs(mail);
   $('#done-title').textContent = 'Sign in as';
-  $('#done-sub').innerHTML = 'Signed in as <b>' + mail + '</b> through Google. An email to download the VesperVPN has been sent to you.';
+  $('#done-sub').innerHTML = 'Signed in as <b>' + mail + '</b> through Google. An email to download the RusNetVPN has been sent to you.';
   aForm.style.display = 'none';
   aDone.style.display = '';
 });
@@ -2228,15 +2228,15 @@ function connState(state){
     connEl.classList.add('is-connecting'); connSt.classList.add('is-connecting');
     connDot.classList.add('amber');
     connLabel.textContent = 'Connecting…'; connMs.textContent = '— ms';
-    connEl.setAttribute('aria-label', 'VesperVPN app, connecting to Frankfurt from Moscow.');
+    connEl.setAttribute('aria-label', 'RusNetVPN app, connecting to Frankfurt from Moscow.');
   }else if(state === 'error'){
     connEl.classList.add('is-error'); connSt.classList.add('is-error');
     connDot.classList.add('red');
     connLabel.textContent = 'Could not connect'; connMs.textContent = '— ms';
-    connEl.setAttribute('aria-label', 'VesperVPN app showing a failed connection to Frankfurt, with a button to try another server.');
+    connEl.setAttribute('aria-label', 'RusNetVPN app showing a failed connection to Frankfurt, with a button to try another server.');
   }else{
     connLabel.textContent = 'Connected'; connMs.textContent = '12 ms';
-    connEl.setAttribute('aria-label', 'VesperVPN app, connected to Frankfurt from Moscow at 12 milliseconds.');
+    connEl.setAttribute('aria-label', 'RusNetVPN app, connected to Frankfurt from Moscow at 12 milliseconds.');
   }
 }
 /* expose the failure state for review without wiring it to a random chance */

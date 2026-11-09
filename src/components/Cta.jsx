@@ -25,7 +25,7 @@ export default function Cta() {
               </span>
             </h2>
             <p>
-              Protect your online activities with VesperVPN — the VPN crafted in Russia to ensure global privacy and security.
+              Protect your online activities with RusNetVPN — the VPN crafted in Russia to ensure global privacy and security.
             </p>
             {/* the label used to be an aria-label only, so the field was announced but
                           never *shown* as anything except a grey example that vanishes on the

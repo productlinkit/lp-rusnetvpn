@@ -13,9 +13,9 @@ export default function AuthModal() {
             {/* role="img" is what licenses the aria-label. A bare <span> has no role,
                           and aria-label on a roleless generic is discarded — the wordmark would
                           have gone unnamed here, where it is the only branding in the panel. */}
-            <span className="brand" role="img" aria-label="VesperVPN">
-              <svg className="brand-logo" viewBox="0 1 196 40" aria-hidden="true">
-                <use href="#logo-vespervpn" />
+            <span className="brand" role="img" aria-label="RusNetVPN">
+              <svg className="brand-logo" viewBox="0 1 214 40" aria-hidden="true">
+                <use href="#logo-rusnetvpn" />
               </svg>
             </span>
             <p>
@@ -66,9 +66,9 @@ export default function AuthModal() {
           </aside>
           <div className="auth-main">
             <div className="auth-top">
-              <a href="#top" className="brand" data-close="" aria-label="VesperVPN, back to site">
-                <svg className="brand-logo" viewBox="0 1 196 40" aria-hidden="true">
-                  <use href="#logo-vespervpn" />
+              <a href="#top" className="brand" data-close="" aria-label="RusNetVPN, back to site">
+                <svg className="brand-logo" viewBox="0 1 214 40" aria-hidden="true">
+                  <use href="#logo-rusnetvpn" />
                 </svg>
               </a>
               {" "}

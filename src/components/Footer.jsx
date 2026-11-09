@@ -4,13 +4,13 @@ export default function Footer() {
       <footer className="wrap">
         <div className="fgrid">
           <div className="about">
-            <a href="#top" className="brand" aria-label="VesperVPN, back to top">
-              <svg className="brand-logo" viewBox="0 1 196 40" aria-hidden="true">
-                <use href="#logo-vespervpn" />
+            <a href="#top" className="brand" aria-label="RusNetVPN, back to top">
+              <svg className="brand-logo" viewBox="0 1 214 40" aria-hidden="true">
+                <use href="#logo-rusnetvpn" />
               </svg>
             </a>
             <p>
-              A secure and independent VPN solution, fully controlled from Moscow. VesperVPN is a privacy-focused VPN with a strict no-logs policy, built from the ground up locally in Russia.
+              A secure and independent VPN solution, fully controlled from Moscow. RusNetVPN is a privacy-focused VPN with a strict no-logs policy, built from the ground up locally in Russia.
             </p>
           </div>
           <div className="fcol">
@@ -70,16 +70,16 @@ export default function Footer() {
         </div>
         <div className="fbot">
           <p className="tiny">
-            Copyright 2024 VesperVPN
+            Copyright 2024 RusNetVPN
           </p>
           <div className="soc">
-            <a href="https://facebook.com/vespervpn" target="_blank" rel="noopener noreferrer" aria-label="Visit VesperVPN on Facebook">
+            <a href="https://facebook.com/rusnetvpn" target="_blank" rel="noopener noreferrer" aria-label="Visit RusNetVPN on Facebook">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.7v8h3.5z" />
               </svg>
             </a>
             {" "}
-            <a href="https://instagram.com/vespervpn" target="_blank" rel="noopener noreferrer" aria-label="Follow VesperVPN on Instagram">
+            <a href="https://instagram.com/rusnetvpn" target="_blank" rel="noopener noreferrer" aria-label="Follow RusNetVPN on Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                 <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
                 <circle cx="12" cy="12" r="3.7" />
