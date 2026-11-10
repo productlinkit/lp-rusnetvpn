@@ -51,27 +51,3 @@
   .hw-live{width:280px;height:580px;}
   .hw-screen iframe{height:calc(552px / .672);transform:scale(.672);}
 }
-
-/* ---------- the hero video tells the story, so the words sit alone on its dark left ---------- */
-.hx .hx-stage{display:none;}
-.hx-grid{grid-template-columns:minmax(0,560px);min-height:min(76vh,720px);}
-.hx .lead{max-width:500px;}
-@media(max-width:960px){
-  .hx-video{object-position:72% 50%;}
-  .hx::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:calc(50% - 50vw);width:100vw;pointer-events:none;background:linear-gradient(180deg,rgba(20,4,9,.35),rgba(20,4,9,.8) 70%);}
-}
-.hx-video{height:min(100vh,100%);bottom:auto;object-position:100% 50%;
-  -webkit-mask-image:linear-gradient(180deg,#000 72%,transparent);mask-image:linear-gradient(180deg,#000 72%,transparent);}
-.hx::after{display:none;}
-@media(max-width:960px){.hx-video{opacity:.5;object-position:75% 50%;}}
-@media(max-width:960px){
-  .hx{display:flex;flex-direction:column;}
-  .hx::before{display:none;}
-  .hx-grid{order:1;min-height:0;}
-  .hx-video{
-    order:2;position:relative;left:auto;top:auto;width:100%;height:auto;aspect-ratio:16/9;margin-top:32px;
-    opacity:1;object-position:50% 50%;border-radius:20px;border:1px solid rgba(255,255,255,.14);
-    -webkit-mask-image:none;mask-image:none;box-shadow:0 40px 80px -40px rgba(0,0,0,.8);
-  }
-  .hx .stats{order:3;}
-}
