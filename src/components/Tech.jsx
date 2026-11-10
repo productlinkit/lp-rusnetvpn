@@ -45,6 +45,15 @@ const GROUPS = [
   },
 ];
 
+const VS = [
+  ['Logs of your activity', 'Never stored', 'Often kept'],
+  ['Who runs the servers', 'Our own team', 'Rented from third parties'],
+  ['DNS leak protection', 'Always on', 'Not always included'],
+  ['Foreign parent company', 'None', 'Common'],
+  ['Busy server', 'Switched for you', 'You switch by hand'],
+  ['Money-back guarantee', '30 days', 'Varies, or none'],
+];
+
 export default function Tech() {
   const [g, setG] = useState(0);
   const cur = GROUPS[g];
@@ -87,6 +96,30 @@ export default function Tech() {
               <h3>{it.t}</h3>
               <p>{it.d}</p>
             </article>
+          ))}
+        </div>
+      </div>
+      <div className="vs up">
+        <div className="vs-head">
+          <span className="eyebrow">Compare</span>
+          <h3>
+            Safer and more private{" "}
+            <span className="serif">than other VPNs</span>
+          </h3>
+          <p>Most VPNs promise privacy. Here is how RusnetVPN keeps it, side by side with what you usually get elsewhere.</p>
+        </div>
+        <div className="vs-table" role="table" aria-label="RusnetVPN compared with other VPNs">
+          <div className="vs-row vs-top" role="row">
+            <span role="columnheader" />
+            <span role="columnheader" className="vs-us">RusnetVPN</span>
+            <span role="columnheader">Many other VPNs</span>
+          </div>
+          {VS.map(([q, us, them]) => (
+            <div className="vs-row" role="row" key={q}>
+              <span role="rowheader">{q}</span>
+              <span role="cell" className="vs-us"><i className="vs-yes" aria-hidden="true" />{us}</span>
+              <span role="cell" className="vs-them"><i className="vs-no" aria-hidden="true" />{them}</span>
+            </div>
           ))}
         </div>
       </div>

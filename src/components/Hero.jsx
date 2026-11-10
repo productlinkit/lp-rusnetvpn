@@ -8,7 +8,7 @@ export default function Hero() {
           <span className="eyebrow up">
             <i className="dot" />
             <span>
-              Owned and run in Russia
+              Safer and more private than the rest
             </span>
           </span>
           <h1 className="up" style={{ "--d": "60ms" }}>
@@ -18,7 +18,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="lead up" style={{ "--d": "120ms" }}>
-            One tap hides what you do online. Pick from{" "}
+            The safest, most private way to get online. One tap hides what you do. Pick from{" "}
             <span data-fact="servers">
               700
             </span>

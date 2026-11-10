@@ -208,3 +208,31 @@
   .sec-cta .cta .inner > h2{font-size:clamp(30px,8vw,40px);}
   .sec-cta .cta .cta-form-wrap{padding:20px;}
 }
+
+/* ---------- FEATURES: comparison with other VPNs ---------- */
+.vs{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start;margin-top:clamp(56px,7vw,96px);}
+.vs-head{display:flex;flex-direction:column;align-items:flex-start;gap:16px;position:sticky;top:120px;}
+.vs-head h3{font-size:clamp(28px,3.2vw,44px);line-height:1.08;letter-spacing:-.025em;}
+.vs-head .serif{color:#C81E27;}
+.vs-head p{color:var(--body);max-width:420px;}
+.vs-table{border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:0 40px 80px -50px rgba(120,10,20,.45);overflow:hidden;}
+.vs-row{display:grid;grid-template-columns:1.1fr 1fr 1fr;align-items:stretch;border-top:1px solid var(--line-2);}
+.vs-row:first-child{border-top:0;}
+.vs-row > span{padding:18px 22px;display:flex;align-items:center;gap:10px;}
+.vs-row > span:first-child{font-weight:600;color:var(--ink);}
+.vs-top > span{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-block:16px;}
+.vs-us{background:linear-gradient(180deg,#FFF3F4,#FFE9EB);color:#A5121A;font-weight:600;}
+.vs-top .vs-us{background:linear-gradient(180deg,#F23A43,#C81E27);color:#fff;}
+.vs-them{color:var(--muted);}
+.vs-yes,.vs-no{flex:0 0 auto;width:20px;height:20px;border-radius:6px;display:grid;place-items:center;}
+.vs-yes{background:#E12730;}
+.vs-yes::after{content:"";width:9px;height:5px;border:2px solid #fff;border-top:0;border-right:0;rotate:-45deg;translate:0 -1px;}
+.vs-no{background:rgba(20,10,13,.08);}
+.vs-no::after{content:"";width:9px;height:2px;background:var(--muted);border-radius:2px;}
+@media(max-width:900px){.vs{grid-template-columns:1fr;}.vs-head{position:static;}}
+@media(max-width:560px){
+  .vs-row{grid-template-columns:1fr 1fr;}
+  .vs-row > span:first-child{grid-column:1/-1;padding-bottom:4px;}
+  .vs-top > span:first-child{display:none;}
+  .vs-row > span{padding:12px 16px;font-size:14px;}
+}

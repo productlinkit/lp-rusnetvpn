@@ -75,10 +75,10 @@ export default function Why() {
           <div className="show-head up">
             <span className="eyebrow">Why Rusnet</span>
             <h2>
-              Made for people who{" "}
-              <span className="serif">value quiet</span>
+              The safest choice,{" "}
+              <span className="serif">the most private too</span>
             </h2>
-            <p className="lead">No trackers, no middlemen, no slowdowns. Here is what that looks like day to day.</p>
+            <p className="lead">Other VPNs keep logs, rent their servers or answer to a parent company abroad. We do none of that. Here is what it means for you.</p>
           </div>
           <ol className="show-list" ref={list}>
             {ITEMS.map((it, i) => (
