@@ -185,16 +185,10 @@ export default function Apps() {
               </div>
             </div>
             <div className="phones" id="phones">
-              {/* src comes from the baked-in SHOT map, so there is nothing to keep beside the file */}
-              <div className="phone p-side">
-                <img id="ph-l" alt="RusnetVPN app screen" />
-              </div>
-              <div className="phone p-main">
-                <img id="ph-m" alt="RusnetVPN connected screen" />
-              </div>
-              <div className="phone p-side">
-                <img id="ph-r" alt="RusnetVPN app screen" />
-              </div>
+              {/* src comes from the SHOT list in interactions.js and changes with the tab */}
+              <figure className="appshot media">
+                <img id="ph-m" alt="RusnetVPN app on a phone" />
+              </figure>
             </div>
           </div>
           {/* pros & cons */}

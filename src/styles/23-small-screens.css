@@ -73,7 +73,7 @@
   .tile p{font-size:var(--fs-300);line-height:1.5;}
   .tile .viz{height:44px;margin-top:16px;}
 
-  .phone.p-main{width:min(56%,190px);}
+  .appshot{width:min(100%,300px);}
   .applist{gap:var(--space-3);margin-top:22px;}
   .stores{margin-top:22px;}
   .pc{margin-top:26px;}

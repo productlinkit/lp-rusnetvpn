@@ -1,14 +1,7 @@
-import appConnectedImg from '../assets/images/app-connected.jpg';
-import appTooltipImg from '../assets/images/app-tooltip.jpg';
-import appFreehomeImg from '../assets/images/app-freehome.jpg';
-import appServersImg from '../assets/images/app-servers.jpg';
-import appServersPremImg from '../assets/images/app-servers-prem.jpg';
-import appFreeServersImg from '../assets/images/app-free-servers.jpg';
-import appSplitImg from '../assets/images/app-split.jpg';
-import appSettingsImg from '../assets/images/app-settings.jpg';
-import appProtocolImg from '../assets/images/app-protocol.jpg';
-import appNotifsImg from '../assets/images/app-notifs.jpg';
-import appMenuFreeImg from '../assets/images/app-menu-free.jpg';
+import appShot1Img from '../assets/images/app-shot-1.jpg';
+import appShot2Img from '../assets/images/app-shot-2.jpg';
+import appShot3Img from '../assets/images/app-shot-3.jpg';
+import appShot4Img from '../assets/images/app-shot-4.jpg';
 
 // The original page script, unchanged apart from being wrapped in a function so
 // App can call it once the markup is mounted. It works directly on the DOM by id
@@ -700,52 +693,39 @@ peekImg.addEventListener('error', function(){ peekImg.style.visibility = 'hidden
 peekImg.addEventListener('load',  function(){ peekImg.style.visibility = 'visible'; });
 
 /* ---------- app tabs ----------
-   the screenshots are baked in below by tools/bake-rusvpn-v2-phones.ps1, so
-   the phones still render when this file is moved away from images/. */
-var SHOT = {
-  connected: appConnectedImg,
-  tooltip: appTooltipImg,
-  freehome: appFreehomeImg,
-  servers: appServersImg,
-  serversPrem: appServersPremImg,
-  freeServers: appFreeServersImg,
-  split: appSplitImg,
-  settings: appSettingsImg,
-  protocol: appProtocolImg,
-  notifs: appNotifsImg,
-  menuFree: appMenuFreeImg,
-};
+   one phone mockup per tab, already composed on its backdrop */
+var SHOT = [appShot1Img, appShot2Img, appShot4Img, appShot3Img];
 
 var APP = [
-  { m:'connected', l:'tooltip', r:'freehome',
+  { shot:0,
     c:['We are a no-log VPN meaning that we don’t store any of your traffic logs.',
        'RusnetVPN is committed to independent, no-log auditing — that audit is in progress.',
        'No third-party access to your VPN traffic. All data is securely managed from Moscow, free from Western interference.'] },
-  { m:'servers', l:'serversPrem', r:'freeServers',
+  { shot:1,
     c:['700+ servers worldwide, spanning North America, South America, Europe, Asia, Africa, and Oceania.',
        'Automatic server switching prevents slowdowns for uninterrupted service.',
        'We have optimized streaming servers around the globe, allowing you to get the most from your existing streaming subscription.'] },
-  { m:'split', l:'settings', r:'protocol',
+  { shot:2,
     c:['Select the apps for which you want to route through our secure VPN.',
        'Protect your privacy by ensuring your DNS isn’t being leaked to any entity.',
        'Experience advanced security, blazing-fast speed, and unrestricted access with our VPN.'] },
-  { m:'settings', l:'notifs', r:'menuFree',
+  { shot:3,
     c:['We offer the most advanced VPN protocols for the fastest and most secure connection.',
        'Advanced hardware ensures fast speeds and smooth streaming.',
        'Owned and operated in-house, following strict Russian security standards.'] }
 ];
-var phM = $('#ph-m'), phL = $('#ph-l'), phR = $('#ph-r'), appcopy = $('#appcopy');
-phM.src = SHOT[APP[0].m]; phL.src = SHOT[APP[0].l]; phR.src = SHOT[APP[0].r];
+var phM = $('#ph-m'), appcopy = $('#appcopy');
+phM.src = SHOT[APP[0].shot];
 var TICK = '<span class="tick"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3.2L13 5"/></svg></span>';
 $$('#apptabs button').forEach(function(b){
   b.addEventListener('click', function(){
     $$('#apptabs button').forEach(function(x){ x.classList.remove('on'); });
     b.classList.add('on');
     var d = APP[+b.dataset.app];
-    [phM,phL,phR].forEach(function(el){ el.style.opacity = 0; });
+    phM.style.opacity = 0;
     setTimeout(function(){
-      phM.src = SHOT[d.m]; phL.src = SHOT[d.l]; phR.src = SHOT[d.r];
-      [phM,phL,phR].forEach(function(el){ el.style.transition = 'opacity .45s'; el.style.opacity = 1; });
+      phM.src = SHOT[d.shot];
+      phM.style.transition = 'opacity .45s'; phM.style.opacity = 1;
     }, 180);
     /* Rewrite the whole list, not just its items — #appcopy is the tabpanel
        wrapper now, so the <ul> has to be reinstated with it or the <li> lose
