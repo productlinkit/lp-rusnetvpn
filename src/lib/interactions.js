@@ -740,14 +740,14 @@ $$('#apptabs button').forEach(function(b){
 
 /* ---------- pros & cons ---------- */
 var PC = [
-  { pro:['Security &amp; Safety','Automatic Updates','Official &amp; Verified','Easier Management','Better Compatibility'],
-    con:['Regional Restrictions','Delayed Updates','Limited Apps','Forced Updates/Removals'] },
-  { pro:['Access to Restricted Apps','Early Updates','Modified Apps','No Google Dependency'],
-    con:['Security Risks','Manual Updates','Compatibility Issues','No Official Support'] },
-  { pro:['Best performance on desktop','Supports all app features','Stable for long sessions','Easy installation and setup'],
-    con:['Only for Windows devices','Needs manual update for new installer versions'] },
-  { pro:['Native macOS experience','Best performance on Apple Silicon','Easy drag-and-drop installation'],
-    con:['Only for Mac devices'] }
+  { pro:['Most people, on iPhone or Android','Updates arrive on their own','The store checks the app for you'],
+    con:['The store may not be available in your region','Updates can reach you a few days later'] },
+  { pro:['Android phones without the Play Store','Getting new versions first'],
+    con:['You install updates yourself','Only download the APK from this site'] },
+  { pro:['Desktops and laptops running Windows','Long sessions, every feature included'],
+    con:['New versions need a fresh installer'] },
+  { pro:['Any Mac, tuned for Apple Silicon','Drag it into Applications and you are done'],
+    con:['Mac only'] }
 ];
 function renderPC(i){
   var d = PC[i];

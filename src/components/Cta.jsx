@@ -14,18 +14,12 @@ export default function Cta() {
           {" "}
           <span className="spot" />
           <div className="inner">
-            <span className="eyebrow">
-              <i className="dot" />
-              Create your account
-            </span>
+
             <h2>
-              One email away from{" "}
-              <span className="serif">
-                a private internet
-              </span>
+              Go private today
             </h2>
             <p>
-              Enter your email, choose a plan, and every device you own is protected the same day.
+              Leave your email and we’ll set up your account. You can be protected on every device before your coffee gets cold.
             </p>
             {/* the label used to be an aria-label only, so the field was announced but
                           never *shown* as anything except a grey example that vanishes on the

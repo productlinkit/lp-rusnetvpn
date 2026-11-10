@@ -4,14 +4,9 @@ export default function Pricing() {
       <section className="sec wrap" id="pricing" data-fx="">
         <div className="sec-head">
           <div className="col up">
-            <span className="eyebrow">
-              Pricing
-            </span>
+            
             <h2>
-              Pay for time,{" "}
-              <span className="serif">
-                not for features.
-              </span>
+              Every plan has everything
             </h2>
             {/* a row of buttons that swap one panel is a tablist. Without the roles it
                           is five unrelated buttons and nothing says which one is active; with
@@ -42,7 +37,7 @@ export default function Pricing() {
             </div>
           </div>
           <p className="aside up" style={{ "--d": "100ms" }}>
-            Every plan unlocks everything. The only choice is how long, and longer terms cost less per month.
+            Plans only differ in how long they last. The longer you pick, the less each month costs.
           </p>
         </div>
         <div className="price-grid up">
@@ -207,10 +202,7 @@ export default function Pricing() {
           </div>
           <div className="trial">
             <div>
-              <span className="eyebrow" style={{ background: "rgba(255,255,255,.1)", color: "#fff", borderColor: "rgba(255,255,255,.14)" }}>
-                <i className="dot" />
-                30-Day Money-Back Guarantee
-              </span>
+              
               <h3 style={{ marginTop: "18px" }}>
                 Change your mind? Get it all back.
               </h3>

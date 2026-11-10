@@ -4,11 +4,8 @@ export default function Faq() {
       <section className="sec wrap" id="faq" data-fx="">
         <div className="sec-head">
           <div className="col up">
-            <span className="eyebrow is-neutral">
-              FAQ
-            </span>
             <h2>
-              Before you ask
+              What people ask before switching
             </h2>
           </div>
           <p className="aside up" style={{ "--d": "100ms" }}>

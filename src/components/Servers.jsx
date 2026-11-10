@@ -11,19 +11,13 @@ export default function Servers() {
         <div className="wrap sec">
           <div className="sec-head">
             <div className="col up">
-              <span className="eyebrow is-neutral">
-                Where we are
-              </span>
               {/* bound to FACTS, which is summed from the rows below — see the JS */}
               <h2>
-                <span data-fact="servers">
-                  700
-                </span>
-                + servers. Pick a corner of the world.
+                Pick a country, we pick the fastest machine in it
               </h2>
             </div>
             <p className="aside up" style={{ "--d": "100ms" }}>
-              Six regions, each with its own fast lane. Tap one to see how many countries and servers it covers.
+              <span data-fact="servers">700</span>+ servers across six regions. The number next to each region is the usual delay from Moscow.
             </p>
           </div>
           <div className="srv-tools up">

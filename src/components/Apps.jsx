@@ -8,17 +8,11 @@ export default function Apps() {
         <div className="apps up" data-fx="">
           <div className="apps-grid">
             <div>
-              <span className="eyebrow">
-                Download
-              </span>
-              <h2 style={{ marginTop: "18px" }}>
-                Works on{" "}
-                <span className="serif">
-                  everything you own
-                </span>
+              <h2>
+                Put it on every screen you use
               </h2>
               <p className="lead" style={{ marginTop: "16px" }}>
-                Phone, laptop or desktop. Sign in once and up to five devices stay protected together.
+                Your phone on the train, your laptop at the café, the desktop at home. Sign in once and all five are covered.
               </p>
               <div className="tabs" id="apptabs" role="tablist" aria-label="App feature" style={{ marginTop: "26px" }}>
                 <button type="button" role="tab" id="apptab-0" data-app="0" aria-selected="true" aria-controls="appcopy" tabIndex={0} className="on">
@@ -205,7 +199,7 @@ export default function Apps() {
           <div className="pc">
             <div className="pc-head">
               <h3>
-                Which download is right for you?
+                Not sure which download to pick?
               </h3>
               <div className="tabs" id="pctabs" role="tablist" aria-label="Download method">
                 <button type="button" role="tab" id="pctab-0" data-pc="0" aria-selected="true" aria-controls="pc-panel" tabIndex={0} className="on">
@@ -228,13 +222,13 @@ export default function Apps() {
             <div className="pc-grid" id="pc-panel" role="tabpanel" aria-labelledby="pctab-0">
               <div className="pc-col pro">
                 <h4 id="pc-pro-h">
-                  Pros
+                  Good for
                 </h4>
                 <ul id="pc-pro" aria-labelledby="pc-pro-h" />
               </div>
               <div className="pc-col con">
                 <h4 id="pc-con-h">
-                  Cons
+                  Keep in mind
                 </h4>
                 <ul id="pc-con" aria-labelledby="pc-con-h" />
               </div>

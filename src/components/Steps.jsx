@@ -5,15 +5,15 @@ const APP_URL = 'https://rusnetvpn-app.vercel.app';
 const STEPS = [
   {
     t: 'Choose a plan',
-    d: 'Start with a week or lock in a year. Every plan includes every feature, and the first 30 days are refundable.',
+    d: 'A week, a month or a year. Every plan has every feature, and the first 30 days are refundable.',
   },
   {
     t: 'Install on your devices',
-    d: 'Get the app for iPhone, Android, Windows or Mac and sign in on up to five devices at once.',
+    d: 'iPhone, Android, Windows or Mac. One account covers five devices at the same time.',
   },
   {
     t: 'Tap connect',
-    d: 'The app picks the fastest server near you. From that moment your traffic is encrypted and private.',
+    d: 'The app picks the fastest server near you. From then on, what you do online is yours alone.',
   },
 ];
 
@@ -25,13 +25,9 @@ export default function Steps() {
     <section className="sec wrap" id="how">
       <div className="hw">
         <div className="hw-left">
-          <div className="hw-head up">
-            <span className="eyebrow">How it works</span>
-            <h2>
-              Protected in under{" "}
-              <span className="serif">a minute</span>
-            </h2>
-            <p className="lead">The phone on the right is the real RusnetVPN app. Follow the steps and try it yourself.</p>
+          <div className="hw-head">
+            <h2>Three steps to go private</h2>
+            <p className="lead">That phone is the real RusnetVPN app, running live. Follow along and try it.</p>
           </div>
           <ol className="hw-steps" role="tablist" aria-label="Steps">
             {STEPS.map((s, i) => (
@@ -64,8 +60,6 @@ export default function Steps() {
           </a>
         </div>
         <div className="hw-right">
-          <span className="hw-blob b1" aria-hidden="true" />
-          <span className="hw-blob b2" aria-hidden="true" />
           <div className="hw-phone hw-live">
             <span className="hw-notch" />
             <div className={`hw-screen${ready ? ' is-ready' : ''}`}>
@@ -79,8 +73,6 @@ export default function Steps() {
               <span className="hw-loading" aria-hidden="true" />
             </div>
           </div>
-          <span className="hw-float f1 mono" aria-hidden="true">Live app</span>
-          <span className="hw-float f2 mono" aria-hidden="true">Tap to try</span>
         </div>
       </div>
     </section>
