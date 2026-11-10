@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import heroVideo from '../assets/video/hero-gradient.mp4';
-import heroPoster from '../assets/video/hero-gradient-poster.jpg';
+import heroVideo from '../assets/video/hero-story.mp4';
+import heroPoster from '../assets/video/hero-story-poster.jpg';
 
 export default function Hero() {
   const vid = useRef(null);
