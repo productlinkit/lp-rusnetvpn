@@ -34,7 +34,7 @@ export function initScrollFx() {
 
 // Cards lean a little toward the pointer and catch a highlight where it is.
 // One listener for the page; only the card under the pointer is restyled.
-const TILT = '.ft-card, .rowi, .pcard, .trial, .vs-table, .store, .hw-phone, .show-frame';
+const TILT = '.ft-card, .rowi, .pcard, .trial, .vs-table, .store, .show-frame';
 
 function initTilt(reduce) {
   if (reduce.matches || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
