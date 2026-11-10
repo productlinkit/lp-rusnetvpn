@@ -58,25 +58,26 @@ header.small .nav{background:rgba(24,7,12,.68);}
    HERO — split: words left, a tall glass photo right
    ========================================================================== */
 .hero{
-  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
   column-gap:clamp(32px,5vw,80px);align-items:center;
   min-height:100vh;padding-top:clamp(110px,10vw,140px);
 }
 .hero-top{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-7);margin-bottom:0;}
-.hero h1{font-size:clamp(40px,5.6vw,84px);}
+.hero h1{font-size:clamp(38px,4.6vw,70px);}
 .hero h1 .serif{display:block;}
 .hero-side{padding-bottom:0;}
-.stage{align-self:stretch;display:flex;align-items:center;}
+.stage{align-self:center;}
 .stage .shot{
-  width:100%;height:clamp(440px,68vh,680px);border-radius:40px;
+  /* the photo's own shape, so both phones stay in frame */
+  width:100%;height:auto;aspect-ratio:1671/941;border-radius:40px;
   border:var(--glass-edge);
   translate:0 calc((var(--p,.5) - .5) * -70px);
 }
-.stage .shot img{object-position:42% 30%;scale:calc(1.12 - var(--p,.5) * .12);}
-.stage .conn{right:-22px;bottom:12%;translate:0 calc((var(--p,.5) - .5) * 90px);}
-.stage .chip.c1{left:-14px;top:12%;translate:0 calc((var(--p,.5) - .5) * 60px);}
-.stage .chip.c2{right:auto;left:42%;top:-16px;}
-.stage .chip.c3{left:20px;bottom:20px;}
+.stage .shot img{object-position:50% 50%;scale:calc(1.08 - var(--p,.5) * .08);}
+.stage .conn{right:-26px;bottom:-34px;translate:0 calc((var(--p,.5) - .5) * 70px);}
+.stage .chip.c1{left:20px;top:20px;}
+.stage .chip.c2{right:20px;top:20px;}
+.stage .chip.c3{left:20px;bottom:20px;translate:0 calc((var(--p,.5) - .5) * 40px);}
 .conn,.chip{background:rgba(26,8,13,.5);border:var(--glass-edge);box-shadow:var(--glass-hi),0 30px 60px -30px rgba(0,0,0,.9);}
 .stats{
   grid-column:1/-1;margin-top:clamp(36px,4vw,56px);
@@ -86,10 +87,7 @@ header.small .nav{background:rgba(24,7,12,.68);}
 .stats .st{padding:18px 10px;text-align:center;}
 @media(max-width:960px){
   .hero{grid-template-columns:1fr;min-height:0;row-gap:var(--space-8);}
-  .stage .shot{height:clamp(320px,90vw,520px);}
-  .stage .conn{right:12px;}
-  .stage .chip.c1{left:12px;}
-  .stage .chip.c2{left:auto;right:12px;top:16px;}
+  .stage .conn{right:12px;bottom:-24px;}
   .stats{border-radius:28px;}
 }
 @media(max-width:640px){
