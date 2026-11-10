@@ -1,0 +1,121 @@
+/* ==========================================================================
+   LIGHT THEME — the page goes soft blush-white, red stays the accent
+   ==========================================================================
+   The dark ground was too heavy to read for long, so the page itself turns
+   light: a white-to-blush ground with faint red glows, dark text, frosted
+   white glass. Red is kept for the panels that carry a message — Download
+   App, the guarantee card and the closing CTA — which keep their white text.
+   The motion is calmed down too: the orbs barely drift, nothing tilts. */
+
+header,main,footer,.sheet,.fab{
+  --ink:#1A0D11; --ink-2:#2E1D22; --body:#5C4A50; --muted:#75636A;
+  --paper:#FFFFFF; --paper-2:#F8EFF1; --card:#FFFFFF;
+  --line:rgba(26,13,17,.09); --line-2:rgba(26,13,17,.06); --line-3:rgba(26,13,17,.14);
+  --line-ui:#8E7E84; --line-ui-dark:rgba(255,255,255,.42);
+  --brand-text:#BE1A23; --brand-tint:#FFF0F1;
+  --green-text:#087040; --green-tint:#E9F9F0;
+  --amber-text:#B54708; --amber-tint:#FFF4E5;
+  --focus:#1A0D11;
+  --glass-bg:linear-gradient(155deg,rgba(255,255,255,.82),rgba(255,255,255,.55));
+  --glass-edge:1px solid rgba(225,39,48,.12);
+  --glass-hi:inset 0 1px 0 #fff;
+  color:var(--ink);
+}
+body{
+  background-color:#FFF8F8;
+  background-image:
+    radial-gradient(50% 14% at 92% 2%,rgba(240,53,63,.16),transparent 70%),
+    radial-gradient(45% 12% at 4% 20%,rgba(240,53,63,.10),transparent 70%),
+    radial-gradient(50% 12% at 96% 45%,rgba(240,53,63,.10),transparent 70%),
+    radial-gradient(50% 12% at 4% 70%,rgba(240,53,63,.09),transparent 70%),
+    linear-gradient(180deg,#FFF5F6 0%,#FFFFFF 35%,#FFF4F5 65%,#FFFFFF 100%);
+  color:var(--ink);
+}
+body::before{background:radial-gradient(circle,rgba(240,53,63,.18),rgba(240,53,63,0) 70%);translate:0 calc(var(--sy,0) * -.02px);rotate:none;}
+body::after{background:radial-gradient(circle,rgba(240,53,63,.14),rgba(240,53,63,0) 70%);translate:0 calc(var(--sy,0) * -.015px);}
+
+/* ---------- labels, buttons ---------- */
+.eyebrow{background:var(--brand-tint);border-color:rgba(190,26,35,.18);color:var(--brand-text);}
+.eyebrow.is-neutral{background:rgba(26,13,17,.05);border-color:var(--line-2);color:var(--ink);}
+.btn-primary{background:var(--ink);color:#fff;}
+.btn-ghost{color:var(--ink);border-color:var(--line-ui);background:rgba(255,255,255,.6);}
+.btn-ghost:hover{background:#fff;border-color:var(--ink);}
+.link-u{border-bottom-color:var(--line-ui);}
+
+/* ---------- header: frosted white ---------- */
+header .nav{background:rgba(255,255,255,.72);border:1px solid rgba(225,39,48,.1);box-shadow:inset 0 1px 0 #fff,0 18px 40px -28px rgba(120,10,20,.35);}
+header.small .nav{background:rgba(255,255,255,.88);}
+.navlinks a:hover{background:rgba(225,39,48,.06);color:var(--ink);}
+.lang-btn{background:rgba(255,255,255,.7);}
+.lang-btn:hover{background:#fff;border-color:var(--ink);}
+.lang-menu,.acct-menu{background:#fff;border-color:var(--line-2);}
+.lang-menu button:hover{background:var(--paper-2);}
+.acct-btn{background:#fff;border-color:var(--line-ui);}
+.sheet{background:linear-gradient(180deg,#FFFFFF,#FFF4F5);}
+
+/* ---------- hero ---------- */
+.chip,.conn{background:rgba(255,255,255,.8);color:var(--ink);border:1px solid rgba(225,39,48,.12);box-shadow:inset 0 1px 0 #fff,0 24px 50px -30px rgba(120,10,20,.45);}
+.chip.c3{color:#fff;}
+.conn .route .dash{background:repeating-linear-gradient(90deg,var(--line-3) 0 4px,transparent 4px 8px);}
+.conn .bars i{background:var(--paper-2);}
+@keyframes bar{0%,100%{height:22%;background:#F3E3E6;}50%{height:100%;background:#E12730;}}
+.stage .shot{box-shadow:0 40px 90px -50px rgba(225,39,48,.55);}
+.stage .shot::after{background:linear-gradient(0deg,rgba(26,13,17,.35) 0%,rgba(26,13,17,0) 40%);}
+
+/* ---------- marquee ---------- */
+.marq{background:linear-gradient(90deg,transparent,rgba(225,39,48,.07) 20%,rgba(225,39,48,.07) 80%,transparent);}
+.marq .it{color:var(--body);}
+.marq .it b{color:var(--ink);}
+.marq .it .sep{box-shadow:none;}
+.marq .track{translate:calc(var(--sy,0) * -.12px) 0;}
+
+/* ---------- sheets on a light page: lift them with a shadow, not contrast ---------- */
+#why,#servers,#pricing{box-shadow:0 30px 80px -50px rgba(120,10,20,.35);border:1px solid rgba(225,39,48,.08);}
+
+/* ---------- features ---------- */
+#tech .tile.wide{background:radial-gradient(70% 70% at 100% 0%,rgba(240,53,63,.14),transparent 60%),var(--glass-bg);box-shadow:inset 0 1px 0 #fff,0 40px 80px -50px rgba(120,10,20,.4);}
+#tech .bento.has-open .tile.wide.is-open{background:radial-gradient(70% 70% at 100% 0%,rgba(240,53,63,.22),transparent 60%),var(--glass-bg);}
+.tile .togg{border-color:var(--line-ui);}
+.tile.is-open .togg{background:var(--ink);color:#fff;}
+.tile .geo span{background:#fff;border-color:var(--line-2);}
+.tile.is-open .geo span{background:var(--brand-tint);color:var(--ink);}
+.tile .viz i{opacity:.25;}
+
+/* ---------- apps: a solid red panel so its white text keeps reading ---------- */
+.apps{
+  background:radial-gradient(70% 90% at 100% 0%,rgba(255,110,118,.55),transparent 60%),linear-gradient(140deg,#E12730 0%,#B3141D 55%,#7A0B13 100%);
+  border:0;box-shadow:0 50px 100px -50px rgba(225,39,48,.65);
+}
+.apps .lead,.applist li{color:rgba(255,255,255,.88);}
+.apps .eyebrow{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.24);color:#fff;}
+.apps .serif{color:#FFD6D8;}
+.apps .tabs{background:rgba(0,0,0,.16);border-color:rgba(255,255,255,.16);}
+.apps .tabs button{color:rgba(255,255,255,.85);}
+.apps .tabs button.on{background:#fff;color:#B3141D;}
+.apps .applist .tick{background:rgba(255,255,255,.22);}
+.apps .pc{background:rgba(0,0,0,.14);border-color:rgba(255,255,255,.14);}
+.apps .pc-head h3{color:#fff;}
+.apps .pc-col li{color:rgba(255,255,255,.85);}
+.apps{--focus:#fff;}
+
+/* ---------- faq ---------- */
+.qrow{border-bottom:1px solid var(--line-2);}
+.qrow:hover{background:rgba(225,39,48,.04);}
+.qrow.is-on{background:linear-gradient(90deg,rgba(225,39,48,.08),rgba(255,255,255,0));}
+.qpanel{box-shadow:inset 0 1px 0 #fff,0 40px 80px -50px rgba(120,10,20,.4);}
+.qpanel .ghost{color:#E12730;opacity:.06;}
+.qp-cat{background:var(--brand-tint);border-color:rgba(190,26,35,.18);color:var(--brand-text);}
+main .srch input{background:#fff;border-color:var(--line-ui);color:var(--ink);}
+main .srch input::placeholder{color:var(--muted);}
+main .srch input:focus{border-color:var(--ink);}
+
+/* ---------- footer ---------- */
+.fgrid{border-bottom-color:var(--line);}
+.fbot .soc a{border-color:var(--line-ui);}
+.fab .opts a{background:#fff;color:var(--ink);}
+
+/* ---------- calmer motion ---------- */
+#why.is-pinned .rcard{rotate:none;}
+#pricing .price-grid > .trial{rotate:none;}
+.appshot{rotate:calc((var(--p,.5) - .5) * -5deg);translate:0 calc((.5 - var(--p,.5)) * 40px);}
+.stage .shot{translate:0 calc((var(--p,.5) - .5) * -30px);}
