@@ -20,12 +20,13 @@ import AuthModal from './components/AuthModal.jsx';
 import Checkout from './components/Checkout.jsx';
 import Account from './components/Account.jsx';
 import { initInteractions } from './lib/interactions.js';
+import { initScrollFx } from './lib/scrollfx.js';
 
 export default function App() {
   // The page's behaviour (menus, modals, checkout, FAQ, tooltips …) is the original
   // vanilla script. It runs once, after React has put the markup in the document,
   // which is exactly when it used to run at the end of <body>.
-  useEffect(() => initInteractions(), []);
+  useEffect(() => { initInteractions(); initScrollFx(); }, []);
 
   return (
     <>

@@ -7,6 +7,8 @@ export default function Why() {
   return (
     <>
       <section className="sec wrap" id="why">
+        {/* sticky while the section scrolls by; scrollfx.js turns that scroll into the rail sliding sideways */}
+        <div className="why-pin">
         <div className="sec-head">
           <div className="col up">
             <span className="eyebrow">
@@ -191,6 +193,7 @@ export default function Why() {
               </span>
             </span>
           </button>
+        </div>
         </div>
       </section>
     </>

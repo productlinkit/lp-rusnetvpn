@@ -1,0 +1,233 @@
+/* ==========================================================================
+   GLASS + SCROLL MOTION + NEW LAYOUT
+   ==========================================================================
+   Sits on the dark-red revamp. Three things happen here:
+   - glass: panels are frosted (backdrop blur) over red orbs that drift behind
+     the whole page, so the frost always has colour to bend
+   - layout: each section gets a new arrangement (split hero, pinned sideways
+     rail, sticky-headed features, server cards, mirrored apps and FAQ)
+   - motion: scrollfx.js feeds --sy / --p / --hx; parallax and scale use the
+     individual translate/scale/rotate properties so they never fight the
+     transform the .up reveal already owns. */
+
+:root{
+  --glass-bg:linear-gradient(155deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
+  --glass-blur:blur(22px) saturate(150%);
+  --glass-edge:1px solid rgba(255,255,255,.12);
+  --glass-hi:inset 0 1px 0 rgba(255,255,255,.14);
+}
+
+/* ---------- drifting orbs behind everything ---------- */
+body::before,body::after{
+  content:"";position:fixed;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(70px);
+}
+body::before{
+  width:46vw;height:46vw;top:-10vw;right:-12vw;
+  background:radial-gradient(circle,rgba(240,53,63,.55),rgba(165,18,26,0) 70%);
+  translate:0 calc(var(--sy,0) * -.06px);rotate:calc(var(--sy,0) * .01deg);
+}
+body::after{
+  width:40vw;height:40vw;bottom:-14vw;left:-10vw;
+  background:radial-gradient(circle,rgba(200,30,39,.5),rgba(110,10,18,0) 70%);
+  translate:calc(var(--sy,0) * .03px) calc(var(--sy,0) * -.04px);
+}
+
+/* ---------- glass, shared ---------- */
+.glass,.tile,.rowi,.pcard,.qpanel,.stats,.conn,.chip,.pc,.apps,.tabs,.seg{
+  backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+}
+
+/* ---------- header: a floating glass bar ---------- */
+header{padding-block:14px;}
+header::before{display:none;}
+header .nav{
+  background:rgba(24,7,12,.42);border:var(--glass-edge);box-shadow:var(--glass-hi),0 20px 50px -30px rgba(0,0,0,.8);
+  backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border-radius:999px;padding:8px 8px 8px 22px;
+  transition:background .4s,box-shadow .4s;
+}
+header.small .nav{background:rgba(24,7,12,.68);}
+@media(max-width:1380px){header .nav{margin-inline:calc(var(--pad) - 14px);}}
+
+/* ---------- reveal: items rise in, one after another ---------- */
+.fx-rise:not(.in){opacity:0;}
+.fx-rise.in{animation:fx-rise .9s var(--ease-enter) backwards;animation-delay:calc(var(--i,0) * 70ms);}
+@keyframes fx-rise{from{opacity:0;translate:0 44px;scale:.97;}to{opacity:1;translate:0 0;scale:1;}}
+
+/* ==========================================================================
+   HERO — split: words left, a tall glass photo right
+   ========================================================================== */
+.hero{
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  column-gap:clamp(32px,5vw,80px);align-items:center;
+  min-height:100vh;padding-top:clamp(110px,10vw,140px);
+}
+.hero-top{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-7);margin-bottom:0;}
+.hero h1{font-size:clamp(40px,5.6vw,84px);}
+.hero h1 .serif{display:block;}
+.hero-side{padding-bottom:0;}
+.stage{align-self:stretch;display:flex;align-items:center;}
+.stage .shot{
+  width:100%;height:clamp(440px,68vh,680px);border-radius:40px;
+  border:var(--glass-edge);
+  translate:0 calc((var(--p,.5) - .5) * -70px);
+}
+.stage .shot img{object-position:42% 30%;scale:calc(1.12 - var(--p,.5) * .12);}
+.stage .conn{right:-22px;bottom:12%;translate:0 calc((var(--p,.5) - .5) * 90px);}
+.stage .chip.c1{left:-14px;top:12%;translate:0 calc((var(--p,.5) - .5) * 60px);}
+.stage .chip.c2{right:auto;left:42%;top:-16px;}
+.stage .chip.c3{left:20px;bottom:20px;}
+.conn,.chip{background:rgba(26,8,13,.5);border:var(--glass-edge);box-shadow:var(--glass-hi),0 30px 60px -30px rgba(0,0,0,.9);}
+.stats{
+  grid-column:1/-1;margin-top:clamp(36px,4vw,56px);
+  background:var(--glass-bg);border:var(--glass-edge);box-shadow:var(--glass-hi);
+  border-radius:999px;padding:10px clamp(16px,3vw,40px);gap:0;
+}
+.stats .st{padding:18px 10px;text-align:center;}
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;min-height:0;row-gap:var(--space-8);}
+  .stage .shot{height:clamp(320px,90vw,520px);}
+  .stage .conn{right:12px;}
+  .stage .chip.c1{left:12px;}
+  .stage .chip.c2{left:auto;right:12px;top:16px;}
+  .stats{border-radius:28px;}
+}
+@media(max-width:640px){
+  .stage{flex-direction:column;align-items:stretch;}
+  .stage .conn,.stage .chip{translate:none;}
+}
+@media(max-width:760px){.stats .st{text-align:left;}}
+
+/* ==========================================================================
+   WHY — pinned; scrolling slides the cards sideways
+   ========================================================================== */
+.rail,.rail.has-open{display:flex;flex-direction:row;gap:clamp(16px,2vw,26px);height:auto;width:max-content;}
+.rcard,.rail.has-open .rcard,.rail .rcard.is-open{
+  flex:0 0 clamp(300px,30vw,430px);height:min(60vh,540px);min-height:420px;
+  border-radius:34px;border:var(--glass-edge);cursor:default;
+}
+/* every card reads open: title, copy and tag over the darkened shot */
+.rcard .vert,.rcard .plus{display:none;}
+.rcard .full{opacity:1;transform:none;pointer-events:auto;width:100%;}
+.rcard .veil,.rail.has-open .rcard:not(.is-open) .veil{background:linear-gradient(180deg,rgba(18,5,10,.1) 0%,rgba(18,5,10,.2) 40%,rgba(18,5,10,.92) 100%);}
+.rcard .media img,.rcard.is-open .media img{transform:none;filter:none;object-position:72% 40%;}
+.rcard:hover .media img{scale:1.05;transition:scale 1s var(--ease);}
+.rcard .num{display:block;}
+
+#why.is-pinned{height:calc(100vh + 160vh);padding-block:0;}
+#why.is-pinned .why-pin{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;}
+#why.is-pinned .sec-head{margin-bottom:clamp(24px,3vw,40px);}
+#why.is-pinned .rail{translate:var(--hx,0px) 0;will-change:translate;}
+/* how far along the rail you are */
+#why.is-pinned .why-pin::after{
+  content:"";display:block;height:3px;margin-top:28px;border-radius:3px;width:100%;
+  background:linear-gradient(90deg,#FF4A53 calc(var(--wp,0) * 100%),rgba(255,255,255,.1) calc(var(--wp,0) * 100%));
+}
+/* narrow screens: no pin, a swipeable row that snaps card by card */
+#why:not(.is-pinned) .why-pin{overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(var(--pad) * -1);padding-inline:var(--pad);scrollbar-width:none;}
+#why:not(.is-pinned) .why-pin::-webkit-scrollbar{display:none;}
+#why:not(.is-pinned) .sec-head{position:sticky;left:0;width:calc(100vw - var(--pad) * 2);}
+#why:not(.is-pinned) .rcard{scroll-snap-align:start;flex-basis:min(82vw,380px);height:460px;}
+
+/* ==========================================================================
+   FEATURES — heading sticks on the left, tiles scroll past on the right
+   ========================================================================== */
+#tech{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(28px,4vw,64px);align-items:start;}
+#tech .sec-head{position:sticky;top:130px;flex-direction:column;align-items:flex-start;margin-bottom:0;}
+#tech .bento{grid-template-columns:repeat(2,minmax(0,1fr));}
+#tech .tile.wide{grid-column:span 2;}
+.tile{background:var(--glass-bg);border:var(--glass-edge);box-shadow:var(--glass-hi);border-radius:30px;}
+.tile:hover{translate:0 -4px;transition:translate .5s var(--ease),box-shadow .5s;}
+@media(max-width:980px){
+  #tech{grid-template-columns:1fr;}
+  #tech .sec-head{position:static;}
+}
+@media(max-width:600px){#tech .bento{grid-template-columns:1fr;}#tech .tile.wide{grid-column:span 1;}}
+
+/* ==========================================================================
+   SERVERS — one glass card per region
+   ========================================================================== */
+#servers .sec-head{flex-direction:column;align-items:center;text-align:center;}
+#servers .sec-head .col{align-items:center;}
+#servers .srv-tools{justify-content:center;}
+.rows,.rows.skel.on{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,20px);}
+.rows.skel:not(.on){display:none;}
+.rowi{
+  grid-template-columns:1fr 44px;grid-template-rows:auto auto auto;align-items:start;row-gap:14px;
+  min-height:190px;padding:26px 24px;margin:0;border-radius:30px;
+  background:var(--glass-bg);border:var(--glass-edge);box-shadow:var(--glass-hi);
+  transition:translate .5s var(--ease),background .4s,box-shadow .5s;
+}
+.rowi:hover{padding-left:24px;translate:0 -6px;background:linear-gradient(155deg,rgba(240,53,63,.32),rgba(255,255,255,.04));box-shadow:var(--glass-hi),0 40px 80px -40px rgba(225,39,48,.7);}
+.rowi .nm{grid-column:1;grid-row:1;font-size:var(--fs-h4);}
+.rowi .go{grid-column:2;grid-row:1;}
+.rowi .tag{grid-column:1/-1;grid-row:2;justify-self:start;}
+.rowi .lat{grid-column:1/-1;grid-row:3;align-self:end;}
+.rows.skel .skel-row{border-radius:30px;min-height:190px;border:var(--glass-edge);padding:26px 24px;display:flex;flex-direction:column;gap:14px;}
+@media(max-width:900px){.rows,.rows.skel.on{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:560px){.rows,.rows.skel.on{grid-template-columns:1fr;}.rowi{min-height:0;}}
+
+/* ==========================================================================
+   APPS — glass panel, mockup on the left, tilting with the scroll
+   ========================================================================== */
+.apps{
+  background:
+    radial-gradient(60% 80% at 0% 50%,rgba(240,53,63,.38),transparent 62%),
+    var(--glass-bg);
+  border:var(--glass-edge);box-shadow:var(--glass-hi),0 60px 120px -60px rgba(225,39,48,.6);border-radius:48px;
+}
+.apps-grid > .phones{order:-1;}
+.appshot{
+  border-radius:40px;border:var(--glass-edge);
+  rotate:calc((var(--p,.5) - .5) * -14deg);
+  translate:0 calc((.5 - var(--p,.5)) * 90px);
+  scale:calc(.9 + min(var(--p,.5), .5) * .2);
+}
+.tabs{background:rgba(255,255,255,.06);border:var(--glass-edge);}
+.pc{background:rgba(255,255,255,.04);border:var(--glass-edge);border-radius:30px;}
+@media(max-width:1180px){.apps-grid > .phones{order:0;}}
+
+/* ==========================================================================
+   PRICING — centred head, two glass cards
+   ========================================================================== */
+#pricing .sec-head{flex-direction:column;align-items:center;text-align:center;}
+#pricing .sec-head .col{align-items:center;}
+#pricing .sec-head .aside{max-width:560px;}
+.seg{background:rgba(255,255,255,.06);border:var(--glass-edge);}
+.pcard{background:var(--glass-bg);border:var(--glass-edge);box-shadow:var(--glass-hi),0 50px 100px -50px rgba(0,0,0,.9);border-radius:40px;}
+.trial{
+  background:radial-gradient(80% 70% at 100% 0%,rgba(255,120,126,.55),transparent 60%),linear-gradient(150deg,rgba(240,53,63,.85),rgba(110,10,18,.75));
+  backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid rgba(255,255,255,.2);box-shadow:var(--glass-hi),0 60px 120px -50px rgba(225,39,48,.7);border-radius:40px;
+}
+
+/* ==========================================================================
+   FAQ — the answer panel moves to the left, questions on the right
+   ========================================================================== */
+@media(min-width:881px){
+  .qsplit{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);}
+  .qsplit > .qpanel{order:-1;}
+}
+.qpanel{background:var(--glass-bg);border:var(--glass-edge);box-shadow:var(--glass-hi),0 50px 100px -50px rgba(225,39,48,.5);border-radius:40px;}
+.qrow{border-bottom:0;margin-bottom:6px;border-radius:20px;transition:background .4s;}
+.qrow:hover{background:rgba(255,255,255,.04);}
+.qrow.is-on{background:linear-gradient(90deg,rgba(225,39,48,.2),rgba(255,255,255,.03));}
+.qitem{padding-inline:14px;}
+.qrow.is-on .qitem{padding-left:22px;}
+
+/* ==========================================================================
+   CTA — grows into place as it reaches the middle of the screen
+   ========================================================================== */
+.cta{
+  border-radius:56px;border:1px solid rgba(255,255,255,.2);
+  scale:min(1, calc(.84 + var(--p,.5) * .32));
+  transition:scale .1s linear;
+}
+.form{backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);}
+
+/* ---------- reduced motion: everything at rest ---------- */
+@media(prefers-reduced-motion:reduce){
+  body::before,body::after,.stage .shot,.stage .shot img,.stage .conn,.stage .chip,.appshot,.cta{translate:none;rotate:none;scale:none;}
+  .fx-rise:not(.in){opacity:1;}
+  .fx-rise.in{animation:none;}
+}

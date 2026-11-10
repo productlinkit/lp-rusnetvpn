@@ -5,7 +5,7 @@ export default function Apps() {
               by the phone trim, so this section kept its 72px desktop rhythm on a 390px
               screen while every section around it had already come down to 40px. */}
       <section className="sec wrap" id="apps">
-        <div className="apps up">
+        <div className="apps up" data-fx="">
           <div className="apps-grid">
             <div>
               <span className="eyebrow">

@@ -3,7 +3,7 @@ export default function Cta() {
     <>
       {/* same reason as #apps: as an inline padding the phone trim could not reach it */}
       <section className="wrap sec-cta">
-        <div className="cta up" id="cta">
+        <div className="cta up" id="cta" data-fx="">
           {/* no photo baked in for this one yet. instead of a "missing file" box it
                       falls back to the navy backdrop below, which is a finished look on its
                       own. drop a cta.jpg beside this file and it takes over automatically. */}

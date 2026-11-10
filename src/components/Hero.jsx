@@ -54,7 +54,7 @@ export default function Hero() {
             </p>
           </div>
         </div>
-        <div className="stage up" style={{ "--d": "200ms" }}>
+        <div className="stage up" data-fx="" style={{ "--d": "200ms" }}>
           <figure className="media shot">
             <img src={heroImg} alt="Two people smiling and holding phones with RusnetVPN open" onError={(e) => e.currentTarget.remove()} />
             {" "}
