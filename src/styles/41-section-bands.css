@@ -1,14 +1,16 @@
 /* ==========================================================================
    SECTION BANDS — dark red glass, then white with a hint of red, in turn
    ==========================================================================
-     hero + marquee   dark red
-     why              white
-     features         dark red
-     servers          white
-     apps             dark red
-     pricing          white
-     faq              dark red
-     cta + footer     white
+     hero             dark red
+     how it works     white
+     why              dark red
+     features         white
+     servers          dark red
+     apps             white
+     pricing          dark red
+     faq              white
+     cta              dark red
+     footer           white
    Each band runs edge to edge through border-image (outset past the .wrap
    width), so the sections keep their markup. The glass is drawn with
    translucent fills and edge highlights only: no backdrop-filter and no
@@ -25,7 +27,7 @@ header .nav{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
 body{background:#FFFFFF;}
 
 /* ---------- the bands ---------- */
-.hero,.marq,#why,#tech,#servers,#apps,#pricing,#faq,.sec-cta,footer{
+.hero,#how,#why,#tech,#servers,#apps,#pricing,#faq,.sec-cta,footer{
   position:relative;margin-block:0;border-radius:0;box-shadow:none;border:0;
 }
 #servers{margin-inline:0;}
@@ -34,21 +36,19 @@ body{background:#FFFFFF;}
 .hero{padding-bottom:clamp(56px,6vw,88px);}
 .sec-cta{padding-block:clamp(72px,8vw,120px) 24px;}
 
-.hero,.marq,#tech,#apps,#faq{
+.hero,#why,#servers,#pricing,.sec-cta{
   border-image:linear-gradient(170deg,#3B0A12 0%,#22060B 45%,#14040A 100%) fill 0 / 0 / 0 100vmax;
 }
 .hero{border-image:linear-gradient(175deg,#4A0C15 0%,#2A070E 55%,#170509 100%) fill 0 / 0 / 0 100vmax;}
-.marq{border-image:linear-gradient(90deg,#170509,#2A070E 50%,#170509) fill 0 / 0 / 0 100vmax;border-block:1px solid rgba(255,255,255,.06);}
-#apps{border-image:linear-gradient(180deg,#14040A 0%,#3A0A12 55%,#1A050B 100%) fill 0 / 0 / 0 100vmax;}
+#pricing{border-image:linear-gradient(180deg,#14040A 0%,#3A0A12 55%,#1A050B 100%) fill 0 / 0 / 0 100vmax;}
 
-#why,#servers,#pricing,.sec-cta,footer{
+#how,#tech,#apps,#faq,footer{
   border-image:linear-gradient(180deg,#FFF0F1 0%,#FFFFFF 22%,#FFFFFF 78%,#FFF5F6 100%) fill 0 / 0 / 0 100vmax;
 }
-.sec-cta{border-image:linear-gradient(180deg,#FFF0F1 0%,#FFFFFF 40%) fill 0 / 0 / 0 100vmax;}
 footer{border-image:linear-gradient(180deg,#FFFFFF 0%,#FFF2F3 100%) fill 0 / 0 / 0 100vmax;}
 
 /* ---------- dark band tokens + glass ---------- */
-.hero,.marq,#tech,#apps,#faq{
+.hero,#why,#servers,#pricing,.sec-cta{
   --ink:#FFFFFF; --ink-2:#F3E9EA; --body:rgba(255,238,240,.74); --muted:rgba(255,232,235,.6);
   --paper:#14040A; --paper-2:rgba(255,255,255,.06); --card:rgba(255,255,255,.05);
   --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.07); --line-3:rgba(255,255,255,.16);
@@ -62,14 +62,14 @@ footer{border-image:linear-gradient(180deg,#FFFFFF 0%,#FFF2F3 100%) fill 0 / 0 /
   --glass-hi:inset 0 1px 0 rgba(255,255,255,.16);
   color:var(--ink);
 }
-:is(.hero,#tech,#apps,#faq) h1,:is(.hero,#tech,#apps,#faq) h2,:is(.hero,#tech,#apps,#faq) h3{color:#fff;}
-:is(.hero,#tech,#apps,#faq) .serif{color:#FF9AA0;}
-:is(.hero,#tech,#apps,#faq) .eyebrow{background:rgba(225,39,48,.2);border-color:rgba(255,138,144,.3);color:#FFC2C5;}
-:is(.hero,#tech,#apps,#faq) .eyebrow.is-neutral{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14);color:#fff;}
-:is(.hero,#tech,#apps,#faq) .btn-primary{background:#fff;color:#14040A;}
-:is(.hero,#tech,#apps,#faq) .btn-ghost{color:#fff;border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.05);}
-:is(.hero,#tech,#apps,#faq) .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;}
-:is(.hero,#tech,#apps,#faq) .link-u{border-bottom-color:rgba(255,255,255,.34);}
+:is(.hero,#why,#servers,#pricing,.sec-cta) h1,:is(.hero,#why,#servers,#pricing,.sec-cta) h2,:is(.hero,#why,#servers,#pricing,.sec-cta) h3{color:#fff;}
+:is(.hero,#why,#servers,#pricing,.sec-cta) .serif{color:#FF9AA0;}
+:is(.hero,#why,#servers,#pricing,.sec-cta) .eyebrow{background:rgba(225,39,48,.2);border-color:rgba(255,138,144,.3);color:#FFC2C5;}
+:is(.hero,#why,#servers,#pricing,.sec-cta) .eyebrow.is-neutral{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14);color:#fff;}
+:is(.hero,#why,#servers,#pricing,.sec-cta) .btn-primary{background:#fff;color:#14040A;}
+:is(.hero,#why,#servers,#pricing,.sec-cta) .btn-ghost{color:#fff;border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.05);}
+:is(.hero,#why,#servers,#pricing,.sec-cta) .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;}
+:is(.hero,#why,#servers,#pricing,.sec-cta) .link-u{border-bottom-color:rgba(255,255,255,.34);}
 
 /* hero */
 .chip,.conn{background:linear-gradient(155deg,rgba(52,12,19,.9),rgba(26,6,11,.84));color:#fff;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 24px 50px -28px rgba(0,0,0,.7);}
@@ -78,32 +78,3 @@ footer{border-image:linear-gradient(180deg,#FFFFFF 0%,#FFF2F3 100%) fill 0 / 0 /
 @keyframes bar{0%,100%{height:22%;background:rgba(255,255,255,.16);}50%{height:100%;background:#F0353F;}}
 .stage .shot{box-shadow:0 40px 90px -40px rgba(0,0,0,.7);}
 
-/* marquee */
-.marq .it{color:rgba(255,255,255,.62);}
-.marq .it b{color:#fff;}
-.marq .it .sep{opacity:1;background:#F0353F;}
-
-/* features */
-#tech .tile.wide{background:radial-gradient(70% 70% at 100% 0%,rgba(240,53,63,.28),transparent 60%),var(--glass-bg);border:var(--glass-edge);box-shadow:var(--glass-hi),0 40px 80px -50px rgba(0,0,0,.6);}
-#tech .bento.has-open .tile.wide.is-open{background:radial-gradient(70% 70% at 100% 0%,rgba(240,53,63,.36),transparent 60%),var(--glass-bg);}
-#tech .tile.is-open .togg{background:#fff;color:#14040A;}
-#tech .tile .geo span{background:rgba(255,255,255,.06);border-color:var(--line-2);}
-#tech .tile.is-open .geo span{background:var(--brand-tint);color:#fff;}
-
-/* apps: the panel becomes glass on the dark band */
-#apps .apps{
-  background:radial-gradient(60% 80% at 100% 0%,rgba(240,53,63,.3),transparent 60%),var(--glass-bg);
-  border:var(--glass-edge);box-shadow:var(--glass-hi),0 50px 100px -60px rgba(0,0,0,.7);
-}
-#apps .apps .tabs button.on{color:#A5121A;}
-
-/* faq */
-#faq .qrow{border-bottom-color:var(--line-2);}
-#faq .qrow:hover{background:rgba(255,255,255,.04);}
-#faq .qrow.is-on{background:linear-gradient(90deg,rgba(225,39,48,.2),rgba(255,255,255,0));}
-#faq .qpanel{background:var(--glass-bg);border:var(--glass-edge);box-shadow:var(--glass-hi),0 40px 80px -50px rgba(0,0,0,.6);}
-#faq .qpanel .ghost{color:#fff;opacity:.05;}
-#faq .qp-cat{background:var(--brand-tint);border-color:rgba(255,138,144,.3);color:#FFC2C5;}
-#faq .srch input{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);color:#fff;}
-#faq .srch input::placeholder{color:var(--muted);}
-#faq .srch input:focus{border-color:#fff;}

@@ -634,7 +634,7 @@ function openCard(card){
   });
   rail.classList.add('has-open');
 }
-rcards.forEach(function(c){
+if(rail) rcards.forEach(function(c){
   c.addEventListener('click', function(){
     if(c.classList.contains('is-open') && window.innerWidth <= 900){
       c.classList.remove('is-open'); c.setAttribute('aria-expanded','false');
@@ -646,11 +646,11 @@ rcards.forEach(function(c){
     if(window.matchMedia('(hover:hover) and (pointer:fine)').matches && window.innerWidth > 900) openCard(c);
   });
 });
-openCard(rcards[0]);
+if(rail) openCard(rcards[0]);
 
 /* ---------- bento focus (open one, dim the rest) ---------- */
 var bento = $('#bento'), tiles = $$('.tile', bento);
-function closeTiles(){ bento.classList.remove('has-open'); tiles.forEach(function(t){ t.classList.remove('is-open'); }); }
+function closeTiles(){ if(!bento) return; bento.classList.remove('has-open'); tiles.forEach(function(t){ t.classList.remove('is-open'); }); }
 tiles.forEach(function(t){
   t.addEventListener('click', function(e){
     e.stopPropagation();

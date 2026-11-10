@@ -8,9 +8,9 @@ export default function Pricing() {
               Pricing
             </span>
             <h2>
-              Simple plans,{" "}
+              Pay for time,{" "}
               <span className="serif">
-                full protection.
+                not for features.
               </span>
             </h2>
             {/* a row of buttons that swap one panel is a tablist. Without the roles it
@@ -42,7 +42,7 @@ export default function Pricing() {
             </div>
           </div>
           <p className="aside up" style={{ "--d": "100ms" }}>
-            Every plan includes every feature. Choose a longer term and pay less each month.
+            Every plan unlocks everything. The only choice is how long, and longer terms cost less per month.
           </p>
         </div>
         <div className="price-grid up">
@@ -212,7 +212,7 @@ export default function Pricing() {
                 30-Day Money-Back Guarantee
               </span>
               <h3 style={{ marginTop: "18px" }}>
-                Try it for 30 days, risk-free.
+                Change your mind? Get it all back.
               </h3>
               <p>
                 If RusnetVPN isn’t right for you, ask within 30 days and we refund you in full, no questions asked.

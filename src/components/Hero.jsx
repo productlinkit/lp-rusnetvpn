@@ -4,55 +4,49 @@ export default function Hero() {
   return (
     <>
       <section className="hero wrap" aria-label="Hero section">
-        <div className="hero-top">
-          <div className="up">
-            <span className="eyebrow">
-              <i className="dot" />
-              <span>
-                30-Day Money-Back Guarantee
-              </span>
+        <div className="hero-center">
+          <span className="eyebrow up">
+            <i className="dot" />
+            <span>
+              Owned and run in Russia
             </span>
-            <h1>
-              Private by default.{" "}
-              <span className="serif">
-                Fast everywhere.
+          </span>
+          <h1 className="up" style={{ "--d": "60ms" }}>
+            Your internet,{" "}
+            <span className="serif">
+              on your terms.
+            </span>
+          </h1>
+          <p className="lead up" style={{ "--d": "120ms" }}>
+            One tap hides what you do online. Pick from{" "}
+            <span data-fact="servers">
+              700
+            </span>
+            + servers in{" "}
+            <span data-fact="countries">
+              90
+            </span>
+            + countries, and nothing you do is ever logged.
+          </p>
+          <div className="hero-cta up" style={{ "--d": "180ms" }}>
+            <a href="#" className="btn btn-red" data-buy="">
+              <span>
+                Start your 30-day trial
               </span>
-            </h1>
+              <span className="arw">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 12L12 4M6 4h6v6" />
+                </svg>
+              </span>
+            </a>
+            {" "}
+            <a href="#how" className="btn btn-ghost">
+              How it works
+            </a>
           </div>
-          <div className="hero-side up" style={{ "--d": "120ms" }}>
-            <p className="lead">
-              Route every device through{" "}
-              <span data-fact="servers">
-                700
-              </span>
-              + servers in{" "}
-              <span data-fact="countries">
-                90
-              </span>
-              + countries, with a strict no-logs policy and one tap to connect.
-            </p>
-            <div className="hero-cta">
-              <a href="#" className="btn btn-red" data-buy="">
-                <span>
-                  Get Protected
-                </span>
-                <span className="arw">
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 12L12 4M6 4h6v6" />
-                  </svg>
-                </span>
-              </a>
-              {" "}
-              <a href="#pricing" className="btn btn-ghost">
-                See Pricing
-              </a>
-            </div>
-            <p className="tiny">
-              Owned and run in Russia.
-              <br />
-              30-day money-back guarantee.
-            </p>
-          </div>
+          <p className="tiny up" style={{ "--d": "220ms" }}>
+            Not happy? Get a full refund within 30 days.
+          </p>
         </div>
         <div className="stage up" data-fx="" style={{ "--d": "200ms" }}>
           <figure className="media shot">
@@ -176,7 +170,7 @@ export default function Hero() {
               </em>
             </div>
             <div className="l">
-              Servers online
+              Servers ready for you
             </div>
           </div>
           <div className="st">
@@ -189,7 +183,7 @@ export default function Hero() {
               </em>
             </div>
             <div className="l">
-              Countries to choose from
+              Countries on the map
             </div>
           </div>
           <div className="st">
@@ -197,7 +191,7 @@ export default function Hero() {
               0
             </div>
             <div className="l">
-              Records kept of your browsing, DNS or connections.
+              Logs of what you do
             </div>
           </div>
           <div className="st">
@@ -207,7 +201,7 @@ export default function Hero() {
               </span>
             </div>
             <div className="l">
-              Continents in reach
+              Continents covered
             </div>
           </div>
         </div>

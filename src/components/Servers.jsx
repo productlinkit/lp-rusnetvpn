@@ -12,18 +12,18 @@ export default function Servers() {
           <div className="sec-head">
             <div className="col up">
               <span className="eyebrow is-neutral">
-                Server network
+                Where we are
               </span>
               {/* bound to FACTS, which is summed from the rows below — see the JS */}
               <h2>
                 <span data-fact="servers">
                   700
                 </span>
-                + servers, six continents.
+                + servers. Pick a corner of the world.
               </h2>
             </div>
             <p className="aside up" style={{ "--d": "100ms" }}>
-              From Europe to Oceania, there’s always a fast server close to you, and automatic switching keeps it that way.
+              Six regions, each with its own fast lane. Tap one to see how many countries and servers it covers.
             </p>
           </div>
           <div className="srv-tools up">

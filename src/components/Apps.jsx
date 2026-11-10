@@ -9,16 +9,16 @@ export default function Apps() {
           <div className="apps-grid">
             <div>
               <span className="eyebrow">
-                Apps
+                Download
               </span>
               <h2 style={{ marginTop: "18px" }}>
-                One account,{" "}
+                Works on{" "}
                 <span className="serif">
-                  every device
+                  everything you own
                 </span>
               </h2>
               <p className="lead" style={{ marginTop: "16px" }}>
-                Install RusnetVPN on your phone, laptop and desktop, sign in once, and protect up to five devices at the same time.
+                Phone, laptop or desktop. Sign in once and up to five devices stay protected together.
               </p>
               <div className="tabs" id="apptabs" role="tablist" aria-label="App feature" style={{ marginTop: "26px" }}>
                 <button type="button" role="tab" id="apptab-0" data-app="0" aria-selected="true" aria-controls="appcopy" tabIndex={0} className="on">

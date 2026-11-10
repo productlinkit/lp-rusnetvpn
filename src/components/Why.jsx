@@ -1,201 +1,98 @@
+import { useEffect, useRef, useState } from 'react';
 import benefit1Img from '../assets/images/benefit-1.jpg';
 import benefit2Img from '../assets/images/benefit-2.jpg';
 import benefit3Img from '../assets/images/benefit-3.jpg';
 import benefit4Img from '../assets/images/benefit-4.jpg';
 
+const ITEMS = [
+  {
+    img: benefit1Img,
+    alt: 'RusnetVPN app connected to an optimized streaming server',
+    tag: 'Streaming',
+    t: 'Watch like you never left home',
+    d: 'Servers tuned for video keep the shows and subscriptions you already pay for playing without the spinning wheel.',
+  },
+  {
+    img: benefit2Img,
+    alt: 'RusnetVPN app screen showing the no-logs policy',
+    tag: 'Privacy',
+    t: 'No logs. Not even a little.',
+    d: 'Browsing, traffic, DNS queries and connection times are never stored. An independent audit of this is in progress.',
+  },
+  {
+    img: benefit3Img,
+    alt: 'RusnetVPN server list, run on locally owned servers',
+    tag: 'Independence',
+    t: 'Built here, run here',
+    d: 'A local team owns and runs every server. There is no foreign parent company and no one in the middle.',
+  },
+  {
+    img: benefit4Img,
+    alt: 'RusnetVPN app browsing content without restrictions',
+    tag: 'Access',
+    t: (
+      <>
+        <span data-fact="countries">90</span>+ countries, one switch
+      </>
+    ),
+    d: (
+      <>
+        Jump between <span data-fact="servers">700</span>+ servers to reach the music, news and apps you want, wherever you happen to be.
+      </>
+    ),
+  },
+];
+
 export default function Why() {
+  const [on, setOn] = useState(0);
+  const list = useRef(null);
+
+  // the item crossing the middle of the screen becomes the one shown in the phone
+  useEffect(() => {
+    if (!('IntersectionObserver' in window)) return undefined;
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setOn(+e.target.dataset.i)),
+      { rootMargin: '-45% 0px -45% 0px' },
+    );
+    list.current.querySelectorAll('.show-item').forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <>
-      <section className="sec wrap" id="why">
-        {/* sticky while the section scrolls by; scrollfx.js turns that scroll into the rail sliding sideways */}
-        <div className="why-pin">
-        <div className="sec-head">
-          <div className="col up">
-            <span className="eyebrow">
-              Why Rusnet
+    <section className="sec wrap" id="why">
+      <div className="show">
+        <div className="show-media">
+          <div className="show-frame">
+            {ITEMS.map((it, i) => (
+              <img key={i} src={it.img} alt={it.alt} className={i === on ? 'on' : ''} />
+            ))}
+            <span className="show-count mono">
+              {String(on + 1).padStart(2, '0')} / 04
             </span>
-            <h2>
-              Four reasons people switch
-            </h2>
           </div>
-          <p className="aside up" style={{ "--d": "100ms" }}>
-            Independent, locally owned and built to keep what you do online to yourself.
-          </p>
         </div>
-        <div className="rail up" id="rail">
-          <button className="rcard is-open" data-i="0" aria-expanded="true">
-            <figure className="media">
-              <img src={benefit1Img} alt="RusnetVPN app connected to an optimized streaming server" />
-            </figure>
-            <span className="veil" />
-            {" "}
-            <span className="num mono">
-              01
-            </span>
-            {" "}
-            <span className="plus">
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-                <path d="M8 3v10M3 8h10" />
-              </svg>
-            </span>
-            {" "}
-            <span className="vert">
-              <span>
-                Streaming without the buffering
-              </span>
-            </span>
-            {" "}
-            <span className="full">
-              <h3>
-                Streaming without the buffering
-              </h3>
-              <p>
-                Servers tuned for streaming around the world, so the subscriptions you already pay for play smoothly.
-              </p>
-              <span className="pill">
-                <span>
-                  Streaming-ready servers
-                </span>
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 12L12 4M6 4h6v6" />
-                </svg>
-              </span>
-            </span>
-          </button>
-          {" "}
-          <button className="rcard" data-i="1" aria-expanded="false">
-            <figure className="media">
-              <img src={benefit2Img} alt="RusnetVPN app screen showing the no-logs policy" />
-            </figure>
-            <span className="veil" />
-            {" "}
-            <span className="num mono">
-              02
-            </span>
-            {" "}
-            <span className="plus">
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-                <path d="M8 3v10M3 8h10" />
-              </svg>
-            </span>
-            {" "}
-            <span className="vert">
-              <span>
-                Nothing logged, nothing to share
-              </span>
-            </span>
-            {" "}
-            <span className="full">
-              <h3>
-                Nothing logged, nothing to share
-              </h3>
-              <p>
-                We don’t keep your browsing, traffic, DNS queries or connection history. An independent no-log audit is in progress.
-              </p>
-              <span className="pill">
-                <span>
-                  Audit in progress
-                </span>
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 12L12 4M6 4h6v6" />
-                </svg>
-              </span>
-            </span>
-          </button>
-          {" "}
-          <button className="rcard" data-i="2" aria-expanded="false">
-            <figure className="media">
-              <img src={benefit3Img} alt="RusnetVPN server list, run on locally owned servers" />
-            </figure>
-            <span className="veil" />
-            {" "}
-            <span className="num mono">
-              03
-            </span>
-            {" "}
-            <span className="plus">
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-                <path d="M8 3v10M3 8h10" />
-              </svg>
-            </span>
-            {" "}
-            <span className="vert">
-              <span>
-                Locally owned, fully independent
-              </span>
-            </span>
-            {" "}
-            <span className="full">
-              <h3>
-                Locally owned, fully independent
-              </h3>
-              <p>
-                RusnetVPN is owned and run by a local team that cares about privacy, with no foreign parent company behind it.
-              </p>
-              <span className="pill">
-                <span>
-                  Run in-house
-                </span>
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 12L12 4M6 4h6v6" />
-                </svg>
-              </span>
-            </span>
-          </button>
-          {" "}
-          <button className="rcard" data-i="3" aria-expanded="false">
-            <figure className="media">
-              <img src={benefit4Img} alt="RusnetVPN app browsing content without restrictions" />
-            </figure>
-            <span className="veil" />
-            {" "}
-            <span className="num mono">
-              04
-            </span>
-            {" "}
-            <span className="plus">
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-                <path d="M8 3v10M3 8h10" />
-              </svg>
-            </span>
-            {" "}
-            <span className="vert">
-              <span>
-                Your content, from anywhere
-              </span>
-            </span>
-            {" "}
-            <span className="full">
-              <h3>
-                Your content, from anywhere
-              </h3>
-              <p>
-                With{" "}
-                <span data-fact="servers">
-                  700
-                </span>
-                + servers in{" "}
-                <span data-fact="countries">
-                  90
-                </span>
-                + countries, reach the shows, music and apps you love, wherever you are.
-              </p>
-              <span className="pill">
-                <span>
-                  <span data-fact="countries">
-                    90
-                  </span>
-                  + countries
-                </span>
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 12L12 4M6 4h6v6" />
-                </svg>
-              </span>
-            </span>
-          </button>
+        <div className="show-copy">
+          <div className="show-head up">
+            <span className="eyebrow">Why Rusnet</span>
+            <h2>
+              Made for people who{" "}
+              <span className="serif">value quiet</span>
+            </h2>
+            <p className="lead">No trackers, no middlemen, no slowdowns. Here is what that looks like day to day.</p>
+          </div>
+          <ol className="show-list" ref={list}>
+            {ITEMS.map((it, i) => (
+              <li key={i} data-i={i} className={`show-item${i === on ? ' on' : ''}`}>
+                <button type="button" onClick={() => setOn(i)} onMouseEnter={() => setOn(i)} aria-pressed={i === on}>
+                  <span className="show-tag">{it.tag}</span>
+                  <h3>{it.t}</h3>
+                  <p>{it.d}</p>
+                </button>
+              </li>
+            ))}
+          </ol>
         </div>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

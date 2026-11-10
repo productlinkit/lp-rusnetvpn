@@ -8,11 +8,11 @@ export default function Faq() {
               FAQ
             </span>
             <h2>
-              Got questions? We’ve got answers.
+              Before you ask
             </h2>
           </div>
           <p className="aside up" style={{ "--d": "100ms" }}>
-            Can’t find what you need? Message us on WhatsApp or Telegram and a real person replies.
+            The questions we hear most, answered plainly. Still stuck? A real person replies on WhatsApp or Telegram.
           </p>
         </div>
         {/* twelve questions is past the point where scanning a list works, so it gets

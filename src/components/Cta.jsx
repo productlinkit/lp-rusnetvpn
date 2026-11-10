@@ -19,13 +19,13 @@ export default function Cta() {
               Create your account
             </span>
             <h2>
-              Ready when you are,{" "}
+              One email away from{" "}
               <span className="serif">
-                start browsing privately
+                a private internet
               </span>
             </h2>
             <p>
-              Create your account in seconds, then connect every device with one tap.
+              Enter your email, choose a plan, and every device you own is protected the same day.
             </p>
             {/* the label used to be an aria-label only, so the field was announced but
                           never *shown* as anything except a grey example that vanishes on the
