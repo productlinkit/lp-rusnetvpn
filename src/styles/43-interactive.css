@@ -211,3 +211,4 @@
 .pcard.tilt::after,.vs-table.tilt::after,.store.tilt::after,.ft-card.tilt::after{background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(225,39,48,.08),transparent 65%);}
 .trial.tilt::after{display:block;}
 @media(max-width:640px){.hw-float{display:none;}.hx-orbit .hx-node:nth-child(2){display:none;}}
+#apps .app-open{margin:26px 0 14px;}

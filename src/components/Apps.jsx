@@ -76,8 +76,18 @@ export default function Apps() {
                   </li>
                 </ul>
               </div>
+              <a href="https://rusnetvpn-app.vercel.app" className="btn btn-red app-open" target="_blank" rel="noopener noreferrer">
+                <span>
+                  Open the RusnetVPN app
+                </span>
+                <span className="arw">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 12L12 4M6 4h6v6" />
+                  </svg>
+                </span>
+              </a>
               <div className="stores">
-                <a href="#" className="store">
+                <a href="https://rusnetvpn-app.vercel.app" className="store" target="_blank" rel="noopener noreferrer">
                   <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M16.4 12.9c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.6 2.3 2.8 2.2 1.1 0 1.6-.7 2.9-.7s1.7.7 2.9.7 2-1.1 2.7-2.1c.9-1.2 1.2-2.4 1.2-2.4s-2.3-.9-2.3-3.5zM14.2 5.9c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.8 1 .1 2-.5 2.7-1.3z" />
                   </svg>
@@ -91,7 +101,7 @@ export default function Apps() {
                   </i>
                 </a>
                 {" "}
-                <a href="#" className="store">
+                <a href="https://rusnetvpn-app.vercel.app" className="store" target="_blank" rel="noopener noreferrer">
                   <svg viewBox="0 0 24 24" strokeWidth="1.05" strokeLinejoin="round">
                     <path fill="#4285F4" stroke="#4285F4" d="M3.6 2.6 12.6 12 3.6 21.4Z" />
                     <path fill="#34A853" stroke="#34A853" d="M3.6 2.6 15.6 9.08 12.6 12Z" />
@@ -108,7 +118,7 @@ export default function Apps() {
                   </i>
                 </a>
                 {" "}
-                <a href="#" className="store">
+                <a href="https://rusnetvpn-app.vercel.app" className="store" target="_blank" rel="noopener noreferrer">
                   <svg viewBox="0 0 24 24">
                     <defs>
                       <linearGradient id="xg" x1="0" y1="0" x2="1" y2="1">
@@ -130,7 +140,7 @@ export default function Apps() {
                   </i>
                 </a>
                 {" "}
-                <a href="#" className="store">
+                <a href="https://rusnetvpn-app.vercel.app" className="store" target="_blank" rel="noopener noreferrer">
                   <svg viewBox="0 0 24 24">
                     <path fill="none" stroke="#3DDC84" strokeWidth="1.1" strokeLinecap="round" d="M8.4 5.5 7 3.3M15.6 5.5 17 3.3" />
                     <path fill="#3DDC84" d="M5.6 10.5a6.4 6.4 0 0 1 12.8 0z" />
@@ -152,7 +162,7 @@ export default function Apps() {
                   </i>
                 </a>
                 {" "}
-                <a href="#" className="store">
+                <a href="https://rusnetvpn-app.vercel.app" className="store" target="_blank" rel="noopener noreferrer">
                   <svg viewBox="0 0 24 24">
                     <rect x="2.4" y="2.4" width="9" height="9" fill="#F25022" />
                     <rect x="12.6" y="2.4" width="9" height="9" fill="#7FBA00" />
@@ -169,7 +179,7 @@ export default function Apps() {
                   </i>
                 </a>
                 {" "}
-                <a href="#" className="store">
+                <a href="https://rusnetvpn-app.vercel.app" className="store" target="_blank" rel="noopener noreferrer">
                   <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M16.4 12.9c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.6 2.3 2.8 2.2 1.1 0 1.6-.7 2.9-.7s1.7.7 2.9.7 2-1.1 2.7-2.1c.9-1.2 1.2-2.4 1.2-2.4s-2.3-.9-2.3-3.5zM14.2 5.9c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.8 1 .1 2-.5 2.7-1.3z" />
                   </svg>
