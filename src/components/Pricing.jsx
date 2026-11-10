@@ -1,7 +1,7 @@
 export default function Pricing() {
   return (
     <>
-      <section className="sec wrap" id="pricing" style={{ paddingTop: "0" }}>
+      <section className="sec wrap" id="pricing" data-fx="">
         <div className="sec-head">
           <div className="col up">
             <span className="eyebrow">

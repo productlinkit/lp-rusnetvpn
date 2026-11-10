@@ -41,12 +41,12 @@ body::after{
 header{padding-block:14px;}
 header::before{display:none;}
 header .nav{
-  background:rgba(24,7,12,.42);border:var(--glass-edge);box-shadow:var(--glass-hi),0 20px 50px -30px rgba(0,0,0,.8);
+  background:rgba(24,7,12,.78);border:var(--glass-edge);box-shadow:var(--glass-hi),0 20px 50px -30px rgba(0,0,0,.8);
   backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
   border-radius:999px;padding:8px 8px 8px 22px;
   transition:background .4s,box-shadow .4s;
 }
-header.small .nav{background:rgba(24,7,12,.68);}
+header.small .nav{background:rgba(24,7,12,.86);}
 @media(max-width:1380px){header .nav{margin-inline:calc(var(--pad) - 14px);}}
 
 /* ---------- reveal: items rise in, one after another ---------- */

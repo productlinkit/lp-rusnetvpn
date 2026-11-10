@@ -7,7 +7,7 @@ import regionAfricaImg from '../assets/images/region-africa.jpg';
 export default function Servers() {
   return (
     <>
-      <section className="navyband" id="servers">
+      <section className="navyband" id="servers" data-fx="">
         <div className="wrap sec">
           <div className="sec-head">
             <div className="col up">

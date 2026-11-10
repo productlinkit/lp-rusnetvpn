@@ -1,0 +1,184 @@
+/* ==========================================================================
+   WHITE SHEETS + DISTINCT LAYOUTS + MORE SCROLL
+   ==========================================================================
+   The page alternates: dark red ground, then a rounded white sheet that slides
+   over it, then dark again. Why, Global Coverage and Pricing are the white
+   sheets. Every section also gets its own arrangement and its own kind of card,
+   so no two read alike:
+     hero      split, photo card
+     why       pinned sideways rail, tall photo cards        (white)
+     features  four-up icon list, one glass spotlight card
+     servers   sticky heading left, region bars right        (white)
+     apps      glass panel, phone first
+     pricing   centred, a raised white card and a red one    (white)
+     faq       answer panel left, question rows right
+   Scroll adds: headings unmask, the white sheets grow into place, the marquee
+   runs with the scroll, and cards slide in from the side they sit on. */
+
+/* ---------- light token scope for the white sheets ---------- */
+#why,#servers,#pricing{
+  --ink:#140A0D; --ink-2:#2A1C20; --body:#5A4B4F; --muted:#6E5F63;
+  --paper:#FFFFFF; --paper-2:#F6F1F2; --card:#FFFFFF;
+  --line:rgba(20,10,13,.09); --line-2:rgba(20,10,13,.06); --line-3:rgba(20,10,13,.14);
+  --line-ui:#8A7C80; --line-ui-dark:rgba(255,255,255,.42);
+  --brand-text:#BE1A23; --brand-tint:#FFF0F0;
+  --green-text:#087040; --green-tint:#E9F9F0;
+  --focus:#140A0D;
+  color:var(--ink);
+  position:relative;
+  background:#fff;
+  border-radius:64px;
+  box-shadow:0 -40px 120px -60px rgba(225,39,48,.55),0 40px 120px -60px rgba(225,39,48,.45);
+}
+/* a faint red bloom inside each sheet so white never reads flat */
+#why::before,#pricing::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(40% 30% at 100% 0%,rgba(225,39,48,.10),transparent 70%),
+    radial-gradient(40% 30% at 0% 100%,rgba(225,39,48,.08),transparent 70%);
+}
+#why > *,#pricing > *{position:relative;z-index:1;}
+#why h2,#servers h2,#pricing h2{color:var(--ink);}
+#why .eyebrow,#servers .eyebrow,#pricing .eyebrow:not(.trial .eyebrow){background:var(--brand-tint);border-color:rgba(190,26,35,.2);color:var(--brand-text);}
+#why .sec-head .aside,#servers .sec-head .aside,#pricing .sec-head .aside{color:var(--body);}
+.sec{margin-block:clamp(24px,3vw,48px);}
+
+/* the sheets grow into place as they come up the screen */
+#servers,#pricing{scale:min(1, calc(.92 + var(--p,.5) * .2));transform-origin:50% 0;}
+@media(max-width:640px){#why,#servers,#pricing{border-radius:36px;}}
+
+/* ---------- headings unmask as their block reveals ---------- */
+.sec-head .col.up h2{clip-path:inset(0 0 100% 0);translate:0 30px;transition:clip-path 1.1s var(--ease-enter),translate 1.1s var(--ease-enter);transition-delay:.12s;}
+.sec-head .col.up.in h2{clip-path:inset(0 0 -20% 0);translate:0 0;}
+
+/* ---------- marquee runs with the scroll as well as on its own ---------- */
+.marq .track{translate:calc(var(--sy,0) * -.35px) 0;}
+
+/* ==========================================================================
+   WHY (white) — the photo cards stay dark, so they pop off the sheet
+   ========================================================================== */
+#why.is-pinned{height:calc(100vh + 170vh);}
+#why .rcard{border:0;box-shadow:0 40px 80px -40px rgba(60,6,12,.55);}
+#why.is-pinned .why-pin::after{background:linear-gradient(90deg,#E12730 calc(var(--wp,0) * 100%),rgba(20,10,13,.08) calc(var(--wp,0) * 100%));}
+#why .sec-head{position:relative;}
+/* cards lean a little as they travel, straightening as the rail settles */
+#why.is-pinned .rcard{rotate:calc((var(--wp,0) - .5) * -3deg);transition:rotate .2s linear;}
+
+/* ==========================================================================
+   FEATURES (dark) — no boxes: an icon list, one glass spotlight card
+   ========================================================================== */
+#tech{display:block;}
+#tech .sec-head{position:static;flex-direction:column;align-items:center;text-align:center;margin-bottom:clamp(40px,5vw,72px);}
+#tech .sec-head .col{align-items:center;}
+#tech .bento{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.4vw,36px) clamp(18px,2vw,30px);}
+#tech .tile{background:none;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;padding:8px 4px 8px 0;border-radius:0;}
+#tech .tile:hover{translate:0 -4px;box-shadow:none;}
+#tech .tile .ic{width:54px;height:54px;border-radius:50%;background:var(--red-grad);color:#fff;box-shadow:0 16px 34px -14px rgba(225,39,48,.8);}
+#tech .tile .ic svg{width:22px;height:22px;}
+#tech .tile .togg{top:8px;right:0;}
+/* the wide tiles become spotlight cards: glass, spanning two columns */
+#tech .tile.wide{
+  grid-column:span 2;grid-row:span 2;padding:var(--pad-3);border-radius:40px;
+  background:radial-gradient(70% 70% at 100% 0%,rgba(240,53,63,.35),transparent 60%),var(--glass-bg);
+  border:var(--glass-edge);box-shadow:var(--glass-hi),0 50px 100px -50px rgba(225,39,48,.6);
+  backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+}
+#tech .tile.wide .togg{top:24px;right:24px;}
+#tech .bento.has-open .tile{opacity:.45;}
+#tech .bento.has-open .tile.is-open{opacity:1;background:none;box-shadow:none;}
+#tech .bento.has-open .tile.wide.is-open{background:radial-gradient(70% 70% at 100% 0%,rgba(240,53,63,.45),transparent 60%),var(--glass-bg);}
+/* icons spin up as each item rises in */
+#tech .tile.fx-rise.in .ic{animation:fx-spin .9s var(--ease-enter) backwards;animation-delay:calc(var(--i,0) * 70ms + .15s);}
+@keyframes fx-spin{from{rotate:-90deg;scale:.4;opacity:0;}to{rotate:0deg;scale:1;opacity:1;}}
+@media(max-width:1000px){#tech .bento{grid-template-columns:repeat(2,minmax(0,1fr));}#tech .tile.wide{grid-row:auto;}}
+@media(max-width:600px){#tech .bento{grid-template-columns:1fr;}#tech .tile.wide{grid-column:span 1;}}
+
+/* ==========================================================================
+   SERVERS (white) — sticky heading + search left, region bars right
+   ========================================================================== */
+#servers{margin-inline:clamp(0px,1.6vw,24px);}
+#servers::before{display:none;}
+#servers > .wrap{
+  display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  grid-template-areas:"head rows" "tools rows" ". rows";grid-template-rows:auto auto 1fr;
+  column-gap:clamp(32px,5vw,80px);align-items:start;
+}
+#servers .sec-head{grid-area:head;flex-direction:column;align-items:flex-start;text-align:left;margin-bottom:28px;position:sticky;top:120px;}
+#servers .sec-head .col{align-items:flex-start;}
+#servers .srv-tools{grid-area:tools;justify-content:flex-start;flex-direction:column;align-items:flex-start;position:sticky;top:420px;}
+#servers .rows,#servers .rows.skel.on,#servers .state{grid-area:rows;}
+#servers .rows,#servers .rows.skel.on{grid-template-columns:1fr;gap:14px;}
+#servers .rowi{
+  grid-template-columns:minmax(0,1fr) auto 44px;grid-template-rows:auto auto;min-height:0;row-gap:6px;
+  padding:22px 26px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);backdrop-filter:none;-webkit-backdrop-filter:none;
+  box-shadow:0 18px 40px -28px rgba(60,6,12,.4);
+}
+#servers .rowi .nm{grid-column:1;grid-row:1;color:var(--ink);font-size:var(--fs-h5);}
+#servers .rowi .tag{grid-column:1;grid-row:2;border-color:var(--line-3);color:var(--body);}
+#servers .rowi .lat{grid-column:2;grid-row:1 / 3;align-self:center;color:var(--muted);}
+#servers .rowi .lat b{color:var(--ink);}
+#servers .rowi .go{grid-column:3;grid-row:1 / 3;align-self:center;border-color:var(--line-3);color:var(--ink);}
+#servers .rowi:hover{background:var(--red-grad);border-color:transparent;padding-left:34px;translate:0 0;box-shadow:0 30px 60px -30px rgba(225,39,48,.8);}
+#servers .rowi:hover .nm,#servers .rowi:hover .lat,#servers .rowi:hover .lat b{color:#fff;}
+#servers .rowi:hover .tag{color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.4);}
+#servers .rowi:hover .go{background:#fff;color:#C81E27;border-color:transparent;}
+#servers .srch input{background:#fff;border-color:var(--line-ui);color:var(--ink);}
+#servers .srch input::placeholder{color:var(--muted);}
+#servers .srch input:focus{border-color:var(--ink);background:#fff;}
+#servers .srch svg.mag,#servers .srch .clr{color:var(--body);}
+#servers .srch-count{color:var(--muted);}
+#servers .state .si{background:var(--paper-2);color:var(--ink);}
+#servers .state h3{color:var(--ink);}
+#servers .state p{color:var(--body);}
+#servers .skel-row{border-radius:999px;min-height:76px;background:#fff;border:1px solid var(--line);flex-direction:row;align-items:center;}
+#servers .skel-bar{background:linear-gradient(90deg,#F4EEEF 25%,#EBE2E4 37%,#F4EEEF 63%);background-size:400% 100%;}
+/* bars slide in from the right */
+#servers .rowi.fx-rise.in{animation-name:fx-from-right;}
+@keyframes fx-from-right{from{opacity:0;translate:60px 0;}to{opacity:1;translate:0 0;}}
+@media(max-width:900px){
+  #servers > .wrap{grid-template-columns:1fr;grid-template-areas:"head" "tools" "rows";}
+  #servers .sec-head,#servers .srv-tools{position:static;}
+}
+@media(max-width:560px){
+  #servers .rowi{border-radius:28px;grid-template-columns:1fr 40px;}
+  #servers .rowi .lat{grid-column:1;grid-row:3;}
+  #servers .rowi .go{grid-column:2;grid-row:1 / 4;}
+}
+
+/* ==========================================================================
+   PRICING (white) — a raised white plan card beside a red one
+   ========================================================================== */
+#pricing{padding-inline:clamp(20px,6vw,112px);}
+#pricing .seg{background:#F6F1F2;border:1px solid var(--line);backdrop-filter:none;-webkit-backdrop-filter:none;}
+#pricing .seg button{color:var(--body);}
+#pricing .seg button.on{background:var(--red-grad);color:#fff;}
+#pricing .seg button.on .segsave{color:#FFD6D8;}
+#pricing .pcard{
+  background:#fff;border:1px solid var(--line);backdrop-filter:none;-webkit-backdrop-filter:none;
+  box-shadow:0 50px 100px -50px rgba(60,6,12,.45);
+}
+#pricing .pcard .per b{color:var(--ink);}
+#pricing .tip-btn{color:var(--body);border-color:var(--line-ui);}
+#pricing .cmp-toggle,#pricing .btn-ghost{color:var(--ink);border-color:var(--line-ui);background:#fff;}
+#pricing .btn-ghost:hover{background:var(--paper-2);}
+/* the two cards arrive from their own sides */
+#pricing .price-grid > .pcard.fx-rise.in{animation-name:fx-from-left;}
+#pricing .price-grid > .trial.fx-rise.in{animation-name:fx-from-right;}
+@keyframes fx-from-left{from{opacity:0;translate:-60px 0;rotate:-2deg;}to{opacity:1;translate:0 0;rotate:0deg;}}
+#pricing .price-grid > .trial{rotate:calc((.5 - var(--p,.5)) * 4deg);}
+/* solid on the white sheet — the glass version let the white through as pink */
+#pricing .trial{background:radial-gradient(80% 70% at 100% 0%,rgba(255,120,126,.55),transparent 60%),var(--red-grad);border-color:transparent;}
+
+/* ==========================================================================
+   FAQ (dark) — rows slide in from the right, the panel floats up
+   ========================================================================== */
+#faq .qrow.fx-rise.in{animation-name:fx-from-right;}
+#faq .qpanel{translate:0 calc((.5 - var(--p,.5)) * 40px);}
+
+/* ---------- reduced motion ---------- */
+@media(prefers-reduced-motion:reduce){
+  #servers,#pricing,#pricing .price-grid > .trial,#why.is-pinned .rcard,.marq .track{scale:none;rotate:none;translate:none;}
+  .sec-head .col.up h2{clip-path:none;translate:none;}
+  #tech .tile.fx-rise.in .ic{animation:none;}
+}
