@@ -143,13 +143,13 @@
 .trial::after{
   content:"";position:absolute;bottom:-38%;left:-26%;width:96%;height:104%;
   background:radial-gradient(ellipse closest-side,
-    rgba(37,99,235,.38) 0%,
-    rgba(37,99,235,.33) 16%,
-    rgba(37,99,235,.25) 33%,
-    rgba(37,99,235,.16) 50%,
-    rgba(37,99,235,.09) 66%,
-    rgba(37,99,235,.04) 81%,
-    rgba(37,99,235,0) 100%);
+    rgba(225,39,48,.38) 0%,
+    rgba(225,39,48,.33) 16%,
+    rgba(225,39,48,.25) 33%,
+    rgba(225,39,48,.16) 50%,
+    rgba(225,39,48,.09) 66%,
+    rgba(225,39,48,.04) 81%,
+    rgba(225,39,48,0) 100%);
 }
 .trial h3{color:#fff;font-size:var(--fs-h3);position:relative;z-index:2;}
 .trial p{color:rgba(255,255,255,.66);font-size:var(--fs-400);margin-top:12px;position:relative;z-index:2;}

@@ -2,11 +2,11 @@
    TOKENS
    ========================================================================== */
 :root{
-  --brand:#2563EB; --brand-2:#4361EE; --brand-deep:#1E3FAE; --brand-tint:#EEF3FF;
+  --brand:#E12730; --brand-2:#F0353F; --brand-deep:#A5121A; --brand-tint:#FFF0F0;
   --blue:#12356E; --blue-2:#2563EB; --blue-tint:#EEF3FF;
   --ink:#0E1216; --ink-2:#1C2430; --body:#4E5964; --muted:#5C636B;
-  --navy:#0C1A4D; --navy-2:#12286E;
-  --splash:linear-gradient(170deg,#050A1F 0%,#0C1A4D 55%,#12286E 100%);
+  --navy:#0D1E3C; --navy-2:#152A52;
+  --splash:linear-gradient(170deg,#08142A 0%,#0D1E3C 55%,#152A52 100%);
   --paper:#F3F2EF; --paper-2:#EBEAE5; --card:#FFFFFF;
   --line:rgba(14,18,22,.10); --line-2:rgba(14,18,22,.06); --line-3:rgba(14,18,22,.16);
 
@@ -14,20 +14,20 @@
      --brand / --green-ok / --amber are the *brand* colours: fine as fills, as
      icons, and as 3:1 large text. They do NOT clear 4.5:1 as small text on our
      light surfaces, so anything set in them at body size uses the -text pair.
-       --brand-text #1D4ED8  ≥5.56 on paper, card, brand-tint, paper-2
+       --brand-text #BE1A23  ≥5.19 on paper, card, brand-tint, paper-2
        --err-text   #BE1A23  ≥5.19 on paper, card, err-tint, #FFF7F7, #FFF8F8
        --green-text #087040  ≥5.51 on paper, card, #E9F9F0
        --amber-text #B54708  ≥4.99 on card, #FFF4E5
      --muted was #8B949F: 2.74:1 on paper and 3.07:1 on card — the two confirmed
      1.4.3 failures. #5C636B measures 5.43 / 6.08 / 5.05 (paper / card / paper-2). */
-  --brand-text:#1D4ED8; --err-text:#BE1A23; --err-tint:#FFF0F0; --green-ok:#12B76A; --green-text:#087040;
+  --brand-text:#BE1A23; --err-text:#BE1A23; --err-tint:#FFF0F0; --green-ok:#12B76A; --green-text:#087040;
 
-  /* ---------- BLUE THAT CARRIES WHITE TEXT ----------
+  /* ---------- RED THAT CARRIES WHITE TEXT ----------
      The mirror of --brand-text. A gradient has to clear 4.5 at its LIGHTEST
-     point, not on average: --brand-fill-2 #2563EB measures 5.17 against white
-     and --brand-fill #1E3FAE measures 8.83. Errors keep their own red
+     point, not on average: --brand-fill-2 #D92A33 measures 4.6 against white
+     and --brand-fill #C81E27 measures 5.5. Errors keep their own red
      (--err-text / --err-tint) so a failed field never reads as brand. */
-  --brand-fill-2:#2563EB; --brand-fill:#1E3FAE;
+  --brand-fill-2:#D92A33; --brand-fill:#C81E27;
   --amber:#F79009; --amber-text:#B54708;
   --green-tint:#E9F9F0; --amber-tint:#FFF4E5;
 

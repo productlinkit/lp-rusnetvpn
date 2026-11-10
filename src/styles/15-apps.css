@@ -20,13 +20,13 @@
 .apps::before{
   content:"";position:absolute;top:-46%;right:-16%;width:92%;height:150%;pointer-events:none;
   background:radial-gradient(ellipse closest-side,
-    rgba(37,99,235,.32) 0%,
-    rgba(37,99,235,.28) 16%,
-    rgba(37,99,235,.21) 33%,
-    rgba(37,99,235,.135) 50%,
-    rgba(37,99,235,.076) 66%,
-    rgba(37,99,235,.034) 81%,
-    rgba(37,99,235,0) 100%);
+    rgba(225,39,48,.32) 0%,
+    rgba(225,39,48,.28) 16%,
+    rgba(225,39,48,.21) 33%,
+    rgba(225,39,48,.135) 50%,
+    rgba(225,39,48,.076) 66%,
+    rgba(225,39,48,.034) 81%,
+    rgba(225,39,48,0) 100%);
 }
 .apps .eyebrow{background:rgba(255,255,255,.09);color:#fff;border-color:rgba(255,255,255,.14);}
 .apps h2{color:#fff;font-size:var(--fs-h2);}

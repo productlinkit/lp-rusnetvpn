@@ -11,19 +11,6 @@ export default function PageChrome() {
       <p className="sr-only" id="live-polite" role="status" aria-live="polite" aria-atomic="true" />
       {/* and its assertive twin, for things that interrupt: a failed submit */}
       <p className="sr-only" id="live-alert" role="alert" aria-live="assertive" aria-atomic="true" />
-      {/* the RusnetVPN wordmark, defined once and pulled in wherever the brand
-              appears. "Rusnet" is currentColor so the same mark reads dark on the paper
-              header and white on the navy auth panel; "VPN" always carries the brand blue. */}
-      <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true" focusable="false">
-        <symbol id="logo-rusnetvpn" viewBox="0 1 214 40">
-          <text x="0" y="31" fontFamily="'Host Grotesk','Inter',system-ui,sans-serif" fontWeight="700" fontSize="40" letterSpacing="-1.2" fill="currentColor">
-            Rusnet
-            <tspan fill="#2563EB">
-              VPN
-            </tspan>
-          </text>
-        </symbol>
-      </svg>
       <div id="prog" />
     </>
   );

@@ -1,12 +1,11 @@
+import logoImg from '../assets/images/logo.png';
 export default function Header() {
   return (
     <>
       <header id="hdr">
         <nav className="nav" aria-label="Main">
           <a href="#top" className="brand" aria-label="RusnetVPN, back to top">
-            <svg className="brand-logo" viewBox="0 1 214 40" aria-hidden="true">
-              <use href="#logo-rusnetvpn" />
-            </svg>
+            <img className="brand-logo" src={logoImg} alt="" />
           </a>
           <div className="navlinks">
             <a href="#why">

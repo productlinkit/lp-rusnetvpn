@@ -1,3 +1,5 @@
+import logoImg from '../assets/images/logo.png';
+import logoLightImg from '../assets/images/logo-light.png';
 import authSideImg from '../assets/images/auth-side.jpg';
 
 export default function AuthModal() {
@@ -14,9 +16,7 @@ export default function AuthModal() {
                           and aria-label on a roleless generic is discarded — the wordmark would
                           have gone unnamed here, where it is the only branding in the panel. */}
             <span className="brand" role="img" aria-label="RusnetVPN">
-              <svg className="brand-logo" viewBox="0 1 214 40" aria-hidden="true">
-                <use href="#logo-rusnetvpn" />
-              </svg>
+              <img className="brand-logo" src={logoLightImg} alt="" />
             </span>
             <p>
               Security. Privacy. Freedom. For everyone.
@@ -67,9 +67,7 @@ export default function AuthModal() {
           <div className="auth-main">
             <div className="auth-top">
               <a href="#top" className="brand" data-close="" aria-label="RusnetVPN, back to site">
-                <svg className="brand-logo" viewBox="0 1 214 40" aria-hidden="true">
-                  <use href="#logo-rusnetvpn" />
-                </svg>
+                <img className="brand-logo" src={logoImg} alt="" />
               </a>
               {" "}
               <button type="button" className="auth-back" data-close="">

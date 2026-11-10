@@ -38,7 +38,7 @@
   transition:background .4s,color .4s,border-color .4s;
 }
 .tile .geo span i{width:5px;height:5px;border-radius:50%;background:var(--brand);opacity:.45;flex:0 0 auto;transition:opacity .4s;}
-.tile.is-open .geo span{background:var(--brand-tint);border-color:rgba(37,99,235,.16);color:var(--ink);}
+.tile.is-open .geo span{background:var(--brand-tint);border-color:rgba(225,39,48,.16);color:var(--ink);}
 .tile.is-open .geo span i{opacity:1;}
 @media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr);}.tile.wide{grid-column:span 2;}}
 @media(max-width:600px){

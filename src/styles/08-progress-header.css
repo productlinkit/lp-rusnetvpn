@@ -27,7 +27,7 @@ header.small::before{opacity:1;}
    The mark is 21px tall, which made the "back to top" link a 21px target — the
    44px floor is on the link, not the artwork, so nothing moves visually. */
 .brand{display:flex;align-items:center;flex:0 0 auto;color:var(--ink);min-height:44px;}
-.brand-logo{height:24px;width:auto;display:block;}
+.brand-logo{height:30px;width:auto;display:block;}
 /* one line, always. links never wrap onto a second row. */
 .navlinks{display:flex;align-items:center;gap:2px;margin-left:6px;flex-wrap:nowrap;min-width:0;}
 .navlinks a{font-size:var(--fs-300);font-weight:500;color:var(--body);padding:9px 13px;border-radius:999px;white-space:nowrap;transition:color .25s,background .25s;}
@@ -65,7 +65,7 @@ body.menu-open .burger span:nth-child(3){transform:translateY(-4.5px) rotate(-45
 @media(max-width:560px){
   .navact .btn-primary{display:none;}
   .navact{gap:var(--space-2);}
-  .brand-logo{height:22px;}
+  .brand-logo{height:27px;}
 }
 .sheet{
   position:fixed;inset:0;z-index:140;background:var(--paper);

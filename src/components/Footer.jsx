@@ -1,3 +1,4 @@
+import logoImg from '../assets/images/logo.png';
 export default function Footer() {
   return (
     <>
@@ -5,9 +6,7 @@ export default function Footer() {
         <div className="fgrid">
           <div className="about">
             <a href="#top" className="brand" aria-label="RusnetVPN, back to top">
-              <svg className="brand-logo" viewBox="0 1 214 40" aria-hidden="true">
-                <use href="#logo-rusnetvpn" />
-              </svg>
+              <img className="brand-logo" src={logoImg} alt="" />
             </a>
             <p>
               A secure and independent VPN solution, fully controlled from Moscow. RusnetVPN is a privacy-focused VPN with a strict no-logs policy, built from the ground up locally in Russia.

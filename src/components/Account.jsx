@@ -1,12 +1,11 @@
+import logoImg from '../assets/images/logo.png';
 export default function Account() {
   return (
     <>
       <div className="account" id="account" role="dialog" aria-modal="true" aria-labelledby="ac-title">
         <div className="ac-top">
           <a href="#top" className="brand" data-ac-close="" aria-label="RusnetVPN, back to site">
-            <svg className="brand-logo" viewBox="0 1 214 40" aria-hidden="true">
-              <use href="#logo-rusnetvpn" />
-            </svg>
+            <img className="brand-logo" src={logoImg} alt="" />
           </a>
           {" "}
           <button type="button" className="ac-back" data-ac-close="">
