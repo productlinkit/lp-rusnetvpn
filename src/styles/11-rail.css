@@ -53,7 +53,7 @@
 /* hugs its label — it is a tag, not a call to action, so it stays slim */
 .rcard .full .pill{
   display:inline-flex;width:fit-content;max-width:100%;align-items:center;gap:var(--space-2);
-  margin-top:15px;padding:6px 12px;border-radius:var(--r-md);
+  margin-top:15px;padding:6px 12px;border-radius:999px;
   background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);
   color:#fff;font-size:var(--fs-100);font-weight:600;line-height:1.35;
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);

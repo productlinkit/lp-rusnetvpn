@@ -9,7 +9,7 @@
 }
 .rowi:hover{padding-left:18px;}
 .rowi .nm{font-size:var(--fs-h5);font-weight:700;letter-spacing:-.03em;color:#fff;}
-.rowi .tag{display:inline-flex;padding:6px 13px;border-radius:var(--r-md);border:1px solid rgba(255,255,255,.2);font-size:var(--fs-100);color:rgba(255,255,255,.62);white-space:nowrap;}
+.rowi .tag{display:inline-flex;padding:6px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.2);font-size:var(--fs-100);color:rgba(255,255,255,.62);white-space:nowrap;}
 .rowi .lat{font-size:var(--fs-300);font-weight:600;color:rgba(255,255,255,.55);}
 .rowi .lat b{color:#fff;}
 .rowi .go{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-ui-dark);color:#fff;display:grid;place-items:center;justify-self:end;transition:background .4s,color .4s,border-color .4s,transform .5s var(--ease);}

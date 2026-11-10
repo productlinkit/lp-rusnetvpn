@@ -4,11 +4,11 @@
 :root{
   --brand:#E12730; --brand-2:#F0353F; --brand-deep:#A5121A; --brand-tint:#FFF0F0;
   --blue:#12356E; --blue-2:#2563EB; --blue-tint:#EEF3FF;
-  --ink:#0B0B0C; --ink-2:#1F1F23; --body:#4A4A52; --muted:#5E5E66;
+  --ink:#0E1216; --ink-2:#1C2430; --body:#4E5964; --muted:#5C636B;
   --navy:#0D1E3C; --navy-2:#152A52;
   --splash:linear-gradient(170deg,#08142A 0%,#0D1E3C 55%,#152A52 100%);
-  --paper:#FFFFFF; --paper-2:#F4F4F5; --card:#FFFFFF;
-  --line:#E4E4E7; --line-2:#ECECEE; --line-3:#D4D4D8;
+  --paper:#F3F2EF; --paper-2:#EBEAE5; --card:#FFFFFF;
+  --line:rgba(14,18,22,.10); --line-2:rgba(14,18,22,.06); --line-3:rgba(14,18,22,.16);
 
   /* ---------- CONTRAST-SAFE TEXT TOKENS (WCAG 1.4.3, 4.5:1) ----------
      --brand / --green-ok / --amber are the *brand* colours: fine as fills, as
@@ -51,10 +51,10 @@
      16.8:1, white on navy 16.56:1. Never below 3:1, wherever focus goes. */
   --focus:#0E1216; --focus-w:3px; --focus-gap:3px;
   --shadow-xs:0 2px 6px rgba(14,18,22,.05);
-  --shadow-sm:0 10px 24px -18px rgba(11,11,12,.28);
-  --shadow-md:0 24px 48px -30px rgba(11,11,12,.32);
-  --shadow-lg:0 40px 80px -40px rgba(11,11,12,.38);
-  --r-xl:10px; --r-lg:8px; --r-md:6px; --r-sm:4px;
+  --shadow-sm:0 16px 34px -22px rgba(14,18,22,.30);
+  --shadow-md:0 30px 60px -34px rgba(14,18,22,.34);
+  --shadow-lg:0 60px 120px -50px rgba(14,18,22,.42);
+  --r-xl:34px; --r-lg:26px; --r-md:18px; --r-sm:12px;
   --pad:112px; --maxw:1280px;
 
   /* ---------- SPACE ----------
@@ -153,13 +153,11 @@
   --t-2:220ms;  /* veils and fades */
   --t-3:320ms;  /* in-place swaps */
   --t-4:420ms;  /* entrances that travel */
-  /* Plus Jakarta Sans for everything people read, JetBrains Mono for the
-     labels, indexes and figures that give the page its measured, technical grid */
+  /* one family for the whole page — headings included */
   --font:'Plus Jakarta Sans','Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
 }
-@media(max-width:1100px){:root{--pad:64px;}}
-@media(max-width:640px){:root{--pad:20px;}}
+@media(max-width:1100px){:root{--pad:64px;--r-xl:26px;--r-lg:20px;}}
+@media(max-width:640px){:root{--pad:22px;--r-xl:22px;--r-lg:18px;}}
 
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}

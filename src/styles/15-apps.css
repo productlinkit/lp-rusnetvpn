@@ -39,11 +39,11 @@
 @media(max-width:1180px) and (min-width:721px){
   .applist{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5);}
 }
-.tabs{display:inline-flex;gap:var(--space-1);padding:5px;border-radius:var(--r-md);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);flex-wrap:nowrap;max-width:100%;min-width:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;}
+.tabs{display:inline-flex;gap:var(--space-1);padding:5px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);flex-wrap:nowrap;max-width:100%;min-width:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;}
 .tabs::-webkit-scrollbar{display:none;}
 /* same untimed transition, same fix — the app tabs and the plan segments are
    the same control doing the same job and should not ease differently */
-.tabs button{flex:0 0 auto;padding:9px 17px;border-radius:var(--r-md);font-size:var(--fs-200);font-weight:600;color:rgba(255,255,255,.72);transition:background var(--t-3) var(--ease-swap),color var(--t-3) var(--ease-swap);min-height:40px;}
+.tabs button{flex:0 0 auto;padding:9px 17px;border-radius:999px;font-size:var(--fs-200);font-weight:600;color:rgba(255,255,255,.72);transition:background var(--t-3) var(--ease-swap),color var(--t-3) var(--ease-swap);min-height:40px;}
 .tabs button.on{background:#fff;color:var(--ink);}
 .applist{display:flex;flex-direction:column;gap:var(--space-4);margin-top:28px;}
 .applist li{display:flex;gap:var(--space-3);align-items:flex-start;list-style:none;font-size:var(--fs-400);color:rgba(255,255,255,.76);}
