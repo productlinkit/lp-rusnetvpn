@@ -694,7 +694,7 @@ peekImg.addEventListener('load',  function(){ peekImg.style.visibility = 'visibl
 
 /* ---------- app tabs ----------
    one phone mockup per tab, already composed on its backdrop */
-var SHOT = [appShot1Img, appShot2Img, appShot4Img, appShot3Img];
+var SHOT = [appShot1Img, appShot2Img, appShot3Img, appShot4Img];
 
 var APP = [
   { shot:0,
