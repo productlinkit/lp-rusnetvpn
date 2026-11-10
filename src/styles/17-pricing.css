@@ -18,10 +18,10 @@
 .seg{
   display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-1);
   width:100%;max-width:540px;
-  padding:4px;border-radius:999px;background:var(--paper-2);
+  padding:4px;border-radius:var(--r-md);background:var(--paper-2);
 }
 .seg button{
-  padding:9px 6px;border-radius:999px;
+  padding:9px 6px;border-radius:var(--r-md);
   font-size:var(--fs-200);font-weight:600;color:var(--body);text-align:center;white-space:nowrap;
   /* named no timing function, so this inherited the CSS initial value: `ease`,
      cubic-bezier(.25,.1,.25,1) — the most default curve there is, sitting on
@@ -41,7 +41,7 @@
    drop shadow and nothing else. The outline gives the state a 3.18:1 boundary
    (1.4.11) without changing what the control looks like. */
 .seg button.on{background:#fff;color:var(--ink);box-shadow:var(--shadow-xs);border-color:var(--line-ui);}
-.seg button .best{position:absolute;top:-9px;right:-6px;background:var(--brand);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:999px;}
+.seg button .best{position:absolute;top:-9px;right:-6px;background:var(--brand);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:var(--r-md);}
 @media(max-width:620px){
   /* Three per row, with the best-value option taking what is left of the
      second — two rows instead of three. At two-per-row the switcher stood
@@ -118,7 +118,7 @@
 .pcard .amt.roll-done .val{transition:none;opacity:1;transform:none;}
 .pcard .per{font-size:var(--fs-300);color:var(--body);margin-top:14px;}
 .pcard .per b{color:var(--ink);}
-.pcard .save{display:inline-flex;align-items:center;gap:var(--space-2);margin-top:16px;padding:7px 13px;border-radius:999px;background:var(--green-tint);color:var(--green-text);font-size:var(--fs-200);font-weight:700;}
+.pcard .save{display:inline-flex;align-items:center;gap:var(--space-2);margin-top:16px;padding:7px 13px;border-radius:var(--r-md);background:var(--green-tint);color:var(--green-text);font-size:var(--fs-200);font-weight:700;}
 .pcard .feat{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3) var(--space-5);margin-top:30px;padding-top:26px;border-top:1px solid var(--line-2);}
 .pcard .feat li{display:flex;gap:var(--space-3);font-size:var(--fs-300);color:var(--body);}
 .pcard .feat svg{width:15px;height:15px;color:var(--brand);flex:0 0 auto;margin-top:4px;}

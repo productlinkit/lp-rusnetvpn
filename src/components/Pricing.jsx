@@ -219,7 +219,7 @@ export default function Pricing() {
               </p>
             </div>
             <div style={{ position: "relative", zIndex: "2" }}>
-              <p className="tiny" style={{ color: "rgba(255,255,255,.5)", marginBottom: "12px" }}>
+              <p className="tiny" style={{ marginBottom: "12px" }}>
                 Total payable at checkout
               </p>
               <div className="paylist">

@@ -12,7 +12,7 @@
 }
 .ac-top .brand{margin-right:auto;}
 .ac-top .ava{width:34px;height:34px;}
-.ac-back{display:inline-flex;align-items:center;gap:var(--space-2);padding:10px 17px;border-radius:999px;border:1px solid var(--line-ui);font-size:var(--fs-200);font-weight:600;color:var(--body);transition:color .3s,background .3s,border-color .3s,gap .3s var(--ease);}
+.ac-back{display:inline-flex;align-items:center;gap:var(--space-2);padding:10px 17px;border-radius:var(--r-md);border:1px solid var(--line-ui);font-size:var(--fs-200);font-weight:600;color:var(--body);transition:color .3s,background .3s,border-color .3s,gap .3s var(--ease);}
 .ac-back:hover{color:var(--ink);background:#fff;border-color:var(--ink);gap:var(--space-3);}
 .ac-back svg{width:13px;height:13px;}
 
@@ -101,7 +101,7 @@
 .sw::before{content:"";position:absolute;inset:-9px -4px;border-radius:999px;}
 
 /* small pill states */
-.ac-tag{display:inline-flex;align-items:center;gap:var(--space-2);padding:7px 12px;border-radius:999px;font-size:var(--fs-100);font-weight:700;letter-spacing:.05em;text-transform:uppercase;line-height:1.2;}
+.ac-tag{display:inline-flex;align-items:center;gap:var(--space-2);padding:7px 12px;border-radius:var(--r-md);font-size:var(--fs-100);font-weight:700;letter-spacing:.05em;text-transform:uppercase;line-height:1.2;}
 .ac-tag.good{background:var(--green-tint);color:var(--green-text);}
 .ac-tag.warn{background:var(--amber-tint);color:var(--amber-text);}
 .ac-tag.off{background:rgba(255,255,255,.12);color:rgba(255,255,255,.86);}

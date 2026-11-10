@@ -5,7 +5,7 @@
 .srch svg.mag{position:absolute;left:15px;width:16px;height:16px;color:var(--body);pointer-events:none;}
 .srch input{
   width:100%;padding:13px 42px 13px 41px;
-  border-radius:999px;border:1px solid var(--line-ui);background:var(--card);
+  border-radius:var(--r-md);border:1px solid var(--line-ui);background:var(--card);
   font-size:var(--fs-300);min-height:46px;
   transition:border-color .25s,box-shadow .25s;
 }

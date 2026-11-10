@@ -30,7 +30,7 @@ header.small::before{opacity:1;}
 .brand-logo{height:30px;width:auto;display:block;}
 /* one line, always. links never wrap onto a second row. */
 .navlinks{display:flex;align-items:center;gap:2px;margin-left:6px;flex-wrap:nowrap;min-width:0;}
-.navlinks a{font-size:var(--fs-300);font-weight:500;color:var(--body);padding:9px 13px;border-radius:999px;white-space:nowrap;transition:color .25s,background .25s;}
+.navlinks a{font-size:var(--fs-300);font-weight:500;color:var(--body);padding:9px 13px;border-radius:var(--r-md);white-space:nowrap;transition:color .25s,background .25s;}
 .navlinks a:hover{color:var(--ink);background:rgba(14,18,22,.05);}
 /* the RusnetVPN mark and CTA are wider, so just above the burger breakpoint the
    links lose a little padding instead of running into the language pill. */
@@ -92,7 +92,7 @@ body.menu-open .sheet{opacity:1;visibility:visible;transform:none;transition:opa
 .lang{position:relative;flex:0 0 auto;}
 .lang-btn{
   display:inline-flex;align-items:center;gap:var(--space-2);
-  padding:8px 11px 8px 10px;border-radius:999px;
+  padding:8px 11px 8px 10px;border-radius:var(--r-md);
   border:1px solid var(--line-ui);background:rgba(255,255,255,.6);
   font-size:var(--fs-200);font-weight:600;line-height:1;color:var(--ink);white-space:nowrap;
   transition:border-color .3s,background .3s,box-shadow .3s;
@@ -142,7 +142,7 @@ body.is-auth .navact .btn-primary{display:none;}
   .acct-name,.acct-btn .chev{display:none;}
   .acct-menu{display:none;}
 }
-.acct-btn{display:flex;align-items:center;gap:var(--space-2);padding:6px 14px 6px 6px;border-radius:999px;border:1px solid var(--line-ui);background:#fff;transition:box-shadow .3s,border-color .3s;}
+.acct-btn{display:flex;align-items:center;gap:var(--space-2);padding:6px 14px 6px 6px;border-radius:var(--r-md);border:1px solid var(--line-ui);background:#fff;transition:box-shadow .3s,border-color .3s;}
 .acct-btn:hover{border-color:var(--ink);box-shadow:var(--shadow-sm);}
 .ava{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;background:linear-gradient(160deg,var(--brand-fill-2),var(--brand-deep));color:#fff;font-size:var(--fs-200);font-weight:700;line-height:1;}
 .ava.lg{width:40px;height:40px;font-size:16px;}

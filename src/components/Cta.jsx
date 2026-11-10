@@ -14,7 +14,7 @@ export default function Cta() {
           {" "}
           <span className="spot" />
           <div className="inner">
-            <span className="eyebrow" style={{ background: "rgba(255,255,255,.1)", color: "#fff", borderColor: "rgba(255,255,255,.16)" }}>
+            <span className="eyebrow">
               <i className="dot" />
               Create your account
             </span>
