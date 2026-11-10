@@ -1,76 +1,94 @@
 import { useEffect, useRef } from 'react';
-import heroVideo from '../assets/video/hero-gradient.mp4';
-import heroPoster from '../assets/video/hero-gradient-poster.jpg';
+
+const LINES = ['Nobody sees', 'what you do', 'online.'];
+const GLYPHS = '01/|!?:;x7il';
 
 export default function Hero() {
-  const vid = useRef(null);
+  const head = useRef(null);
 
-  // a still gradient is enough when motion is turned down
+  // letters near the pointer turn into ciphertext and settle back, which is
+  // what the VPN does to your traffic. Touch screens get one sweep on load.
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) vid.current?.pause();
+    const h = head.current;
+    if (!h || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    const chars = Array.from(h.querySelectorAll('.hz-c'));
+    // lock each letter to its own width so ciphertext never shifts the line
+    const fix = () => {
+      chars.forEach((el) => { el.style.width = ''; el.textContent = el.dataset.c; });
+      chars.forEach((el) => { el.style.width = `${el.getBoundingClientRect().width}px`; });
+    };
+    window.addEventListener('resize', fix);
+    let dead = false;
+    const until = new Map();
+    let raf = 0, px = -1e4, py = -1e4, live = false;
+
+    const scramble = (el, t) => {
+      if (!until.has(el)) el.classList.add('is-x');
+      until.set(el, t);
+    };
+    const tick = () => {
+      raf = 0;
+      const now = performance.now();
+      if (live) {
+        chars.forEach((el) => {
+          const r = el.getBoundingClientRect();
+          const dx = r.left + r.width / 2 - px, dy = r.top + r.height / 2 - py;
+          if (dx * dx + dy * dy < 120 * 120) scramble(el, now + 420);
+        });
+      }
+      until.forEach((t, el) => {
+        if (now > t) { el.textContent = el.dataset.c; el.classList.remove('is-x'); until.delete(el); }
+        else el.textContent = GLYPHS[(Math.random() * GLYPHS.length) | 0];
+      });
+      if (until.size || live) raf = requestAnimationFrame(tick);
+    };
+    const go = () => { if (!raf) raf = requestAnimationFrame(tick); };
+
+    const move = (e) => { px = e.clientX; py = e.clientY; live = true; go(); };
+    const leave = () => { live = false; go(); };
+    h.addEventListener('pointermove', move);
+    h.addEventListener('pointerleave', leave);
+
+    // the one orchestrated moment: a single left-to-right pass after load
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => {
+      if (dead) return;
+      fix();
+      chars.forEach((el, i) => setTimeout(() => { if (!dead) { scramble(el, performance.now() + 380); go(); } }, 300 + i * 22));
+    });
+
+    return () => { dead = true; window.removeEventListener('resize', fix); h.removeEventListener('pointermove', move); h.removeEventListener('pointerleave', leave); cancelAnimationFrame(raf); };
   }, []);
 
   return (
     <>
-      <section className="hero wrap hx" aria-label="Hero section">
-        <video
-          className="hx-video"
-          ref={vid}
-          src={heroVideo}
-          poster={heroPoster}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-        />
-        <div className="hx-grid">
-          <div className="hx-copy">
-            <span className="eyebrow up">
-              <i className="dot" />
-              <span>
-                Safer and more private than the rest
-              </span>
-            </span>
-            <h1 className="up" style={{ "--d": "60ms" }}>
-              <span className="hx-w">Your</span>{" "}
-              <span className="hx-w">internet,</span>{" "}
-              <span className="serif hx-w">on your</span>{" "}
-              <span className="serif hx-w">terms.</span>
-            </h1>
-            <p className="lead up" style={{ "--d": "120ms" }}>
-              The safest, most private way to get online. Pick from{" "}
-              <span data-fact="servers">
-                700
-              </span>
-              + servers in{" "}
-              <span data-fact="countries">
-                90
-              </span>
-              + countries, and nothing you do is ever logged.
-            </p>
-            <div className="hero-cta up" style={{ "--d": "180ms" }}>
-              <a href="#" className="btn btn-red" data-buy="">
-                <span>
-                  Start your 30-day trial
-                </span>
-                <span className="arw">
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 12L12 4M6 4h6v6" />
-                  </svg>
-                </span>
-              </a>
-              {" "}
-              <a href="#how" className="btn btn-ghost">
-                How it works
-              </a>
-            </div>
-            <p className="tiny up" style={{ "--d": "220ms" }}>
-              Not happy? Get a full refund within 30 days.
-            </p>
+      <section className="hero wrap hz" aria-label="Hero section">
+        <div className="hz-side">
+          <p className="hz-lead">
+            The safest, most private way to get online. RusnetVPN encrypts everything that leaves your phone or laptop and sends it through our own servers. No logs, no third parties, and a full refund if it isn’t for you within 30 days.
+          </p>
+          <div className="hz-cta">
+            <a href="#" className="btn hz-btn" data-buy="">
+              Start a 30-day trial
+            </a>
+            <a href="#how" className="hz-link">
+              See how it works
+            </a>
           </div>
-          <div className="stage hx-stage up" style={{ "--d": "200ms" }}>
+        </div>
+
+        <h1 className="hz-head" ref={head} aria-label={LINES.join(' ')}>
+          {LINES.map((line, li) => (
+            <span className="hz-line" key={li} aria-hidden="true">
+              {Array.from(line).map((c, ci) =>
+                c === ' '
+                  ? <span className="hz-sp" key={ci}> </span>
+                  : <span className="hz-c" data-c={c} key={ci}>{c}</span>,
+              )}
+            </span>
+          ))}
+        </h1>
+
+        <div className="stage hz-route">
           <div className="conn is-connecting" id="conn" role="img" aria-label="RusnetVPN app, connected to Frankfurt from Moscow at 12 milliseconds.">
             <div className="row1">
               <span className="st is-connecting" id="conn-st">
@@ -123,10 +141,7 @@ export default function Hero() {
               <i style={{ animationDelay: "1.32s" }} />
             </div>
           </div>
-          </div>
         </div>
-        {/* data-count is written by JS from FACTS, which is summed from the region
-                  table further down the page. */}
         <div className="stats up" style={{ "--d": "120ms" }}>
           <div className="st">
             <div className="n mono">
@@ -138,7 +153,7 @@ export default function Hero() {
               </em>
             </div>
             <div className="l">
-              Servers ready for you
+              servers
             </div>
           </div>
           <div className="st">
@@ -151,7 +166,7 @@ export default function Hero() {
               </em>
             </div>
             <div className="l">
-              Countries on the map
+              countries
             </div>
           </div>
           <div className="st">
@@ -159,7 +174,7 @@ export default function Hero() {
               0
             </div>
             <div className="l">
-              Logs of what you do
+              logs kept
             </div>
           </div>
           <div className="st">
@@ -169,7 +184,7 @@ export default function Hero() {
               </span>
             </div>
             <div className="l">
-              Continents covered
+              continents
             </div>
           </div>
         </div>
