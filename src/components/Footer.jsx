@@ -9,7 +9,7 @@ export default function Footer() {
               <img className="brand-logo" src={logoImg} alt="" />
             </a>
             <p>
-              A secure and independent VPN solution, fully controlled from Moscow. RusnetVPN is a privacy-focused VPN with a strict no-logs policy, built from the ground up locally in Russia.
+              RusnetVPN is an independent, locally owned VPN built in Russia, with a strict no-logs policy and servers in 90+ countries.
             </p>
           </div>
           <div className="fcol">
@@ -17,16 +17,16 @@ export default function Footer() {
               Product
             </h3>
             <a href="#why">
-              Benefits
+              Why Rusnet
             </a>
             <a href="#tech">
               Features
             </a>
             <a href="#servers">
-              Global Coverage
+              Servers
             </a>
             <a href="#apps">
-              Download App
+              Apps
             </a>
             <a href="#pricing">
               Pricing
@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
         <div className="fbot">
           <p className="tiny">
-            Copyright 2024 RusnetVPN
+            © 2026 RusnetVPN. All rights reserved.
           </p>
           <div className="soc">
             <a href="https://facebook.com/rusnetvpn" target="_blank" rel="noopener noreferrer" aria-label="Visit RusnetVPN on Facebook">

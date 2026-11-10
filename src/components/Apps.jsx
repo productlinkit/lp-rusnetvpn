@@ -9,32 +9,32 @@ export default function Apps() {
           <div className="apps-grid">
             <div>
               <span className="eyebrow">
-                Download App
+                Apps
               </span>
               <h2 style={{ marginTop: "18px" }}>
-                Download & Browse Freely{" "}
+                One account,{" "}
                 <span className="serif">
-                  with RusnetVPN
+                  every device
                 </span>
               </h2>
               <p className="lead" style={{ marginTop: "16px" }}>
-                Protect your online activities with RusnetVPN — the VPN crafted in Russia to ensure global privacy and security.
+                Install RusnetVPN on your phone, laptop and desktop, sign in once, and protect up to five devices at the same time.
               </p>
               <div className="tabs" id="apptabs" role="tablist" aria-label="App feature" style={{ marginTop: "26px" }}>
                 <button type="button" role="tab" id="apptab-0" data-app="0" aria-selected="true" aria-controls="appcopy" tabIndex={0} className="on">
-                  No-Log VPN
+                  Privacy
                 </button>
                 {" "}
                 <button type="button" role="tab" id="apptab-1" data-app="1" aria-selected="false" aria-controls="appcopy" tabIndex={-1}>
-                  Global Coverage
+                  Coverage
                 </button>
                 {" "}
                 <button type="button" role="tab" id="apptab-2" data-app="2" aria-selected="false" aria-controls="appcopy" tabIndex={-1}>
-                  VPN Split Tunnel
+                  Split Tunnel
                 </button>
                 {" "}
                 <button type="button" role="tab" id="apptab-3" data-app="3" aria-selected="false" aria-controls="appcopy" tabIndex={-1}>
-                  VPN Protocols
+                  Protocols
                 </button>
               </div>
               {/* The tabpanel is the wrapper, not the <ul>. role="tabpanel" on a list
@@ -51,7 +51,7 @@ export default function Apps() {
                       </svg>
                     </span>
                     <span>
-                      We are a no-log VPN meaning that we don’t store any of your traffic logs.
+                      We don’t store your traffic, so there is nothing to hand over and nothing to leak.
                     </span>
                   </li>
                   <li>
@@ -61,7 +61,7 @@ export default function Apps() {
                       </svg>
                     </span>
                     <span>
-                      RusnetVPN is committed to independent, no-log auditing — that audit is in progress.
+                      An independent audit of our no-log policy is in progress.
                     </span>
                   </li>
                   <li>
@@ -71,7 +71,7 @@ export default function Apps() {
                       </svg>
                     </span>
                     <span>
-                      No third-party access to your VPN traffic. All data is securely managed from Moscow, free from Western interference.
+                      No third party sees your VPN traffic. Everything is managed from Moscow.
                     </span>
                   </li>
                 </ul>
@@ -195,7 +195,7 @@ export default function Apps() {
           <div className="pc">
             <div className="pc-head">
               <h3>
-                See Pros & Cons
+                Which download is right for you?
               </h3>
               <div className="tabs" id="pctabs" role="tablist" aria-label="Download method">
                 <button type="button" role="tab" id="pctab-0" data-pc="0" aria-selected="true" aria-controls="pc-panel" tabIndex={0} className="on">

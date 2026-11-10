@@ -8,11 +8,11 @@ export default function Tech() {
               Features
             </span>
             <h2>
-              Powerful Features for Unstoppable Connections
+              Everything you need, nothing you don’t
             </h2>
           </div>
           <p className="aside up" style={{ "--d": "100ms" }}>
-            Experience advanced security, blazing-fast speed, and unrestricted access with our VPN.
+            Strong security, quick connections and open access, built into every plan.
           </p>
         </div>
         <div className="bento up" id="bento">
@@ -33,12 +33,12 @@ export default function Tech() {
               DNS Leak Protection
             </h3>
             <p>
-              Protect your privacy by ensuring your DNS isn’t being leaked to any entity.
+              Every lookup stays inside the tunnel. Nothing leaks to your provider.
             </p>
             <span className="more">
               <div>
                 <p>
-                  Experience advanced security, blazing-fast speed, and unrestricted access with our VPN.
+                  Your DNS requests stay inside the encrypted tunnel, so your provider can’t see which sites you look up.
                 </p>
               </div>
             </span>
@@ -73,10 +73,10 @@ export default function Tech() {
               </svg>
             </span>
             <h3>
-              VPN Split Tunnel
+              Split Tunneling
             </h3>
             <p>
-              Select the apps for which you want to route through our secure VPN.
+              Choose which apps use the VPN and which connect directly.
             </p>
             <span className="more">
               <div>
@@ -89,7 +89,7 @@ export default function Tech() {
                   <span data-fact="countries">
                     90
                   </span>
-                  + countries, you can easily access all of your favorite content – shows, music, apps, and more – regardless of where you live.
+                  + countries, send only the apps you choose through the VPN and let the rest connect as normal.
                 </p>
               </div>
             </span>
@@ -109,15 +109,15 @@ export default function Tech() {
               </svg>
             </span>
             <h3>
-              No-Log VPN
+              Strict No-Logs
             </h3>
             <p>
-              We are a no-log VPN meaning that we don’t store any of your traffic logs.
+              We don’t store your traffic. Not now, not later.
             </p>
             <span className="more">
               <div>
                 <p>
-                  RusnetVPN is committed to independent, no-log auditing — that audit is in progress. We don’t store your browsing activity, traffic logs, DNS queries, or connection history tied to your account.
+                  No browsing history, traffic logs, DNS queries or connection timestamps are tied to your account. An independent no-log audit is in progress.
                 </p>
               </div>
             </span>
@@ -136,15 +136,15 @@ export default function Tech() {
               </svg>
             </span>
             <h3>
-              VPN Protocols
+              Modern Protocols
             </h3>
             <p>
-              We offer the most advanced VPN protocols for the fastest and most secure connection.
+              WireGuard by default, OpenVPN when a network needs it. Fast and secure either way.
             </p>
             <span className="more">
               <div>
                 <p>
-                  RusnetVPN is a privacy-focused VPN with a strict no-logs policy, built from the ground up locally in Russia.
+                  The app picks the right protocol for each network on its own, so you never have to.
                 </p>
               </div>
             </span>
@@ -165,15 +165,15 @@ export default function Tech() {
               </svg>
             </span>
             <h3>
-              Russian Reliability
+              Local Reliability
             </h3>
             <p>
-              Owned and operated in-house, following strict Russian security standards.
+              Owned and operated in-house, to strict Russian security standards.
             </p>
             <span className="more">
               <div>
                 <p>
-                  RusnetVPN is run and owned by local people that care about internet privacy and security in Russia. No shadowy megacorporation abroad involvement.
+                  A local team runs every server, so there’s no foreign company in the middle.
                 </p>
               </div>
             </span>
@@ -264,15 +264,15 @@ export default function Tech() {
               </svg>
             </span>
             <h3>
-              Unmatched Privacy
+              Private by Design
             </h3>
             <p>
-              No third-party access to your VPN traffic. All data is securely managed from Moscow, free from Western interference.
+              No third party ever sees your VPN traffic. Everything is managed from Moscow.
             </p>
             <span className="more">
               <div>
                 <p>
-                  Secure your online privacy with a VPN that respects your values and protects you from prying eyes as you browse.
+                  Browse knowing nobody is looking over your shoulder.
                 </p>
               </div>
             </span>
@@ -292,15 +292,15 @@ export default function Tech() {
               </svg>
             </span>
             <h3>
-              Superior Performance
+              Fast Hardware
             </h3>
             <p>
-              Advanced hardware ensures fast speeds and smooth streaming.
+              Modern servers keep speeds high and streams smooth.
             </p>
             <span className="more">
               <div>
                 <p>
-                  We have optimized streaming servers around the globe, allowing you to get the most from your existing streaming subscription.
+                  Streaming-optimized servers around the world get the most from the subscriptions you already have.
                 </p>
               </div>
             </span>
@@ -321,10 +321,10 @@ export default function Tech() {
               </svg>
             </span>
             <h3>
-              Dynamic Switching
+              Auto Switching
             </h3>
             <p>
-              Automatic server switching prevents slowdowns for uninterrupted service.
+              If a server gets busy, you’re moved to a better one automatically.
             </p>
             <span className="more">
               <div>

@@ -9,7 +9,7 @@ export default function Header() {
           </a>
           <div className="navlinks">
             <a href="#why">
-              Benefits
+              Why Rusnet
             </a>
             {" "}
             <a href="#tech">
@@ -17,11 +17,11 @@ export default function Header() {
             </a>
             {" "}
             <a href="#servers">
-              Global Coverage
+              Servers
             </a>
             {" "}
             <a href="#apps">
-              Download App
+              Apps
             </a>
             {" "}
             <a href="#pricing">
@@ -29,7 +29,7 @@ export default function Header() {
             </a>
             {" "}
             <a href="#faq">
-              FAQ
+              Help
             </a>
           </div>
           <div className="navact">
@@ -80,12 +80,12 @@ export default function Header() {
               </div>
             </div>
             <a href="#" className="signin" data-auth="in">
-              Login
+              Sign in
             </a>
             {" "}
             <a href="#" className="btn btn-primary btn-sm" data-buy="">
               <span>
-                Get RusnetVPN
+                Get Protected
               </span>
               <span className="arw">
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -157,7 +157,7 @@ export default function Header() {
               because there are now two. */}
       <nav className="sheet" id="sheet" aria-label="Mobile menu">
         <a href="#why">
-          Benefits
+          Why Rusnet
         </a>
         {" "}
         <a href="#tech">
@@ -165,11 +165,11 @@ export default function Header() {
         </a>
         {" "}
         <a href="#servers">
-          Global Coverage
+          Servers
         </a>
         {" "}
         <a href="#apps">
-          Download App
+          Apps
         </a>
         {" "}
         <a href="#pricing">
@@ -177,16 +177,16 @@ export default function Header() {
         </a>
         {" "}
         <a href="#faq">
-          FAQ
+          Help
         </a>
         <div className="sheet-cta" id="sheet-guest-cta">
           <a href="#" className="btn btn-ghost" data-auth="in">
-            Login
+            Sign in
           </a>
           {" "}
           <a href="#" className="btn btn-red" data-buy="">
             <span>
-              Get RusnetVPN
+              Get Protected
             </span>
             <span className="arw">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

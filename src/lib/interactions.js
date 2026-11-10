@@ -698,21 +698,21 @@ var SHOT = [appShot1Img, appShot2Img, appShot3Img, appShot4Img];
 
 var APP = [
   { shot:0,
-    c:['We are a no-log VPN meaning that we don’t store any of your traffic logs.',
-       'RusnetVPN is committed to independent, no-log auditing — that audit is in progress.',
-       'No third-party access to your VPN traffic. All data is securely managed from Moscow, free from Western interference.'] },
+    c:['We don’t store your traffic, so there is nothing to hand over and nothing to leak.',
+       'An independent audit of our no-log policy is in progress.',
+       'No third party sees your VPN traffic. Everything is managed from Moscow.'] },
   { shot:1,
-    c:['700+ servers worldwide, spanning North America, South America, Europe, Asia, Africa, and Oceania.',
-       'Automatic server switching prevents slowdowns for uninterrupted service.',
-       'We have optimized streaming servers around the globe, allowing you to get the most from your existing streaming subscription.'] },
+    c:['700+ servers across North America, South America, Europe, Asia, Africa and Oceania.',
+       'If a server gets busy, you’re moved to a better one automatically.',
+       'Streaming-optimized servers get the most from the subscriptions you already have.'] },
   { shot:2,
-    c:['Select the apps for which you want to route through our secure VPN.',
-       'Protect your privacy by ensuring your DNS isn’t being leaked to any entity.',
-       'Experience advanced security, blazing-fast speed, and unrestricted access with our VPN.'] },
+    c:['Choose which apps use the VPN and which connect directly.',
+       'Your DNS lookups stay inside the tunnel, so nothing leaks to your provider.',
+       'Keep your banking app or local printer on the normal connection while the rest stays private.'] },
   { shot:3,
-    c:['We offer the most advanced VPN protocols for the fastest and most secure connection.',
-       'Advanced hardware ensures fast speeds and smooth streaming.',
-       'Owned and operated in-house, following strict Russian security standards.'] }
+    c:['WireGuard by default, with OpenVPN over UDP and TCP for networks that block it.',
+       'The app picks the right protocol for each network on its own.',
+       'Modern servers, run in-house to strict Russian security standards.'] }
 ];
 var phM = $('#ph-m'), appcopy = $('#appcopy');
 phM.src = SHOT[APP[0].shot];
@@ -784,7 +784,7 @@ var PLANS = [
 /* One primary CTA, so it is one string rather than a per-plan field that five
    rows have to keep agreeing on. The plan is already named in the card above
    the button; the button says what pressing it does. */
-var BUY_CTA = 'Get RusnetVPN';
+var BUY_CTA = 'Get Protected';
 var BASE_PLAN = 1;                                   /* the 1-month rate */
 var money = function(n){ return '$' + n.toFixed(2); };
 PLANS.forEach(function(p){

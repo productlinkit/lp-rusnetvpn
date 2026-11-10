@@ -12,14 +12,14 @@ export default function Why() {
         <div className="sec-head">
           <div className="col up">
             <span className="eyebrow">
-              Benefits
+              Why Rusnet
             </span>
             <h2>
-              Why Choose RusnetVPN?
+              Four reasons people switch
             </h2>
           </div>
           <p className="aside up" style={{ "--d": "100ms" }}>
-            A secure and independent VPN solution, fully controlled from Moscow. Owned and operated in-house, following strict Russian security standards.
+            Independent, locally owned and built to keep what you do online to yourself.
           </p>
         </div>
         <div className="rail up" id="rail">
@@ -41,20 +41,20 @@ export default function Why() {
             {" "}
             <span className="vert">
               <span>
-                Best Streaming Experience
+                Streaming without the buffering
               </span>
             </span>
             {" "}
             <span className="full">
               <h3>
-                Best Streaming Experience
+                Streaming without the buffering
               </h3>
               <p>
-                We have optimized streaming servers around the globe, allowing you to get the most from your existing streaming subscription.
+                Servers tuned for streaming around the world, so the subscriptions you already pay for play smoothly.
               </p>
               <span className="pill">
                 <span>
-                  Optimized streaming servers
+                  Streaming-ready servers
                 </span>
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 12L12 4M6 4h6v6" />
@@ -81,16 +81,16 @@ export default function Why() {
             {" "}
             <span className="vert">
               <span>
-                Strict No-Logs Policy
+                Nothing logged, nothing to share
               </span>
             </span>
             {" "}
             <span className="full">
               <h3>
-                Strict No-Logs Policy
+                Nothing logged, nothing to share
               </h3>
               <p>
-                RusnetVPN is committed to independent, no-log auditing — that audit is in progress. We don’t store your browsing activity, traffic logs, DNS queries, or connection history tied to your account.
+                We don’t keep your browsing, traffic, DNS queries or connection history. An independent no-log audit is in progress.
               </p>
               <span className="pill">
                 <span>
@@ -121,20 +121,20 @@ export default function Why() {
             {" "}
             <span className="vert">
               <span>
-                100% Independent Local Provider Server
+                Locally owned, fully independent
               </span>
             </span>
             {" "}
             <span className="full">
               <h3>
-                100% Independent Local Provider Server
+                Locally owned, fully independent
               </h3>
               <p>
-                RusnetVPN is run and owned by local people that care about internet privacy and security in Russia. No shadowy megacorporation abroad involvement.
+                RusnetVPN is owned and run by a local team that cares about privacy, with no foreign parent company behind it.
               </p>
               <span className="pill">
                 <span>
-                  Owned and operated in-house
+                  Run in-house
                 </span>
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 12L12 4M6 4h6v6" />
@@ -161,13 +161,13 @@ export default function Why() {
             {" "}
             <span className="vert">
               <span>
-                Access Your Favorite Content
+                Your content, from anywhere
               </span>
             </span>
             {" "}
             <span className="full">
               <h3>
-                Access Your Favorite Content
+                Your content, from anywhere
               </h3>
               <p>
                 With{" "}
@@ -178,7 +178,7 @@ export default function Why() {
                 <span data-fact="countries">
                   90
                 </span>
-                + countries, you can easily access all of your favorite content – shows, music, apps, and more – regardless of where you live.
+                + countries, reach the shows, music and apps you love, wherever you are.
               </p>
               <span className="pill">
                 <span>

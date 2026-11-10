@@ -8,11 +8,11 @@ export default function Faq() {
               FAQ
             </span>
             <h2>
-              Questions we get a lot
+              Got questions? We’ve got answers.
             </h2>
           </div>
           <p className="aside up" style={{ "--d": "100ms" }}>
-            Still stuck? Send a message to customer service on WhatsApp or Telegram and a person writes back.
+            Can’t find what you need? Message us on WhatsApp or Telegram and a real person replies.
           </p>
         </div>
         {/* twelve questions is past the point where scanning a list works, so it gets
@@ -60,7 +60,7 @@ export default function Faq() {
               <div className="qinline" id="qans-1" role="region" aria-labelledby="qbtn-1">
                 <div>
                   <p>
-                    RusnetVPN is committed to independent, no-log auditing — that audit is in progress. We don’t store your browsing activity, traffic logs, DNS queries, or connection history tied to your account. We are a no-log VPN meaning that we don’t store any of your traffic logs.
+                    No. We don’t store your browsing activity, traffic, DNS queries or connection history, and nothing is tied to your account. An independent audit of this is in progress.
                   </p>
                 </div>
               </div>
@@ -87,7 +87,7 @@ export default function Faq() {
                     <span data-fact="servers">
                       700
                     </span>
-                    + servers worldwide, spanning North America, South America, Europe, Asia, Africa, and Oceania. With{" "}
+                    + servers across North America, South America, Europe, Asia, Africa and Oceania. With{" "}
                     <span data-fact="servers">
                       700
                     </span>
@@ -95,7 +95,7 @@ export default function Faq() {
                     <span data-fact="countries">
                       90
                     </span>
-                    + countries, you can easily access all of your favorite content – shows, music, apps, and more – regardless of where you live.
+                    + countries, there’s always a fast server near you.
                   </p>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function Faq() {
               <div className="qinline" id="qans-3" role="region" aria-labelledby="qbtn-3">
                 <div>
                   <p>
-                    RusnetVPN is run and owned by local people that care about internet privacy and security in Russia. No shadowy megacorporation abroad involvement. Owned and operated in-house, following strict Russian security standards.
+                    A local team in Russia that cares about privacy. RusnetVPN is owned and operated in-house, with no foreign parent company behind it.
                   </p>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function Faq() {
               <div className="qinline" id="qans-4" role="region" aria-labelledby="qbtn-4">
                 <div>
                   <p>
-                    Advanced hardware ensures fast speeds and smooth streaming. Automatic server switching prevents slowdowns for uninterrupted service, and we offer the most advanced VPN protocols for the fastest and most secure connection.
+                    Hardly. Modern servers, automatic switching away from busy machines and fast protocols like WireGuard keep your connection quick.
                   </p>
                 </div>
               </div>
@@ -167,7 +167,7 @@ export default function Faq() {
               <div className="qinline" id="qans-5" role="region" aria-labelledby="qbtn-5">
                 <div>
                   <p>
-                    We have optimized streaming servers around the globe, allowing you to get the most from your existing streaming subscription. Access your favorite content across our global VPN network, regardless of where you live.
+                    Yes. Our streaming-optimized servers help you get the most from the subscriptions you already pay for, wherever you are.
                   </p>
                 </div>
               </div>

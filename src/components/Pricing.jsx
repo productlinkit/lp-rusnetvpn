@@ -5,12 +5,12 @@ export default function Pricing() {
         <div className="sec-head">
           <div className="col up">
             <span className="eyebrow">
-              Welcome to Our Service
+              Pricing
             </span>
             <h2>
-              Security. Privacy. Freedom.{" "}
+              Simple plans,{" "}
               <span className="serif">
-                For everyone.
+                full protection.
               </span>
             </h2>
             {/* a row of buttons that swap one panel is a tablist. Without the roles it
@@ -42,7 +42,7 @@ export default function Pricing() {
             </div>
           </div>
           <p className="aside up" style={{ "--d": "100ms" }}>
-            Every plan gets the full service. RusnetVPN is a privacy-focused VPN with a strict no-logs policy, built from the ground up locally in Russia.
+            Every plan includes every feature. Choose a longer term and pay less each month.
           </p>
         </div>
         <div className="price-grid up">
@@ -90,7 +90,7 @@ export default function Pricing() {
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3 8.5l3.2 3.2L13 5" />
                 </svg>
-                Access your favorite content across our global VPN network
+                Your favorite content, from anywhere
               </li>
               <li>
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -172,13 +172,13 @@ export default function Pricing() {
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3 8.5l3.2 3.2L13 5" />
                 </svg>
-                Best streaming experience
+                Streaming-ready servers
               </li>
             </ul>
             {/* data-buy, like every other purchase CTA. One delegated handler owns
                           them all, so a new buy button cannot be added without the behaviour. */}
             <a href="#" className="btn btn-red" style={{ marginTop: "34px" }} id="p-cta" data-buy="">
-              Get RusnetVPN
+              Get Protected
               <span className="arw">
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 12L12 4M6 4h6v6" />
@@ -212,10 +212,10 @@ export default function Pricing() {
                 30-Day Money-Back Guarantee
               </span>
               <h3 style={{ marginTop: "18px" }}>
-                A secure and independent VPN solution.
+                Try it for 30 days, risk-free.
               </h3>
               <p>
-                Fully controlled from Moscow. Secure your online privacy with a VPN that respects your values and protects you from prying eyes as you browse.
+                If RusnetVPN isn’t right for you, ask within 30 days and we refund you in full, no questions asked.
               </p>
             </div>
             <div style={{ position: "relative", zIndex: "2" }}>
@@ -261,7 +261,7 @@ export default function Pricing() {
                 </span>
               </div>
               <a href="#" className="btn btn-white" style={{ marginTop: "26px" }} data-buy="">
-                Get RusnetVPN
+                Get Protected
                 <span className="arw">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 12L12 4M6 4h6v6" />

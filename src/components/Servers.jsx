@@ -12,18 +12,18 @@ export default function Servers() {
           <div className="sec-head">
             <div className="col up">
               <span className="eyebrow is-neutral">
-                Global Coverage
+                Server network
               </span>
               {/* bound to FACTS, which is summed from the rows below — see the JS */}
               <h2>
                 <span data-fact="servers">
                   700
                 </span>
-                + servers worldwide.
+                + servers, six continents.
               </h2>
             </div>
             <p className="aside up" style={{ "--d": "100ms" }}>
-              Spanning North America, South America, Europe, Asia, Africa, and Oceania. Automatic server switching prevents slowdowns for uninterrupted service.
+              From Europe to Oceania, there’s always a fast server close to you, and automatic switching keeps it that way.
             </p>
           </div>
           <div className="srv-tools up">

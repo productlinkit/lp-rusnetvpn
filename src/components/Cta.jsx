@@ -19,13 +19,13 @@ export default function Cta() {
               Create your account
             </span>
             <h2>
-              High-speed and secure Russian VPN{" "}
+              Ready when you are,{" "}
               <span className="serif">
-                that protects your privacy
+                start browsing privately
               </span>
             </h2>
             <p>
-              Protect your online activities with RusnetVPN — the VPN crafted in Russia to ensure global privacy and security.
+              Create your account in seconds, then connect every device with one tap.
             </p>
             {/* the label used to be an aria-label only, so the field was announced but
                           never *shown* as anything except a grey example that vanishes on the
@@ -54,7 +54,7 @@ export default function Cta() {
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3 8.5l3.2 3.2L13 5" />
                 </svg>
-                Russia-based
+                Made in Russia
               </span>
               {" "}
               <span>
@@ -68,7 +68,7 @@ export default function Cta() {
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3 8.5l3.2 3.2L13 5" />
                 </svg>
-                Keep the strict no-logs policy
+                Strict no-logs policy
               </span>
             </div>
           </div>

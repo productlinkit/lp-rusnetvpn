@@ -13,28 +13,28 @@ export default function Hero() {
               </span>
             </span>
             <h1>
-              A secure and independent VPN{" "}
+              Private by default.{" "}
               <span className="serif">
-                built for privacy.
+                Fast everywhere.
               </span>
             </h1>
           </div>
           <div className="hero-side up" style={{ "--d": "120ms" }}>
             <p className="lead">
-              Protect your connection with{" "}
+              Route every device through{" "}
               <span data-fact="servers">
                 700
               </span>
-              + servers across{" "}
+              + servers in{" "}
               <span data-fact="countries">
                 90
               </span>
-              + countries, a strict no-logs policy, and secure access across all your devices.
+              + countries, with a strict no-logs policy and one tap to connect.
             </p>
             <div className="hero-cta">
               <a href="#" className="btn btn-red" data-buy="">
                 <span>
-                  Get RusnetVPN
+                  Get Protected
                 </span>
                 <span className="arw">
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -44,13 +44,13 @@ export default function Hero() {
               </a>
               {" "}
               <a href="#pricing" className="btn btn-ghost">
-                View Plans
+                See Pricing
               </a>
             </div>
             <p className="tiny">
-              Russia-based. Built for privacy.
+              Owned and run in Russia.
               <br />
-              Keep the strict no-logs policy.
+              30-day money-back guarantee.
             </p>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function Hero() {
               <rect x=".45" y=".45" width="20.1" height="13.1" rx="1.75" fill="none" stroke="rgba(14,18,22,.18)" strokeWidth=".9" />
             </svg>
             <span>
-              Russia-based
+              Made in Russia
             </span>
           </span>
           {" "}
@@ -100,7 +100,7 @@ export default function Hero() {
               <path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12L13 2z" />
             </svg>
             <span>
-              Keep the strict no-logs policy
+              Zero logs, always
             </span>
           </span>
           {/* This is a picture of the app, not the app, so it carries one accessible
@@ -176,7 +176,7 @@ export default function Hero() {
               </em>
             </div>
             <div className="l">
-              Servers worldwide
+              Servers online
             </div>
           </div>
           <div className="st">
@@ -189,7 +189,7 @@ export default function Hero() {
               </em>
             </div>
             <div className="l">
-              Countries you can connect from
+              Countries to choose from
             </div>
           </div>
           <div className="st">
@@ -197,7 +197,7 @@ export default function Hero() {
               0
             </div>
             <div className="l">
-              Logs of your browsing, traffic, DNS queries or connection history.
+              Records kept of your browsing, DNS or connections.
             </div>
           </div>
           <div className="st">
@@ -207,7 +207,7 @@ export default function Hero() {
               </span>
             </div>
             <div className="l">
-              Continents covered
+              Continents in reach
             </div>
           </div>
         </div>
