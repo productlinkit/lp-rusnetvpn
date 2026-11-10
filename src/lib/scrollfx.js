@@ -1,10 +1,10 @@
 // Scroll-driven motion for the revamp. CSS does the drawing; this only feeds it
 // numbers and classes:
-//   --sy on <html>           page scroll in px, for the drifting glow orbs
-//   --p on each [data-fx]    0 → 1 as the element travels up through the viewport
 //   --hx on #why             how far the pinned rail has slid sideways
 //   .in on staggered items   once they come into view, with --i as their index
 // Nothing runs under prefers-reduced-motion; the CSS shows everything at rest.
+// Per-frame variables on <html> or on big sections made every scroll frame
+// restyle the whole page, so only the pinned rail is fed while scrolling.
 
 let started = false;
 
@@ -12,7 +12,6 @@ export function initScrollFx() {
   if (started) return;
   started = true;
 
-  const root = document.documentElement;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   // ---------- staggered reveal ----------
@@ -37,7 +36,6 @@ export function initScrollFx() {
   }
 
   // ---------- continuous progress ----------
-  const fx = Array.from(document.querySelectorAll('[data-fx]'));
   const why = document.getElementById('why');
   const rail = document.getElementById('rail');
   let ticking = false;
@@ -45,14 +43,7 @@ export function initScrollFx() {
   function frame() {
     ticking = false;
     const vh = window.innerHeight;
-    root.style.setProperty('--sy', window.scrollY.toFixed(0));
     if (reduce.matches) return;
-
-    fx.forEach((el) => {
-      const r = el.getBoundingClientRect();
-      const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
-      el.style.setProperty('--p', p.toFixed(3));
-    });
 
     // the Why section is tall; while its sticky inner is pinned, vertical
     // scroll becomes the rail's sideways travel
