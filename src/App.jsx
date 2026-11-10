@@ -3,6 +3,7 @@ import PageChrome from './components/PageChrome.jsx';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import Steps from './components/Steps.jsx';
+import About from './components/About.jsx';
 import Why from './components/Why.jsx';
 import Tech from './components/Tech.jsx';
 import Servers from './components/Servers.jsx';
@@ -34,8 +35,9 @@ export default function App() {
       <Header />
       <main id="top" tabIndex={-1}>
         <Hero />
-        <Steps />
+        <About />
         <Why />
+        <Steps />
         <Tech />
         <Servers />
         <Apps />

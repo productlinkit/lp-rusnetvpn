@@ -72,7 +72,7 @@ export default function Servers() {
             </div>
           </div>
           <div className="rows up" id="rows">
-            <a className="rowi" href="#" data-peek={regionEuropeImg}>
+            <a className="rowi" href="#" data-peek={regionEuropeImg} style={{ "--img": `url(${regionEuropeImg})` }}>
               <span className="nm">
                 Europe
               </span>
@@ -95,7 +95,7 @@ export default function Servers() {
               </span>
             </a>
             {" "}
-            <a className="rowi" href="#" data-peek={regionNorthAmericaImg}>
+            <a className="rowi" href="#" data-peek={regionNorthAmericaImg} style={{ "--img": `url(${regionNorthAmericaImg})` }}>
               <span className="nm">
                 North America
               </span>
@@ -118,7 +118,7 @@ export default function Servers() {
               </span>
             </a>
             {" "}
-            <a className="rowi" href="#" data-peek={regionAsiaImg}>
+            <a className="rowi" href="#" data-peek={regionAsiaImg} style={{ "--img": `url(${regionAsiaImg})` }}>
               <span className="nm">
                 Asia
               </span>
@@ -141,7 +141,7 @@ export default function Servers() {
               </span>
             </a>
             {" "}
-            <a className="rowi" href="#" data-peek={regionSouthAmericaImg}>
+            <a className="rowi" href="#" data-peek={regionSouthAmericaImg} style={{ "--img": `url(${regionSouthAmericaImg})` }}>
               <span className="nm">
                 South America
               </span>
@@ -164,7 +164,7 @@ export default function Servers() {
               </span>
             </a>
             {" "}
-            <a className="rowi" href="#" data-peek={regionAfricaImg}>
+            <a className="rowi" href="#" data-peek={regionAfricaImg} style={{ "--img": `url(${regionAfricaImg})` }}>
               <span className="nm">
                 Africa
               </span>

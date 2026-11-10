@@ -1,94 +1,45 @@
-import { useEffect, useRef } from 'react';
-
-const LINES = ['Nobody sees', 'what you do', 'online.'];
-const GLYPHS = '01/|!?:;x7il';
+import heroImg from '../assets/images/hero.jpg';
 
 export default function Hero() {
-  const head = useRef(null);
-
-  // letters near the pointer turn into ciphertext and settle back, which is
-  // what the VPN does to your traffic. Touch screens get one sweep on load.
-  useEffect(() => {
-    const h = head.current;
-    if (!h || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
-    const chars = Array.from(h.querySelectorAll('.hz-c'));
-    // lock each letter to its own width so ciphertext never shifts the line
-    const fix = () => {
-      chars.forEach((el) => { el.style.width = ''; el.textContent = el.dataset.c; });
-      chars.forEach((el) => { el.style.width = `${el.getBoundingClientRect().width}px`; });
-    };
-    window.addEventListener('resize', fix);
-    let dead = false;
-    const until = new Map();
-    let raf = 0, px = -1e4, py = -1e4, live = false;
-
-    const scramble = (el, t) => {
-      if (!until.has(el)) el.classList.add('is-x');
-      until.set(el, t);
-    };
-    const tick = () => {
-      raf = 0;
-      const now = performance.now();
-      if (live) {
-        chars.forEach((el) => {
-          const r = el.getBoundingClientRect();
-          const dx = r.left + r.width / 2 - px, dy = r.top + r.height / 2 - py;
-          if (dx * dx + dy * dy < 120 * 120) scramble(el, now + 420);
-        });
-      }
-      until.forEach((t, el) => {
-        if (now > t) { el.textContent = el.dataset.c; el.classList.remove('is-x'); until.delete(el); }
-        else el.textContent = GLYPHS[(Math.random() * GLYPHS.length) | 0];
-      });
-      if (until.size || live) raf = requestAnimationFrame(tick);
-    };
-    const go = () => { if (!raf) raf = requestAnimationFrame(tick); };
-
-    const move = (e) => { px = e.clientX; py = e.clientY; live = true; go(); };
-    const leave = () => { live = false; go(); };
-    h.addEventListener('pointermove', move);
-    h.addEventListener('pointerleave', leave);
-
-    // the one orchestrated moment: a single left-to-right pass after load
-    (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => {
-      if (dead) return;
-      fix();
-      chars.forEach((el, i) => setTimeout(() => { if (!dead) { scramble(el, performance.now() + 380); go(); } }, 300 + i * 22));
-    });
-
-    return () => { dead = true; window.removeEventListener('resize', fix); h.removeEventListener('pointermove', move); h.removeEventListener('pointerleave', leave); cancelAnimationFrame(raf); };
-  }, []);
-
   return (
     <>
-      <section className="hero wrap hz" aria-label="Hero section">
-        <div className="hz-side">
-          <p className="hz-lead">
-            The safest, most private way to get online. RusnetVPN encrypts everything that leaves your phone or laptop and sends it through our own servers. No logs, no third parties, and a full refund if it isn’t for you within 30 days.
-          </p>
-          <div className="hz-cta">
-            <a href="#" className="btn hz-btn" data-buy="">
-              Start a 30-day trial
-            </a>
-            <a href="#how" className="hz-link">
-              See how it works
-            </a>
+      <section className="hero wrap b-hero" aria-label="Hero section">
+        <div className="b-hero-card">
+          <img className="b-hero-img" src={heroImg} alt="Two people smiling and holding phones with RusnetVPN open" />
+          <div className="b-hero-copy">
+            <ul className="b-tags">
+              <li>No logs</li>
+              <li>Made in Russia</li>
+              <li>30-day refund</li>
+            </ul>
+            <h1>
+              The safest way to be online,{" "}
+              <em>switched on in a tap</em>
+            </h1>
+            <p className="b-hero-lead">
+              RusnetVPN hides what you do online on every device. Pick from{" "}
+              <span data-fact="servers">700</span>+ servers in{" "}
+              <span data-fact="countries">90</span>+ countries, and nothing you do is ever logged.
+            </p>
+            <div className="b-hero-cta">
+              <a href="#" className="b-btn b-btn-light" data-buy="">
+                Start your 30-day trial
+                <span className="b-btn-ic" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12L12 4M6 4h6v6" /></svg>
+                </span>
+              </a>
+              <a href="#pricing" className="b-link-light">
+                See plans
+              </a>
+            </div>
           </div>
-        </div>
-
-        <h1 className="hz-head" ref={head} aria-label={LINES.join(' ')}>
-          {LINES.map((line, li) => (
-            <span className="hz-line" key={li} aria-hidden="true">
-              {Array.from(line).map((c, ci) =>
-                c === ' '
-                  ? <span className="hz-sp" key={ci}> </span>
-                  : <span className="hz-c" data-c={c} key={ci}>{c}</span>,
-              )}
-            </span>
-          ))}
-        </h1>
-
-        <div className="stage hz-route">
+          <div className="b-hero-side">
+            <p className="b-hero-side-note">
+              Every plan includes every feature
+              <br />
+              Five devices on one account
+            </p>
+            <div className="stage b-hero-conn">
           <div className="conn is-connecting" id="conn" role="img" aria-label="RusnetVPN app, connected to Frankfurt from Moscow at 12 milliseconds.">
             <div className="row1">
               <span className="st is-connecting" id="conn-st">
@@ -141,6 +92,8 @@ export default function Hero() {
               <i style={{ animationDelay: "1.32s" }} />
             </div>
           </div>
+            </div>
+          </div>
         </div>
         <div className="stats up" style={{ "--d": "120ms" }}>
           <div className="st">
@@ -153,7 +106,7 @@ export default function Hero() {
               </em>
             </div>
             <div className="l">
-              servers
+              Servers ready for you
             </div>
           </div>
           <div className="st">
@@ -166,7 +119,7 @@ export default function Hero() {
               </em>
             </div>
             <div className="l">
-              countries
+              Countries on the map
             </div>
           </div>
           <div className="st">
@@ -174,7 +127,7 @@ export default function Hero() {
               0
             </div>
             <div className="l">
-              logs kept
+              Logs of what you do
             </div>
           </div>
           <div className="st">
@@ -184,7 +137,7 @@ export default function Hero() {
               </span>
             </div>
             <div className="l">
-              continents
+              Continents covered
             </div>
           </div>
         </div>
