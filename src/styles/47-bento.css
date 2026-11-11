@@ -386,7 +386,7 @@ main .fx-rise.in{animation:fx-rise .8s var(--ease-enter) backwards;animation-del
 .sec-cta .cta p,.sec-cta .cta .row span,.sec-cta .cta-lbl{color:rgba(255,255,255,.9);}
 .sec-cta .cta .form{background:#fff;border:0;border-radius:999px;}
 .sec-cta .cta .form input{color:var(--b-ink);}
-.sec-cta .cta .form .btn-red{background:var(--b-ink);border-radius:999px;box-shadow:none;}
+.sec-cta .cta .form .btn-red{background:var(--b-ink);color:#fff;border-radius:999px;box-shadow:none;}
 
 /* ---------- header + footer on the light page ---------- */
 header .nav{background:rgba(255,255,255,.9);border:1px solid var(--b-line);box-shadow:0 10px 30px -24px rgba(60,6,14,.4);}
@@ -396,4 +396,45 @@ footer{background:none;}
   .b-head{flex-direction:column;align-items:flex-start;}
   .b-head-side{align-items:flex-start;text-align:left;max-width:none;}
   .b-head h2,main section h2{max-width:none;}
+}
+
+/* ---------- phones: every asset sized to the screen ---------- */
+#apps .store i span{color:var(--b-muted);}
+main img,main video{max-width:100%;}
+@media(max-width:900px){
+  /* the photo sits on top as its own picture, the copy reads on deep red under it */
+  .b-hero-card{padding:0;gap:0;background:var(--b-deep);}
+  .b-hero-img{position:relative;inset:auto;height:auto;aspect-ratio:4/3;object-position:62% 30%;z-index:0;}
+  .b-hero-card::before{display:none;}
+  .b-hero-copy{position:relative;margin-top:-64px;padding:0 22px;gap:16px;max-width:none;}
+  .b-hero-copy::before{content:"";position:absolute;inset:-48px 0 -10px;z-index:-1;background:linear-gradient(180deg,rgba(94,10,18,0),var(--b-deep) 60px);}
+  .b-hero-side{padding:22px;}
+}
+@media(max-width:640px){
+  .b-sec,#servers,#pricing,#apps,#faq{padding-block:44px;}
+  #apps,#pricing,#faq{margin-block:0;}
+  .b-hero-copy{margin-top:-44px;}
+  .b-hero{padding-top:84px;}
+  .b-hero h1{font-size:clamp(32px,9vw,40px);}
+  .b-hero-lead{font-size:15px;}
+  .b-hero .stats .st{padding:14px 16px;}
+  .b-hero .stats .n{font-size:24px;}
+  .b-about-img img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;}
+  .b-rail{scroll-padding-inline:var(--pad);}
+  .b-svc{flex-basis:min(78vw,300px);}
+  .b-step-shot{max-height:180px;width:auto;}
+  .b-live{max-width:none;}
+  .b-phone{width:min(272px,100%);}
+  .b-tile{padding:22px;}
+  .b-tile-phone img,.b-tile-shot img{width:100%;height:auto;}
+  /* stacked, not overlapping: at this width the two notes covered each other */
+  .b-split-cards{height:auto;display:flex;flex-direction:column;gap:10px;}
+  .b-mini,.b-mini.m2{position:static;width:auto;rotate:none;}
+  .b-mini{rotate:2deg;margin-left:18px;}
+  .b-mini.m2{rotate:-2deg;margin-right:18px;}
+  .b-tilt-card{width:min(250px,86%);}
+  #apps .stores{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  #apps .store{justify-content:flex-start;padding:10px 12px;}
+  #pricing .cmp-toggle{background:none;}
+  #pricing .cmp-scroll{overflow-x:auto;}
 }

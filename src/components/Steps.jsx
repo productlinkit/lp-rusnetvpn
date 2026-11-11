@@ -23,7 +23,7 @@ export default function Steps() {
           <h2>Protected in four easy steps</h2>
         </div>
         <div className="b-head-side">
-          <p>The phone on the right is the real RusnetVPN app. Follow the steps and try it.</p>
+          <p>The phone in this section is the real RusnetVPN app. Follow the steps and try it.</p>
         </div>
       </div>
 
