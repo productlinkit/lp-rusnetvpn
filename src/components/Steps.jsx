@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import appShot4Img from '../assets/images/app-shot-4.jpg';
+import logoMarkImg from '../assets/images/logo-mark.png';
 
 const APP_URL = 'https://rusnetvpn-app.vercel.app';
 
@@ -14,6 +15,15 @@ export default function Steps() {
   const [plan, setPlan] = useState(2);
   const [on, setOn] = useState(false);
   const [ready, setReady] = useState(false);
+  const [secs, setSecs] = useState(0);
+
+  // the mini app's connected timer, like the real one: starts at 0 on every connect
+  useEffect(() => {
+    if (!on) { setSecs(0); return undefined; }
+    const t = setInterval(() => setSecs((n) => n + 1), 1000);
+    return () => clearInterval(t);
+  }, [on]);
+  const clock = [Math.floor(secs / 3600), Math.floor(secs / 60) % 60, secs % 60].map((n) => String(n).padStart(2, '0')).join(':');
 
   return (
     <section className="b-sec b-how wrap" id="how">
@@ -68,11 +78,21 @@ export default function Steps() {
           <article className="b-step s3 b-reveal">
             <p className="b-step-n">Step 3</p>
             <div className="b-step-vis">
-              <button type="button" className={`b-power${on ? ' on' : ''}`} onClick={() => setOn(!on)} aria-pressed={on}>
-                <span className="b-power-ring" />
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M12 4v7" /><path d="M7.5 6.5a7 7 0 1 0 9 0" /></svg>
+              <button type="button" className={`b-conn${on ? ' on' : ''}`} onClick={() => setOn(!on)} aria-pressed={on} aria-label={on ? 'Disconnect the demo' : 'Connect the demo'}>
+                <span className="b-conn-orb" aria-hidden="true">
+                  <span className="b-conn-ring r1" />
+                  <span className="b-conn-ring r2" />
+                  <span className="b-conn-btn"><img src={logoMarkImg} alt="" /></span>
+                </span>
+                <span className="b-conn-side">
+                  <span className="b-conn-st"><i />{on ? 'Connected' : 'Not connected'}</span>
+                  <span className="b-conn-info">
+                    {on ? <b className="mono">{clock}</b> : <b>Russia</b>}
+                    <small>{on ? 'Russia · Moscow · 32 ms' : 'Moscow · 32 ms'}</small>
+                  </span>
+                  <span className="b-conn-act">{on ? 'Disconnect' : 'Connect'}</span>
+                </span>
               </button>
-              <span className={`b-power-l${on ? ' on' : ''}`}>{on ? 'Connected · Frankfurt' : 'Tap to connect'}</span>
             </div>
             <div className="b-folder">
               <h3>Tap connect</h3>

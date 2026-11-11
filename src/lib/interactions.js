@@ -2219,15 +2219,15 @@ function connState(state){
     connEl.classList.add('is-connecting'); connSt.classList.add('is-connecting');
     connDot.classList.add('amber');
     connLabel.textContent = 'Connecting…'; connMs.textContent = '— ms';
-    connEl.setAttribute('aria-label', 'RusnetVPN app, connecting to Frankfurt from Moscow.');
+    connEl.setAttribute('aria-label', 'RusnetVPN app, connecting to Istanbul from Moscow.');
   }else if(state === 'error'){
     connEl.classList.add('is-error'); connSt.classList.add('is-error');
     connDot.classList.add('red');
     connLabel.textContent = 'Could not connect'; connMs.textContent = '— ms';
-    connEl.setAttribute('aria-label', 'RusnetVPN app showing a failed connection to Frankfurt, with a button to try another server.');
+    connEl.setAttribute('aria-label', 'RusnetVPN app showing a failed connection to Istanbul, with a button to try another server.');
   }else{
-    connLabel.textContent = 'Connected'; connMs.textContent = '12 ms';
-    connEl.setAttribute('aria-label', 'RusnetVPN app, connected to Frankfurt from Moscow at 12 milliseconds.');
+    connLabel.textContent = 'Connected'; connMs.textContent = '35 ms';
+    connEl.setAttribute('aria-label', 'RusnetVPN app, connected to Istanbul from Moscow at 35 milliseconds.');
   }
 }
 /* expose the failure state for review without wiring it to a random chance */

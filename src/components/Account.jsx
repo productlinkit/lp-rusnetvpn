@@ -211,10 +211,10 @@ export default function Account() {
                     {" "}
                     <span className="txt">
                       <b>
-                        Connected to Frankfurt
+                        Connected to Istanbul
                       </b>
                       <span>
-                        Today, 09:41 · Windows · 12 ms
+                        Today, 09:41 · Windows · 35 ms
                       </span>
                     </span>
                   </div>

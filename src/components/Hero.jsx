@@ -39,7 +39,7 @@ export default function Hero() {
               Five devices on one account
             </p>
             <div className="stage b-hero-conn">
-          <div className="conn is-connecting" id="conn" role="img" aria-label="RusnetVPN app, connected to Frankfurt from Moscow at 12 milliseconds.">
+          <div className="conn is-connecting" id="conn" role="img" aria-label="RusnetVPN app, connected to Istanbul from Moscow at 35 milliseconds.">
             <div className="row1">
               <span className="st is-connecting" id="conn-st">
                 <i className="pulse amber" id="conn-dot" />
@@ -62,7 +62,7 @@ export default function Hero() {
               <span className="dash" />
               {" "}
               <span>
-                Frankfurt
+                Istanbul
               </span>
               {" "}
               <span className="flag f2" />

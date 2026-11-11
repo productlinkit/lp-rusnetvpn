@@ -86,8 +86,8 @@ export default function Tech() {
             <p>WireGuard, modern hardware and auto switching keep things quick.</p>
           </div>
           <div className="b-ring-card">
-            <p>Moscow to Frankfurt</p>
-            <div className="b-ring"><b>12</b><span>ms</span></div>
+            <p>Moscow to Istanbul</p>
+            <div className="b-ring"><b>35</b><span>ms</span></div>
           </div>
         </article>
       </div>

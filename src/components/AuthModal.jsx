@@ -13,7 +13,7 @@ export default function AuthModal() {
             {" "}
             <span className="auth-veil" />
             <div className="auth-float" aria-hidden="true">
-              <span className="af af1"><i className="af-dot" /> Protected · Frankfurt <b>12 ms</b></span>
+              <span className="af af1"><i className="af-dot" /> Protected · Istanbul <b>35 ms</b></span>
               <span className="af af2"><b>0</b> logs kept, ever</span>
             </div>
             {/* role="img" is what licenses the aria-label. A bare <span> has no role,
