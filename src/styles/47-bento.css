@@ -320,22 +320,44 @@ main .fx-rise.in{animation:fx-rise .8s var(--ease-enter) backwards;animation-del
    PRICING
    ========================================================================== */
 #pricing{padding:clamp(56px,7vw,104px) var(--pad);}
-#pricing .sec-head{display:flex;flex-direction:column;align-items:center;text-align:center;}
-#pricing .sec-head .col{align-items:center;}
 #pricing h2{color:var(--b-ink);}
-#pricing .sec-head .aside{color:var(--b-body);}
 #pricing .eyebrow{display:none;}
-#pricing .seg{background:#fff;border:0;border-radius:999px;padding:5px;}
-#pricing .seg button{color:var(--b-body);border-radius:999px;}
-#pricing .seg button.on{background:var(--b-ink);color:#fff;}
-#pricing .seg button.on .segsave{color:#FFB3B7;}
+/* the term picker is a row of folder cards, one per plan, like the steps */
+#pricing .seg{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:none;width:100%;padding:0;margin:0 0 18px;background:none;border:0;border-radius:0;}
+#pricing .seg button{position:relative;min-height:112px;padding:34px 20px 18px;border:0;border-radius:6px 20px 20px 20px;background:#fff;color:var(--b-ink);font-size:20px;font-weight:700;letter-spacing:-.01em;align-items:flex-start;justify-content:flex-end;text-align:left;gap:4px;box-shadow:none;transition:background .25s,color .25s,translate .25s;}
+#pricing .seg button::before{content:"";position:absolute;left:0;top:-12px;width:44%;height:14px;border-radius:12px 12px 0 0;background:inherit;}
+#pricing .seg button:nth-child(1){background:#FDE7E3;}
+#pricing .seg button:nth-child(2){background:#FBE3EC;}
+#pricing .seg button:nth-child(3){background:#FCE4E5;}
+#pricing .seg button:nth-child(4){background:#F7E6F0;}
+#pricing .seg button:nth-child(5){background:#FFF4F4;}
+#pricing .seg button:hover{translate:0 -3px;}
+#pricing .seg button.on{background:linear-gradient(150deg,var(--b-deep-2),var(--b-deep));color:#fff;}
+#pricing .seg .segsave{font-size:13px;font-weight:600;color:var(--b-red-2);letter-spacing:0;}
+#pricing .seg button.on .segsave{color:#FFC9CC;}
+#pricing .seg .best{position:absolute;top:14px;right:14px;left:auto;translate:none;background:var(--b-red);color:#fff;border-radius:999px;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:0;text-transform:none;}
+#pricing .price-grid{grid-template-columns:7fr 5fr;gap:14px;}
 #pricing .price-grid > .trial,#pricing .price-grid > .pcard{rotate:none;}
-#pricing .pcard{background:#fff;border:0;border-radius:28px;box-shadow:none;}
+#pricing .pcard{background:#fff;border:0;border-radius:var(--b-r);box-shadow:none;}
 #pricing .pcard .btn-red{border-radius:999px;background:var(--b-ink);box-shadow:none;}
-#pricing .trial{background:var(--b-red) !important;border:0;border-radius:28px;box-shadow:none;}
+#pricing .pcard .save{background:var(--b-blush);color:var(--b-red-2);border-radius:999px;}
+#pricing .trial{background:linear-gradient(160deg,var(--b-red) 0%,var(--b-red-2) 45%,var(--b-deep) 100%) !important;border:0;border-radius:var(--b-r);box-shadow:none;}
 #pricing .trial h3{color:#fff;}
 #pricing .trial .btn-white{border-radius:999px;}
+#pricing .b-refund-card{align-self:center;background:#fff;color:var(--b-ink);rotate:-6deg;position:relative;z-index:2;}
+#pricing .b-refund-card span:last-child{color:var(--b-muted);}
+#pricing .b-refund-card .b-coin{background:var(--b-red);color:#fff;}
 #pricing .cmp-toggle .btn-ghost{background:#fff;border:0;border-radius:999px;color:var(--b-ink);}
+@media(max-width:900px){
+  #pricing .seg .best{position:absolute;}
+  #pricing .seg{grid-template-columns:repeat(3,1fr);gap:18px 10px;}
+  #pricing .price-grid{grid-template-columns:1fr;}
+}
+@media(max-width:560px){
+  #pricing .seg{grid-template-columns:repeat(2,1fr);}
+  #pricing .seg button{min-height:92px;font-size:17px;padding:30px 14px 14px;}
+  #pricing .seg button:last-child{grid-column:1 / -1;flex-direction:column;flex-wrap:nowrap;}
+}
 
 /* ==========================================================================
    FAQ

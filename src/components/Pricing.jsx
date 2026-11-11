@@ -2,13 +2,16 @@ export default function Pricing() {
   return (
     <>
       <section className="sec wrap" id="pricing" data-fx="">
-        <div className="sec-head">
-          <div className="col up">
-            
-            <h2>
-              Every plan has everything
-            </h2>
-            {/* a row of buttons that swap one panel is a tablist. Without the roles it
+        <div className="b-head">
+          <div>
+            <p className="b-kicker">Pricing</p>
+            <h2>Every plan has everything</h2>
+          </div>
+          <div className="b-head-side">
+            <p>Plans only differ in how long they last. The longer you pick, the less each month costs.</p>
+          </div>
+        </div>
+        {/* a row of buttons that swap one panel is a tablist. Without the roles it
                           is five unrelated buttons and nothing says which one is active; with
                           them, arrow keys move between plans and the selected one is stated. */}
             <div className="seg" id="seg" role="tablist" aria-label="Billing period">
@@ -35,11 +38,6 @@ export default function Pricing() {
                 </span>
               </button>
             </div>
-          </div>
-          <p className="aside up" style={{ "--d": "100ms" }}>
-            Plans only differ in how long they last. The longer you pick, the less each month costs.
-          </p>
-        </div>
         <div className="price-grid up">
           <div className="pcard" id="plan-panel" role="tabpanel" aria-labelledby="seg-4">
             <h3 id="p-name">
@@ -209,6 +207,11 @@ export default function Pricing() {
               <p>
                 If RusnetVPN isn’t right for you, ask within 30 days and we refund you in full, no questions asked.
               </p>
+            </div>
+            <div className="b-tilt-card b-refund-card" aria-hidden="true">
+              <span className="b-coin">$</span>
+              <b>Full refund</b>
+              <span>Within 30 days</span>
             </div>
             <div style={{ position: "relative", zIndex: "2" }}>
               <p className="tiny" style={{ marginBottom: "12px" }}>
