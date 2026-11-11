@@ -1,4 +1,5 @@
 import logoImg from '../assets/images/logo.png';
+import acArtImg from '../assets/images/app-shot-1.jpg';
 export default function Account() {
   return (
     <>
@@ -172,7 +173,8 @@ export default function Account() {
                   </div>
                 </div>
               </div>
-              <div className="ac-card dark" style={{ marginTop: "14px" }}>
+              <div className="ac-card dark ac-get" style={{ marginTop: "14px" }}>
+                <img className="ac-get-art" src={acArtImg} alt="" />
                 <h3>
                   Get RusnetVPN on this device
                 </h3>
@@ -343,7 +345,7 @@ export default function Account() {
                   <span className="ac-tag good" style={{ textTransform: "none", letterSpacing: "0", fontSize: "var(--fs-200)", fontWeight: "600" }}>
                     <span>
                       <span data-fact="servers">
-                        700
+                        100
                       </span>
                       + servers,{" "}
                       <span data-fact="countries">

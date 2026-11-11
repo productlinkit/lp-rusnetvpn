@@ -17,7 +17,7 @@ export default function Servers() {
               </h2>
             </div>
             <p className="aside up" style={{ "--d": "100ms" }}>
-              <span data-fact="servers">700</span>+ servers across six regions. The number next to each region is the usual delay from Moscow.
+              <span data-fact="servers">100</span>+ servers across six regions. The number next to each region is the usual delay from Moscow.
             </p>
           </div>
           <div className="srv-tools up">
@@ -77,8 +77,8 @@ export default function Servers() {
                 Europe
               </span>
               {" "}
-              <span className="tag" data-countries="32" data-servers="240">
-                32 countries · 240 servers
+              <span className="tag" data-countries="32" data-servers="35">
+                32 countries · 35 servers
               </span>
               {" "}
               <span className="lat mono">
@@ -100,8 +100,8 @@ export default function Servers() {
                 North America
               </span>
               {" "}
-              <span className="tag" data-countries="5" data-servers="150">
-                5 countries · 150 servers
+              <span className="tag" data-countries="5" data-servers="8">
+                5 countries · 8 servers
               </span>
               {" "}
               <span className="lat mono">
@@ -123,8 +123,8 @@ export default function Servers() {
                 Asia
               </span>
               {" "}
-              <span className="tag" data-countries="21" data-servers="140">
-                21 countries · 140 servers
+              <span className="tag" data-countries="21" data-servers="23">
+                21 countries · 23 servers
               </span>
               {" "}
               <span className="lat mono">
@@ -146,8 +146,8 @@ export default function Servers() {
                 South America
               </span>
               {" "}
-              <span className="tag" data-countries="12" data-servers="80">
-                12 countries · 80 servers
+              <span className="tag" data-countries="12" data-servers="13">
+                12 countries · 13 servers
               </span>
               {" "}
               <span className="lat mono">
@@ -169,8 +169,8 @@ export default function Servers() {
                 Africa
               </span>
               {" "}
-              <span className="tag" data-countries="14" data-servers="55">
-                14 countries · 55 servers
+              <span className="tag" data-countries="14" data-servers="14">
+                14 countries · 14 servers
               </span>
               {" "}
               <span className="lat mono">
@@ -192,8 +192,8 @@ export default function Servers() {
                 Oceania
               </span>
               {" "}
-              <span className="tag" data-countries="6" data-servers="35">
-                6 countries · 35 servers
+              <span className="tag" data-countries="6" data-servers="7">
+                6 countries · 7 servers
               </span>
               {" "}
               <span className="lat mono">

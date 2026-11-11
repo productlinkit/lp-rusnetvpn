@@ -70,7 +70,7 @@ export default function Pricing() {
                 </svg>
                 <span>
                   <span data-fact="servers">
-                    700
+                    100
                   </span>
                   + servers worldwide,{" "}
                   <span data-fact="countries">

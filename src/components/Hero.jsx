@@ -9,7 +9,6 @@ export default function Hero() {
           <div className="b-hero-copy">
             <ul className="b-tags">
               <li>No logs</li>
-              <li>Made in Russia</li>
               <li>30-day refund</li>
             </ul>
             <h1>
@@ -18,7 +17,7 @@ export default function Hero() {
             </h1>
             <p className="b-hero-lead">
               RusnetVPN hides what you do online on every device. Pick from{" "}
-              <span data-fact="servers">700</span>+ servers in{" "}
+              <span data-fact="servers">100</span>+ servers in{" "}
               <span data-fact="countries">90</span>+ countries, and nothing you do is ever logged.
             </p>
             <div className="b-hero-cta">

@@ -51,7 +51,7 @@ export default function Tech() {
         </article>
 
         <article className="b-tile t-reach soft b-reveal">
-          <h3><span data-fact="servers">700</span>+ servers</h3>
+          <h3><span data-fact="servers">100</span>+ servers</h3>
           <div className="b-faces">
             {[europeImg, asiaImg, naImg, saImg].map((src) => <img key={src} src={src} alt="" />)}
             <span>+90</span>

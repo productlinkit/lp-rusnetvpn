@@ -1,6 +1,6 @@
 import logoImg from '../assets/images/logo.png';
 import logoLightImg from '../assets/images/logo-light.png';
-import authSideImg from '../assets/images/auth-side.jpg';
+import authSideImg from '../assets/images/benefit-5.jpg';
 
 export default function AuthModal() {
   return (
@@ -12,6 +12,10 @@ export default function AuthModal() {
             <img className="auth-bg" src={authSideImg} alt="" />
             {" "}
             <span className="auth-veil" />
+            <div className="auth-float" aria-hidden="true">
+              <span className="af af1"><i className="af-dot" /> Protected · Frankfurt <b>12 ms</b></span>
+              <span className="af af2"><b>0</b> logs kept, ever</span>
+            </div>
             {/* role="img" is what licenses the aria-label. A bare <span> has no role,
                           and aria-label on a roleless generic is discarded — the wordmark would
                           have gone unnamed here, where it is the only branding in the panel. */}
@@ -39,7 +43,7 @@ export default function AuthModal() {
                   </b>
                   {" "}—{" "}
                   <span data-fact="servers">
-                    700
+                    100
                   </span>
                   + servers worldwide
                 </span>

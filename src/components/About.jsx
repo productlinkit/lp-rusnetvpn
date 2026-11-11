@@ -1,10 +1,10 @@
-import cityImg from '../assets/images/auth-side.jpg';
+import aboutImg from '../assets/images/about.jpg';
 
 export default function About() {
   return (
     <section className="wrap b-about" id="about">
       <figure className="b-about-img b-reveal">
-        <img src={cityImg} alt="A city skyline with a shield over it, standing for a protected connection" />
+        <img src={aboutImg} alt="The RusnetVPN app connected to Moscow, beside icons for privacy, Wi-Fi protection, servers, speed and anonymity" />
       </figure>
       <div className="b-about-copy b-reveal">
         <p className="b-kicker">About RusnetVPN</p>

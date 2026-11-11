@@ -82,11 +82,11 @@ export default function Faq() {
                 <div>
                   <p>
                     <span data-fact="servers">
-                      700
+                      100
                     </span>
                     + servers across North America, South America, Europe, Asia, Africa and Oceania. With{" "}
                     <span data-fact="servers">
-                      700
+                      100
                     </span>
                     + servers in{" "}
                     <span data-fact="countries">

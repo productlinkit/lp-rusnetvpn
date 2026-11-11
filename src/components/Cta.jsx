@@ -48,13 +48,6 @@ export default function Cta() {
                 <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3 8.5l3.2 3.2L13 5" />
                 </svg>
-                Made in Russia
-              </span>
-              {" "}
-              <span>
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 8.5l3.2 3.2L13 5" />
-                </svg>
                 30-Day Money-Back Guarantee
               </span>
               {" "}

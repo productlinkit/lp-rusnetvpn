@@ -334,8 +334,19 @@ var INERT_OK = 'inert' in HTMLElement.prototype;
    and the toast host — a <dialog> that has been marked inert cannot be opened,
    and a confirm raised from inside the account page would be dead on arrival */
 var INERT_SKIP = { 'live-polite':1, 'live-alert':1, 'dlg':1, 'toasts':1 };
+/* Since the React port everything lives inside #root, so "the siblings" can no
+   longer mean the children of <body>: that inerted #root and the overlay with
+   it, and the sign-in panel opened dead to every click. Walk up from the
+   overlay and treat the siblings at each level instead. */
 function setPageInert(overlay, on){
-  $$('body > *').forEach(function(el){
+  var els = [];
+  for(var node = overlay; node && node.parentElement && node !== document.body; node = node.parentElement){
+    Array.prototype.push.apply(els, node.parentElement.children);
+  }
+  var path = [];
+  for(var up = overlay.parentElement; up && up !== document.body; up = up.parentElement) path.push(up);
+  els.forEach(function(el){
+    if(path.indexOf(el) !== -1) return;           /* an ancestor of the overlay: never inert it */
     if(INERT_SKIP[el.id] || el.tagName === 'SCRIPT') return;
     /* The overlay being opened must be cleared, not skipped. Skipping it meant an
        overlay that a *previous* overlay had inerted stayed inert when its own
@@ -702,7 +713,7 @@ var APP = [
        'An independent audit of our no-log policy is in progress.',
        'No third party sees your VPN traffic. Everything is managed from Moscow.'] },
   { shot:1,
-    c:['700+ servers across North America, South America, Europe, Asia, Africa and Oceania.',
+    c:['100+ servers across North America, South America, Europe, Asia, Africa and Oceania.',
        'If a server gets busy, you’re moved to a better one automatically.',
        'Streaming-optimized servers get the most from the subscriptions you already have.'] },
   { shot:2,

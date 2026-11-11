@@ -3,14 +3,14 @@ import benefit1Img from '../assets/images/benefit-1.jpg';
 import benefit2Img from '../assets/images/benefit-2.jpg';
 import benefit3Img from '../assets/images/benefit-3.jpg';
 import benefit4Img from '../assets/images/benefit-4.jpg';
-import appShot2Img from '../assets/images/app-shot-2.jpg';
+import benefit5Img from '../assets/images/benefit-5.jpg';
 
 const CARDS = [
   { img: benefit2Img, tag: 'Privacy', t: 'Nothing is logged', d: 'Browsing, traffic, DNS lookups and connection times are never stored.', href: '#faq' },
   { img: benefit1Img, tag: 'Streaming', t: 'Smooth streaming', d: 'Servers tuned for video keep your shows playing without the buffering.', href: '#servers' },
   { img: benefit3Img, tag: 'Independence', t: 'Locally owned', d: 'Our own team runs every server, with no foreign parent company behind it.', href: '#about' },
   { img: benefit4Img, tag: 'Access', t: 'Your content, anywhere', d: (<>Reach the apps and sites you love from <span data-fact="countries">90</span>+ countries.</>), href: '#servers' },
-  { img: appShot2Img, tag: 'Speed', t: 'Auto switching', d: 'If a server gets busy, the app moves you to a faster one on its own.', href: '#tech' },
+  { img: benefit5Img, tag: 'Speed', t: 'Auto switching', d: 'If a server gets busy, the app moves you to a faster one on its own.', href: '#tech' },
 ];
 
 export default function Why() {
