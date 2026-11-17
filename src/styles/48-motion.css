@@ -7,6 +7,10 @@
    filter move, so it stays on the compositor. Hover effects sit behind
    (hover:hover) so a tap on a phone never leaves a card stuck mid-lift. */
 
+/* entrances that slide in from the side widened the page for a moment and let a
+   phone scroll sideways; clip, not hidden, so position:sticky keeps working */
+html,body{overflow-x:clip;}
+
 :root{
   --fx-out:cubic-bezier(.16,1,.3,1);
   --fx-spring:cubic-bezier(.34,1.56,.64,1);
