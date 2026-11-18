@@ -1,5 +1,4 @@
 import regionEuropeImg from '../assets/images/region-europe.jpg';
-import regionNorthAmericaImg from '../assets/images/region-north-america.jpg';
 import regionAsiaImg from '../assets/images/region-asia.jpg';
 import regionSouthAmericaImg from '../assets/images/region-south-america.jpg';
 import regionAfricaImg from '../assets/images/region-africa.jpg';
@@ -17,7 +16,7 @@ export default function Servers() {
               </h2>
             </div>
             <p className="aside up" style={{ "--d": "100ms" }}>
-              <span data-fact="servers">100</span>+ servers across six regions. The number next to each region is the usual delay from Moscow.
+              <span data-fact="servers">100</span>+ servers across five regions. The number next to each region is the usual delay from Moscow.
             </p>
           </div>
           <div className="srv-tools up">
@@ -85,29 +84,6 @@ export default function Servers() {
                 avg{" "}
                 <b>
                   14 ms
-                </b>
-              </span>
-              {" "}
-              <span className="go">
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 12L12 4M6 4h6v6" />
-                </svg>
-              </span>
-            </a>
-            {" "}
-            <a className="rowi" href="#" data-peek={regionNorthAmericaImg} style={{ "--img": `url(${regionNorthAmericaImg})` }}>
-              <span className="nm">
-                North America
-              </span>
-              {" "}
-              <span className="tag" data-countries="5" data-servers="8">
-                5 countries · 8 servers
-              </span>
-              {" "}
-              <span className="lat mono">
-                avg{" "}
-                <b>
-                  42 ms
                 </b>
               </span>
               {" "}
