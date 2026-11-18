@@ -2,6 +2,7 @@ import regionEuropeImg from '../assets/images/region-europe.jpg';
 import regionAsiaImg from '../assets/images/region-asia.jpg';
 import regionSouthAmericaImg from '../assets/images/region-south-america.jpg';
 import regionAfricaImg from '../assets/images/region-africa.jpg';
+import regionOceaniaImg from '../assets/images/region-oceania.jpg';
 
 export default function Servers() {
   return (
@@ -162,8 +163,7 @@ export default function Servers() {
                 </svg>
               </span>
             </a>
-            {/* add data-peek="…" here once there is an Oceania photo to bake in */}
-            <a className="rowi" href="#">
+            <a className="rowi" href="#" data-peek={regionOceaniaImg} style={{ "--img": `url(${regionOceaniaImg})` }}>
               <span className="nm">
                 Oceania
               </span>
@@ -199,7 +199,7 @@ export default function Servers() {
               ”
             </h3>
             <p>
-              We cover six continents. Try a continent name, or clear the filter to see all of them.
+              We cover five regions. Try a continent name, or clear the filter to see all of them.
             </p>
             <button type="button" className="btn btn-white btn-sm" id="srv-empty-clear">
               Show every region
