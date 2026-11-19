@@ -49,7 +49,8 @@
   --navy-card:
     radial-gradient(70% 60% at 100% 0%,rgba(225,39,48,.20),transparent 65%),
     linear-gradient(165deg,#1E40AF 0%,#16307A 50%,var(--n-deep) 100%);
-  --red-blue-glow:radial-gradient(70% 70% at 100% 100%,rgba(59,130,246,.65),transparent 62%);
+  /* one smooth diagonal wash, red holding most of the card and easing into blue at the far edge */
+  --red-blue-wash:linear-gradient(125deg,#E12730 0%,#D21F2E 38%,#A61A3E 62%,#5B2A7A 82%,#2F4FC4 100%);
 }
 body{background:#F4F3F6;}
 header,main,footer,.sheet,.fab{--b-bg:#F4F3F6;}
@@ -64,9 +65,9 @@ header,main,footer,.sheet,.fab{--b-bg:#F4F3F6;}
 .b-ic.i3{background:linear-gradient(150deg,var(--n-deep-2),var(--n-ink));}
 
 /* rule 2 — red cards */
-.b-tile.red{background:var(--red-blue-glow),var(--b-red);}
-#pricing .trial{background:var(--red-blue-glow),linear-gradient(160deg,var(--b-red) 0%,var(--b-red-2) 45%,var(--b-deep) 100%) !important;}
-.sec-cta .cta{background:var(--red-blue-glow),linear-gradient(135deg,var(--b-red) 0%,var(--b-red-2) 55%,#7A0E18 100%);}
+.b-tile.red{background:var(--red-blue-wash);}
+#pricing .trial{background:var(--red-blue-wash) !important;}
+.sec-cta .cta{background:var(--red-blue-wash);}
 
 /* rule 3 — soft blue tints, one per group, beside the navy cards */
 .s4 .b-folder{background:var(--n-tint);} .s4 .b-folder h3{color:var(--n-blue-text);}
