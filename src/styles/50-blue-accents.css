@@ -221,3 +221,24 @@ header .nav{box-shadow:0 6px 18px -14px rgba(20,16,30,.3);}
 @media(min-width:901px){
   .b-hero-img{width:160%;max-width:none;left:-8%;right:auto;object-position:50% 22%;}
 }
+
+/* ---------- Why: scroll-triggered sideways rail ----------
+   Why.jsx adds .is-pinned on wide screens with motion allowed and sets the
+   section height; the inner block sticks to the viewport while the page
+   scroll slides the rail. */
+.b-why-prog{display:none;}
+#why.is-pinned{padding-block:0;}
+#why.is-pinned .b-why-pin{
+  position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:center;padding-top:72px;
+}
+#why.is-pinned .b-rail{overflow:visible;scroll-snap-type:none;will-change:transform;}
+#why.is-pinned .b-why-prog{display:block;margin-top:24px;}
+.b-why-prog i{display:block;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--b-red),#2F4FC4);transform:scaleX(0);transform-origin:left;}
+.b-why-prog{position:relative;}
+.b-why-prog::before{content:"";position:absolute;inset:0 var(--pad,0);height:3px;border-radius:3px;background:rgba(20,16,30,.08);}
+#why.is-pinned .b-why-prog i{position:relative;}
+/* bigger cards while pinned, so there is a real distance to travel sideways */
+#why.is-pinned .b-svc{flex-basis:clamp(300px,27vw,400px);}
+@media(max-height:820px){#why.is-pinned .b-svc{flex-basis:clamp(260px,22vw,330px);}}
+#why.is-pinned .b-why-prog{width:100%;}
