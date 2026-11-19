@@ -28,7 +28,7 @@
 #servers .rowi{background:var(--img,none) center/cover no-repeat,linear-gradient(150deg,var(--n-deep-2),var(--n-ink));box-shadow:0 0 0 1px rgba(255,255,255,.08);}
 #servers .rowi::before{background:linear-gradient(0deg,rgba(8,20,42,.9),rgba(8,20,42,.2) 60%,rgba(8,20,42,0));}
 @media(hover:hover){
-  #servers .rowi:hover{box-shadow:0 0 0 1px rgba(156,192,255,.35),0 30px 60px -28px rgba(37,99,235,.7);}
+  #servers .rowi:hover{box-shadow:0 0 0 1px rgba(156,192,255,.35),0 12px 24px -16px rgba(5,10,40,.45);}
   #servers .rowi:hover::before{background:linear-gradient(0deg,rgba(13,40,100,.9),rgba(8,20,42,.2) 60%,rgba(8,20,42,0));}
 }
 #servers .skel-row{background:rgba(255,255,255,.06);}
@@ -118,12 +118,12 @@ header,main,footer,.sheet,.fab{--b-bg:#F4F3F6;}
 /* red cards */
 .b-tile.red,#pricing .trial,.sec-cta .cta{
   background:var(--grain),var(--mesh-red) !important;background-size:auto,135% 135%,135% 135%,135% 135%,100% 100% !important;background-position:0 0,0% 0%,100% 100%,100% 0%,0 0 !important;
-  box-shadow:var(--edge-glass),0 40px 80px -40px rgba(225,39,48,.6),0 30px 70px -45px rgba(13,30,60,.75) !important;
+  box-shadow:var(--edge-glass),0 10px 24px -16px rgba(40,10,30,.28) !important;
 }
 /* navy cards */
 .b-live,.b-tile.dark,#faq .qpanel,#pricing .seg button.on{
   background:var(--grain),var(--mesh-navy) !important;background-size:auto,135% 135%,135% 135%,135% 135%,100% 100% !important;background-position:0 0,0% 0%,100% 0%,100% 100%,0 0 !important;
-  box-shadow:var(--edge-glass),0 40px 80px -42px rgba(37,99,235,.65);
+  box-shadow:var(--edge-glass),0 10px 24px -16px rgba(8,20,42,.28);
 }
 /* the servers band: the same mesh, bigger and slower */
 #servers{
@@ -135,9 +135,9 @@ header,main,footer,.sheet,.fab{--b-bg:#F4F3F6;}
     radial-gradient(45% 55% at 10% 100%,rgba(14,165,233,.35),transparent 65%),
     linear-gradient(165deg,#1A3A9E 0%,#132B6E 45%,#0A1736 100%) !important;
   background-size:auto,130% 130%,130% 130%,130% 130%,130% 130%,100% 100% !important;background-position:0 0,0% 0%,100% 0%,100% 100%,0% 100%,0 0 !important;
-  box-shadow:var(--edge-glass),0 60px 120px -60px rgba(37,99,235,.7);
+  box-shadow:var(--edge-glass),0 12px 28px -18px rgba(8,20,42,.25);
 }
-#servers .rowi{box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 24px 50px -30px rgba(5,10,40,.9);}
+#servers .rowi{box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 8px 18px -12px rgba(5,10,40,.4);}
 #servers .srch input{background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
 
 @keyframes mesh-drift{
@@ -150,7 +150,7 @@ header,main,footer,.sheet,.fab{--b-bg:#F4F3F6;}
   background:rgba(10,23,54,.55) !important;border:1px solid rgba(255,255,255,.18);
   -webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);
 }
-#pricing .b-refund-card{box-shadow:0 30px 60px -24px rgba(30,20,90,.6);}
+#pricing .b-refund-card{box-shadow:0 10px 22px -12px rgba(8,20,42,.3);}
 
 /* a gradient word in the headings that carry the blend */
 .sec-cta .cta h2{background:linear-gradient(90deg,#fff 0%,#fff 55%,#C7D7FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
@@ -182,3 +182,25 @@ body{background:
 /* the grey "Not sure which download to pick?" box under the store buttons is
    removed. Hidden rather than deleted: interactions.js still renders into it. */
 #apps .pc{display:none !important;}
+
+/* ---------- calmer shadows everywhere ----------
+   The older layers gave every card and every hover a long, dark, coloured drop
+   (40–120px blur at up to .8 opacity). One short, light shadow family instead:
+   resting cards barely lift, hover lifts a little more. */
+.b-tile,.b-step,.b-hero .stats .st,#pricing .pcard,#pricing .seg button,.b-vs,#apps .apps{box-shadow:none;}
+@media(hover:hover){
+  .b-tile:hover,.b-step:hover,.b-hero .stats .st:hover{box-shadow:0 12px 26px -18px rgba(20,16,30,.3) !important;}
+  #servers .rowi:hover{box-shadow:inset 0 0 0 1px rgba(156,192,255,.3),0 12px 24px -16px rgba(5,10,40,.45);}
+  #pricing .seg button:hover,#pricing .pcard:hover{box-shadow:0 10px 22px -16px rgba(20,16,30,.28);}
+  #apps .store:hover,.b-btn:hover{box-shadow:0 8px 16px -12px rgba(20,16,30,.3);}
+  #faq .qrow:hover{box-shadow:0 8px 16px -14px rgba(20,16,30,.25);}
+  .b-conn:hover{box-shadow:0 12px 24px -16px rgba(20,16,30,.3),0 0 0 1px var(--b-line);}
+}
+.b-tilt-card,.b-mini,.b-float-card{box-shadow:0 10px 22px -14px rgba(8,10,30,.4);}
+.b-ic{box-shadow:0 8px 16px -10px rgba(20,16,30,.35);}
+.b-step-shot{box-shadow:0 10px 20px -14px rgba(20,16,30,.35);}
+.b-mini-plans button{box-shadow:0 6px 14px -10px rgba(20,16,30,.3);}
+.b-conn{box-shadow:0 10px 22px -16px rgba(20,16,30,.3),0 0 0 1px var(--b-line);}
+.b-power{box-shadow:0 10px 22px -14px rgba(20,16,30,.35);}
+header .nav{box-shadow:0 6px 18px -14px rgba(20,16,30,.3);}
+.fab .toggle{box-shadow:0 8px 18px -10px rgba(225,39,48,.5);}
