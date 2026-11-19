@@ -363,3 +363,12 @@ header .nav{box-shadow:0 6px 18px -14px rgba(20,16,30,.3);}
 @media (max-width:899px) and (max-height:700px){
   #why.is-pinned .b-rail{padding-inline:calc((100% - min(58vw,240px)) / 2);}
 }
+
+/* phones: every region card full width. The tablet rule for the first two
+   cards (:nth-child(-n+2), span 1) out-ranked the plain phone rule, so Asia
+   stayed half width beside an empty cell. */
+@media(max-width:560px){
+  #servers .rows:not(.skel) > .rowi,
+  #servers .rows:not(.skel) > .rowi:first-child,
+  #servers .rows:not(.skel) > .rowi:nth-child(-n+2){grid-column:1 / -1;min-height:190px;}
+}
