@@ -106,7 +106,7 @@ header,main,footer,.sheet,.fab{--b-bg:#F4F3F6;}
 :root{
   --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --mesh-red:
-radial-gradient(75% 95% at 100% 100%,rgba(52,84,255,.95) 0%,rgba(64,92,255,.6) 30%,transparent 68%),    radial-gradient(50% 65% at 60% 108%,rgba(124,58,237,.6),transparent 66%),    radial-gradient(45% 60% at 82% 10%,rgba(214,32,122,.45),transparent 62%),    radial-gradient(60% 80% at 8% 0%,rgba(255,92,80,.5),transparent 60%),    linear-gradient(135deg,#E12730 0%,#C81E3A 55%,#8E1846 100%);
+    radial-gradient(70% 90% at 0% 0%,rgba(255,84,74,.5),transparent 60%),radial-gradient(95% 125% at 100% 100%,#0D1E3C 0%,rgba(15,34,84,.92) 30%,rgba(21,42,82,.55) 52%,transparent 78%),radial-gradient(45% 55% at 92% 6%,rgba(214,32,122,.32),transparent 60%),linear-gradient(125deg,#E12730 0%,#CC1F36 38%,#7A1A44 62%,#1A2752 85%,#0D1E3C 100%);
   --mesh-navy:
     radial-gradient(65% 80% at 0% 0%,rgba(59,130,246,.65),transparent 60%),
     radial-gradient(50% 65% at 100% 0%,rgba(139,92,246,.45),transparent 62%),
@@ -117,8 +117,8 @@ radial-gradient(75% 95% at 100% 100%,rgba(52,84,255,.95) 0%,rgba(64,92,255,.6) 3
 
 /* red cards */
 .b-tile.red,#pricing .trial,.sec-cta .cta{
-  background:var(--grain),var(--mesh-red) !important;background-size:auto,135% 135%,135% 135%,135% 135%,135% 135%,100% 100% !important;background-position:0 0,100% 100%,50% 100%,100% 0%,0% 0%,0 0 !important;
-  box-shadow:var(--edge-glass),0 40px 80px -40px rgba(225,39,48,.6),0 30px 70px -45px rgba(64,92,255,.7) !important;
+  background:var(--grain),var(--mesh-red) !important;background-size:auto,135% 135%,135% 135%,135% 135%,100% 100% !important;background-position:0 0,0% 0%,100% 100%,100% 0%,0 0 !important;
+  box-shadow:var(--edge-glass),0 40px 80px -40px rgba(225,39,48,.6),0 30px 70px -45px rgba(13,30,60,.75) !important;
 }
 /* navy cards */
 .b-live,.b-tile.dark,#faq .qpanel,#pricing .seg button.on{
