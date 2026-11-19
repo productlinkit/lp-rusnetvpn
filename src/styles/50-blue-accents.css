@@ -178,3 +178,7 @@ body{background:
   0%{background-position:0 0,100% 100%,50% 100%,100% 0%,0% 0%,0 0;}
   100%{background-position:0 0,75% 70%,30% 80%,70% 25%,25% 20%,0 0;}
 }
+
+/* the grey "Not sure which download to pick?" box under the store buttons is
+   removed. Hidden rather than deleted: interactions.js still renders into it. */
+#apps .pc{display:none !important;}
