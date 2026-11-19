@@ -1,0 +1,104 @@
+/* ==========================================================================
+   BLUE ACCENTS — red + navy as a pair, not red alone
+   ==========================================================================
+   The page read as one flat red. Red stays the *action* colour (primary
+   buttons, the arrow chips, the trial card, the CTA, "connected"), and the
+   brand navy takes over the *structure*: dark surfaces, photo veils, second
+   tints and secondary marks. Every white-on-navy pair below is ≥ 12:1 and the
+   blue text tokens clear 4.5:1 on their tints. */
+
+:root{
+  --n-deep:#0D1E3C; --n-deep-2:#152A52; --n-ink:#08142A;
+  --n-blue:#2563EB; --n-blue-2:#3B82F6; --n-blue-text:#1D4ED8;   /* 6.0:1 on --n-sky */
+  --n-sky:#E8EFFC; --n-sky-2:#F2F6FD; --n-ice:#BFD3F7;
+}
+
+/* ---------- page: a cool paper instead of a pink one ---------- */
+body{background:#F2F4F8;}
+header,main,footer,.sheet,.fab{--b-bg:#F2F4F8;}
+header .nav{box-shadow:0 10px 30px -24px rgba(8,20,42,.45);}
+#prog{background:linear-gradient(90deg,var(--b-red),var(--n-blue));}
+
+/* section kickers: alternate the dot so it is not red on every heading */
+main section:nth-of-type(even) .b-kicker{color:var(--n-blue-text);}
+main section:nth-of-type(even) .b-kicker::before{background:var(--n-blue);}
+
+/* ---------- hero: navy veil over the photo ---------- */
+.b-hero-card::before{background:
+  radial-gradient(60% 80% at 100% 100%,rgba(225,39,48,.28),transparent 60%),
+  linear-gradient(90deg,rgba(8,20,42,.9) 0%,rgba(13,30,60,.6) 42%,rgba(13,30,60,0) 70%),
+  linear-gradient(0deg,rgba(8,20,42,.6),rgba(8,20,42,0) 45%);}
+.b-hero h1 em{color:#9CC0FF;}
+.b-hero .conn{background:rgba(8,20,42,.55);}
+.b-hero .stats .st:nth-child(even) .n em{color:var(--n-blue);}
+@media(max-width:900px){
+  .b-hero-card::before{background:linear-gradient(0deg,rgba(8,20,42,.94) 0%,rgba(8,20,42,.6) 55%,rgba(8,20,42,.1) 100%);}
+  .b-hero-card{background:var(--n-deep);}
+  .b-hero-copy::before{background:linear-gradient(180deg,rgba(13,30,60,0),var(--n-deep) 60px);}
+}
+
+/* ---------- why: photo cards alternate red and navy veils ---------- */
+.b-svc::before{background:linear-gradient(0deg,rgba(8,20,42,.92) 0%,rgba(8,20,42,.5) 40%,rgba(8,20,42,0) 62%);}
+.b-svc:nth-child(3n+2)::before{background:linear-gradient(0deg,rgba(60,6,14,.92) 0%,rgba(60,6,14,.5) 40%,rgba(60,6,14,0) 62%);}
+
+/* ---------- how: folders go red / blue / red / blue, the live phone on navy ---------- */
+.s2 .b-folder{background:var(--n-sky);} .s2 .b-folder h3{color:var(--n-blue-text);}
+.s4 .b-folder{background:#E6ECF7;} .s4 .b-folder h3{color:var(--n-deep-2);}
+.b-ic.i2{background:linear-gradient(150deg,var(--n-blue-2),#1E3A8A);}
+.b-ic.i3{background:linear-gradient(150deg,var(--n-deep-2),var(--n-ink));}
+.b-note-arrow{color:var(--n-blue);}
+.b-live{background:linear-gradient(165deg,var(--n-deep-2),var(--n-ink));}
+.b-phone,.b-notch{background:#050B18;}
+
+/* ---------- features bento: dark tiles go navy, one soft tile goes sky ---------- */
+.b-tile.dark{background:linear-gradient(160deg,var(--n-deep-2),var(--n-deep));}
+.b-tile.dark:nth-of-type(4){background:linear-gradient(160deg,#1E3A8A,var(--n-ink));}
+.t-reach.soft{background:var(--n-sky);}
+.t-reach .b-faces img,.t-reach .b-faces span{border-color:var(--n-sky);}
+.b-faces span,.b-float-card,.b-tilt-card{background:var(--n-deep);}
+.b-ring{background:conic-gradient(var(--b-red) 0 72%,var(--n-blue-2) 72% 86%,#E3E8F1 86%);}
+.b-vs-row .them{color:#5A6577;}
+
+/* ---------- servers: navy veil, red on hover ---------- */
+#servers .rowi{background:var(--img,none) center/cover no-repeat,linear-gradient(150deg,var(--n-deep-2),var(--n-ink));}
+#servers .rowi::before{background:linear-gradient(0deg,rgba(8,20,42,.9),rgba(8,20,42,.2) 60%,rgba(8,20,42,0));}
+@media(hover:hover){
+  #servers .rowi:hover::before{background:linear-gradient(0deg,rgba(150,14,24,.9),rgba(60,6,14,.25) 60%,rgba(60,6,14,0));}
+}
+#servers .skel-bar{background:#E3E8F1;}
+
+/* ---------- apps ---------- */
+#apps .appshot{background:linear-gradient(160deg,var(--n-sky),#DCE6FA);}
+#apps .applist .tick{background:var(--n-sky);color:var(--n-blue-text);}
+#apps .store:hover{background:var(--n-sky);}
+
+/* ---------- pricing: folders alternate, the picked term goes navy ---------- */
+#pricing .seg button:nth-child(2){background:var(--n-sky);}
+#pricing .seg button:nth-child(4){background:#E6ECF7;}
+#pricing .seg button:nth-child(5){background:var(--n-sky-2);}
+#pricing .seg button.on{background:linear-gradient(150deg,var(--n-deep-2),var(--n-ink));color:#fff;}
+#pricing .seg button.on .segsave{color:#9CC0FF;}
+#pricing .pcard .btn-red{background:var(--n-deep);}
+#pricing .trial{background:
+  radial-gradient(70% 70% at 100% 100%,rgba(37,99,235,.45),transparent 60%),
+  linear-gradient(160deg,var(--b-red) 0%,var(--b-red-2) 45%,var(--b-deep) 100%) !important;}
+
+/* ---------- faq: navy answer panel, sky open row ---------- */
+#faq .qrow.is-on{background:var(--n-sky);}
+#faq .qrow.is-on .qn,#faq .qrow.is-on .qc{color:var(--n-blue-text);}
+#faq .qpanel{background:linear-gradient(165deg,var(--n-deep-2),var(--n-ink));}
+
+/* ---------- cta: red that fades into navy ---------- */
+.sec-cta .cta{background:
+  radial-gradient(60% 90% at 100% 100%,rgba(37,99,235,.55),transparent 62%),
+  linear-gradient(135deg,var(--b-red) 0%,var(--b-red-2) 45%,var(--n-deep) 100%);}
+.sec-cta .cta .form .btn-red{background:var(--n-deep);}
+
+/* ---------- auth + account: navy side panels ---------- */
+.auth-side{background:linear-gradient(160deg,var(--n-deep-2) 0%,var(--n-deep) 50%,var(--n-ink) 100%);}
+.auth-side .auth-veil{background:linear-gradient(180deg,rgba(13,30,60,.2) 0%,rgba(13,30,60,0) 22%,rgba(13,30,60,.7) 52%,var(--n-deep) 66%,var(--n-ink) 100%);}
+#acp-overview .ac-stat:nth-child(2){background:var(--n-sky);}
+
+@media(forced-colors:active){
+  #prog,.b-live,.b-tile.dark,#faq .qpanel,.sec-cta .cta{background:Canvas;}
+}
