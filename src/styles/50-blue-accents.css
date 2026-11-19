@@ -215,3 +215,9 @@ header .nav{box-shadow:0 6px 18px -14px rgba(20,16,30,.3);}
 .b-about-img img{object-position:50% 50%;}
 @media(max-width:860px){.b-about{grid-template-columns:1fr;}}
 @media(max-width:640px){.b-about-img{aspect-ratio:16/9;}.b-about-img img{aspect-ratio:16/9;}}
+
+/* hero photo (two people centred in a 3:2 shot): zoom in and slide the frame
+   so they stand in the right half, clear of the headline */
+@media(min-width:901px){
+  .b-hero-img{width:160%;max-width:none;left:-8%;right:auto;object-position:50% 22%;}
+}
