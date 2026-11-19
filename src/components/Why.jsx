@@ -38,6 +38,16 @@ export default function Why() {
       const t = travel > 0 ? Math.min(1, Math.max(0, -s.getBoundingClientRect().top / travel)) : 0;
       r.style.transform = `translate3d(${-t * dist}px,0,0)`;
       if (bar.current) bar.current.style.transform = `scaleX(${t})`;
+      /* coverflow: the card nearest the middle of the screen is full size and
+         upright; the further out, the smaller and the more it turns away */
+      const mid = window.innerWidth / 2;
+      r.querySelectorAll('.b-svc').forEach((card) => {
+        const b = card.getBoundingClientRect();
+        const d = Math.max(-1, Math.min(1, (b.left + b.width / 2 - mid) / (window.innerWidth * 0.6)));
+        card.style.scale = (1 - Math.abs(d) * 0.12).toFixed(3);
+        card.style.rotate = `y ${(-d * 14).toFixed(2)}deg`;
+        card.style.opacity = (1 - Math.abs(d) * 0.25).toFixed(3);
+      });
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
     const setup = () => {
@@ -47,6 +57,7 @@ export default function Why() {
         s.style.height = '';
         r.style.transform = '';
         r.scrollLeft = 0;
+        r.querySelectorAll('.b-svc').forEach((card) => { card.style.scale = ''; card.style.rotate = ''; card.style.opacity = ''; });
         return;
       }
       r.style.transform = '';

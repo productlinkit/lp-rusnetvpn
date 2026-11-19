@@ -242,3 +242,66 @@ header .nav{box-shadow:0 6px 18px -14px rgba(20,16,30,.3);}
 #why.is-pinned .b-svc{flex-basis:clamp(300px,27vw,400px);}
 @media(max-height:820px){#why.is-pinned .b-svc{flex-basis:clamp(260px,22vw,330px);}}
 #why.is-pinned .b-why-prog{width:100%;}
+
+/* ==========================================================================
+   SCROLL STORY — a different scroll-linked move for every section
+   ==========================================================================
+   All scrubbed to the scroll position (they run backwards when you scroll
+   back up), all on the compositor via animation-timeline. Browsers without
+   scroll timelines, and anyone with reduced motion, get the page as it was.
+   Only individual transform properties (translate/scale/rotate) are animated,
+   so the pointer tilt on cards keeps working. Fill is "backwards" where a
+   hover also moves the element, so the hover lift is back once a card lands. */
+#why.is-pinned .b-rail{perspective:1400px;}
+#why.is-pinned .b-svc{transition:scale .15s linear,rotate .15s linear,opacity .15s linear;}
+
+@supports (animation-timeline: view()){
+@media (prefers-reduced-motion: no-preference){
+
+  /* 1. hero: the photo card sinks back and rounds off as you scroll past */
+  .b-hero-card{animation:st-hero linear both;animation-timeline:view();animation-range:exit 0% exit 90%;transform-origin:50% 0;}
+  @keyframes st-hero{to{scale:.9;border-radius:48px;opacity:.55;}}
+  .b-hero .stats{animation:st-stats linear both;animation-timeline:view();animation-range:exit 0% exit 100%;}
+  @keyframes st-stats{to{translate:0 -40px;opacity:0;}}
+
+  /* 2. about: the sentence lights up word by word */
+  .b-statement{view-timeline:--stmt block;}
+  .b-statement .b-word{opacity:.16;animation:st-word linear both;animation-timeline:--stmt;
+    animation-range:cover calc(18% + var(--p) * 34%) cover calc(22% + var(--p) * 34%);}
+  @keyframes st-word{to{opacity:1;}}
+  .b-about-img img{animation:st-about-img linear both;animation-timeline:view();animation-range:entry 0% cover 50%;}
+  @keyframes st-about-img{from{scale:1.25;rotate:-3deg;}to{scale:1;rotate:0deg;}}
+
+  /* 4. steps: each card swings up from below, one after the other */
+  main .b-step.b-step{animation:st-step linear backwards;animation-timeline:view();animation-range:entry 0% cover 38%;transform-origin:50% 100%;}
+  main .b-step.s2,main .b-step.s4{animation-range:entry 10% cover 46%;}
+  @keyframes st-step{from{translate:0 160px;rotate:-9deg;scale:.86;opacity:0;}}
+  main .b-step.s2.s2,main .b-step.s4.s4{animation-name:st-step-r;}
+  @keyframes st-step-r{from{translate:0 160px;rotate:9deg;scale:.86;opacity:0;}}
+  main .b-live.b-live{animation:st-live linear backwards;animation-timeline:view();animation-range:entry 0% cover 40%;}
+  @keyframes st-live{from{translate:120px 0;rotate:6deg;opacity:0;}}
+
+  /* 5. features: tiles come in from alternating sides with a 3D turn */
+  .b-bento{perspective:1600px;}
+  main .b-tile.b-tile{animation:st-tile-l linear backwards;animation-timeline:view();animation-range:entry 0% cover 35%;}
+  main .b-tile.b-tile:nth-child(even){animation-name:st-tile-r;}
+  @keyframes st-tile-l{from{translate:-140px 60px;rotate:y 28deg;scale:.9;opacity:0;}}
+  @keyframes st-tile-r{from{translate:140px 60px;rotate:y -28deg;scale:.9;opacity:0;}}
+  .b-tilt-card{animation:st-tilt linear backwards;animation-timeline:view();animation-range:entry 20% cover 45%;}
+  @keyframes st-tilt{from{translate:0 80px;rotate:-24deg;}}
+
+  /* 6. servers: the navy band opens out from a small card to full size */
+  #servers{animation:st-band linear both;animation-timeline:view();animation-range:entry 0% entry 90%;}
+  @keyframes st-band{from{clip-path:inset(8% 14% round 64px);}to{clip-path:inset(0 0 round 32px);}}
+  #servers h2{animation:st-h2 linear both;animation-timeline:view();animation-range:entry 20% cover 40%;}
+  @keyframes st-h2{from{translate:0 60px;letter-spacing:.06em;opacity:0;}}
+
+  /* 7. pricing: the plan tabs drop in one by one like folders onto a desk */
+  #pricing .seg button{animation:st-drop linear backwards;animation-timeline:view();
+    animation-range:entry calc(var(--i,0) * 12%) cover calc(28% + var(--i,0) * 4%);transform-origin:20% 0;}
+  @keyframes st-drop{from{translate:0 -120px;rotate:calc(-14deg + var(--i,0) * 6deg);opacity:0;}}
+
+  /* 8. cta: the closing card grows out of the page */
+  main .sec-cta .cta.cta{animation:st-cta linear backwards;animation-timeline:view();animation-range:entry 0% cover 45%;}
+  @keyframes st-cta{from{scale:.72;border-radius:120px;opacity:.2;}}
+}}
