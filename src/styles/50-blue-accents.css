@@ -372,3 +372,42 @@ header .nav{box-shadow:0 6px 18px -14px rgba(20,16,30,.3);}
   #servers .rows:not(.skel) > .rowi:first-child,
   #servers .rows:not(.skel) > .rowi:nth-child(-n+2){grid-column:1 / -1;min-height:190px;}
 }
+
+/* CTA: the placeholder was white on the white email field */
+.sec-cta .cta .form input::placeholder{color:#8A8F99;opacity:1;}
+
+/* ---------- plan comparison on phones: one card per plan ----------
+   The table had a 520px minimum and scrolled sideways on a phone. Here each
+   row becomes a card: plan + Choose on top, per-month and total side by side,
+   saving underneath. The cells carry their column name in data-label, so the
+   labels the hidden header row gave are still there. Screen readers keep the
+   table semantics (the header row is only visually hidden). */
+@media(max-width:640px){
+  #pricing .cmp-scroll{overflow:visible;}
+  #pricing .cmp table{display:block;min-width:0;}
+  #pricing .cmp caption{display:block;text-align:left;padding:0 2px 12px;}
+  #pricing .cmp thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+  #pricing .cmp tbody{display:grid;gap:10px;}
+  #pricing .cmp tbody tr{
+    display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"plan pick" "mo tot" "sv sv";
+    gap:12px 14px;padding:16px 16px 14px;border-radius:18px;background:#fff;border:1px solid var(--b-line,rgba(0,0,0,.08));
+  }
+  #pricing .cmp tbody tr.is-best{background:linear-gradient(160deg,#EAF0FB,#fff 70%);border-color:rgba(37,99,235,.35);}
+  #pricing .cmp th,#pricing .cmp td{padding:0;border:0;}
+  #pricing .cmp .plan{grid-area:plan;align-self:center;font-size:17px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+  #pricing .cmp .plan .ac-tag{margin-left:0 !important;}
+  #pricing .cmp .pick{grid-area:pick;justify-self:end;align-self:center;}
+  #pricing .cmp td.mo{grid-area:mo;}
+  #pricing .cmp td.tot{grid-area:tot;}
+  #pricing .cmp td.save-c{grid-area:sv;padding-top:12px;border-top:1px dashed rgba(0,0,0,.12);}
+  #pricing .cmp td[data-label]::before{content:attr(data-label);display:block;margin-bottom:3px;font-size:12px;font-weight:500;letter-spacing:.02em;color:var(--b-muted,#6b7280);}
+  #pricing .cmp td.save-c .sv br{display:none;}
+  #pricing .cmp td.save-c .sv > span{display:block;margin-top:2px;}
+}
+/* narrow phones: email field on its own row, the button full width under it,
+   so the placeholder and what people type are not cut off by the button */
+@media(max-width:520px){
+  .sec-cta .cta .form{flex-direction:column;border-radius:26px;padding:8px;gap:8px;width:100%;}
+  .sec-cta .cta .form input{width:100%;padding:14px 16px;text-align:center;}
+  .sec-cta .cta .form .btn-red{width:100%;justify-content:center;min-height:48px;}
+}

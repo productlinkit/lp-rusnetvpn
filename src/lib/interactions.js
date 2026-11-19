@@ -1167,9 +1167,9 @@ cmpBody.innerHTML = PLANS.map(function(p, i){
     : '<span class="sv none">' + (i === BASE_PLAN ? 'Baseline rate' : '—') + '</span>';
   return '<tr' + (p === BEST ? ' class="is-best"' : '') + '>' +
       '<th scope="row" class="plan">' + p.short + (p === BEST ? ' <span class="ac-tag good" style="font-size:10px;padding:4px 8px;margin-left:6px">Best deal</span>' : '') + '</th>' +
-      '<td class="mo">' + money(p.perMonth) + '</td>' +
-      '<td class="tot">' + money(p.price) + ' <span style="color:var(--muted)">once</span></td>' +
-      '<td>' + saving + '</td>' +
+      '<td class="mo" data-label="Per month">' + money(p.perMonth) + '</td>' +
+      '<td class="tot" data-label="You pay">' + money(p.price) + ' <span style="color:var(--muted)">once</span></td>' +
+      '<td class="save-c" data-label="Saving">' + saving + '</td>' +
       '<td class="pick"><button type="button" class="btn btn-ghost" data-pick="' + i + '">Choose</button></td>' +
     '</tr>';
 }).join('');
