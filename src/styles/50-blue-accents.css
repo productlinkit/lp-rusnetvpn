@@ -204,3 +204,6 @@ body{background:
 .b-power{box-shadow:0 10px 22px -14px rgba(20,16,30,.35);}
 header .nav{box-shadow:0 6px 18px -14px rgba(20,16,30,.3);}
 .fab .toggle{box-shadow:0 8px 18px -10px rgba(225,39,48,.5);}
+
+/* new About artwork (16:9 in a 4:3 frame): keep the phone and the icon cluster in view */
+.b-about-img img{object-position:72% 50%;}
