@@ -256,7 +256,7 @@ header .nav{box-shadow:0 6px 18px -14px rgba(20,16,30,.3);}
 #why.is-pinned .b-svc{transition:scale .15s linear,rotate .15s linear,opacity .15s linear;}
 
 @supports (animation-timeline: view()){
-@media (prefers-reduced-motion: no-preference){
+@media (prefers-reduced-motion: no-preference) and (min-width: 900px){
 
   /* 1. hero: the photo card sinks back and rounds off as you scroll past */
   .b-hero-card{animation:st-hero linear both;animation-timeline:view();animation-range:exit 0% exit 90%;transform-origin:50% 0;}
