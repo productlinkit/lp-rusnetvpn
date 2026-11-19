@@ -305,3 +305,61 @@ header .nav{box-shadow:0 6px 18px -14px rgba(20,16,30,.3);}
   main .sec-cta .cta.cta{animation:st-cta linear backwards;animation-timeline:view();animation-range:entry 0% cover 45%;}
   @keyframes st-cta{from{scale:.72;border-radius:120px;opacity:.2;}}
 }}
+
+/* ---------- Why pinned on phones ----------
+   A phone screen has room for the heading and one card, so the side copy and
+   arrows step aside (the scroll does what the arrows did) and the cards are
+   sized to sit whole under the heading. */
+@media (max-width:899px){
+  #why.is-pinned .b-why-pin{padding-top:84px;justify-content:center;}
+  #why.is-pinned .b-head{margin-bottom:18px;}
+  #why.is-pinned .b-head-side{display:none;}
+  #why.is-pinned .b-svc{flex-basis:min(72vw,300px);}
+  #why.is-pinned .b-why-prog{margin-top:18px;}
+}
+@media (max-width:899px) and (max-height:700px){
+  #why.is-pinned .b-svc{flex-basis:min(58vw,240px);}
+}
+
+/* ---------- scroll story on phones ----------
+   Same ideas as desktop, retimed for tall cards: every move finishes while
+   the card is still coming in (entry range), so once a card is on screen it
+   is at full size. The hero card is left alone. */
+@supports (animation-timeline: view()){
+@media (prefers-reduced-motion: no-preference) and (max-width: 899px){
+  .b-statement{view-timeline:--stmt block;}
+  .b-statement .b-word{opacity:.16;animation:st-word linear both;animation-timeline:--stmt;
+    animation-range:cover calc(12% + var(--p) * 38%) cover calc(16% + var(--p) * 38%);}
+  @keyframes st-word{to{opacity:1;}}
+
+  .b-hero .stats .st{animation:st-m-rise linear backwards;animation-timeline:view();animation-range:entry 0% entry 100%;}
+  @keyframes st-m-rise{from{translate:0 60px;scale:.94;opacity:0;}}
+
+  main .b-step.b-step{animation:st-m-step linear backwards;animation-timeline:view();animation-range:entry 0% entry 70%;transform-origin:50% 100%;}
+  main .b-step.s2.s2,main .b-step.s4.s4{animation-name:st-m-step-r;}
+  @keyframes st-m-step{from{translate:0 120px;rotate:-6deg;opacity:0;}}
+  @keyframes st-m-step-r{from{translate:0 120px;rotate:6deg;opacity:0;}}
+  main .b-live.b-live{animation:st-m-rise linear backwards;animation-timeline:view();animation-range:entry 0% entry 60%;}
+
+  main .b-tile.b-tile{animation:st-m-tile-l linear backwards;animation-timeline:view();animation-range:entry 0% entry 70%;}
+  main .b-tile.b-tile:nth-child(even){animation-name:st-m-tile-r;}
+  @keyframes st-m-tile-l{from{translate:-70% 0;rotate:-4deg;opacity:0;}}
+  @keyframes st-m-tile-r{from{translate:70% 0;rotate:4deg;opacity:0;}}
+
+  #servers{animation:st-band linear both;animation-timeline:view();animation-range:entry 0% entry 45%;}
+  @keyframes st-band{from{clip-path:inset(4% 8% round 48px);}to{clip-path:inset(0 0 round 32px);}}
+  #servers .rowi{animation:st-m-rise linear backwards;animation-timeline:view();animation-range:entry 0% entry 80%;}
+
+  #pricing .seg button{animation:st-drop linear backwards;animation-timeline:view();animation-range:entry 0% entry 100%;transform-origin:20% 0;}
+  @keyframes st-drop{from{translate:0 -80px;rotate:calc(-10deg + var(--i,0) * 5deg);opacity:0;}}
+
+  main .sec-cta .cta.cta{animation:st-m-cta linear backwards;animation-timeline:view();animation-range:entry 0% entry 80%;}
+  @keyframes st-m-cta{from{scale:.88;opacity:.4;}}
+}}
+/* phones: first and last card rest in the middle of the screen, not cut at the edge */
+@media (max-width:899px){
+  #why.is-pinned .b-rail{padding-inline:calc((100% - min(72vw,300px)) / 2);scroll-padding-inline:0;}
+}
+@media (max-width:899px) and (max-height:700px){
+  #why.is-pinned .b-rail{padding-inline:calc((100% - min(58vw,240px)) / 2);}
+}

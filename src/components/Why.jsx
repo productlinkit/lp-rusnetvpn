@@ -20,15 +20,16 @@ export default function Why() {
   const bar = useRef(null);
   const pinned = useRef(false);
 
-  /* Scroll trigger: on wide screens with motion allowed, the section pins to
+  /* Scroll trigger: with motion allowed, the section pins to
      the viewport and the vertical scroll drives the rail sideways. The page
      only moves on once the last card is in view. One pixel down = one pixel
      across, so the section is exactly as much taller as the rail overflows.
-     Narrow screens and reduced motion keep the plain swipeable rail. */
+     Reduced motion keeps the plain swipeable rail. */
   useEffect(() => {
     const s = sec.current, p = pin.current, r = rail.current;
     if (!s || !p || !r) return undefined;
-    const mq = window.matchMedia('(min-width: 900px) and (prefers-reduced-motion: no-preference)');
+    /* every width, phones included; only reduced motion keeps the plain swipe rail */
+    const mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
     let dist = 0, raf = 0;
 
     const update = () => {
@@ -41,11 +42,14 @@ export default function Why() {
       /* coverflow: the card nearest the middle of the screen is full size and
          upright; the further out, the smaller and the more it turns away */
       const mid = window.innerWidth / 2;
+      const narrow = window.innerWidth < 900;
+      const turn = narrow ? 6 : 14;          // a phone has less room for the cards to swing
+      const shrink = narrow ? 0.08 : 0.12;
       r.querySelectorAll('.b-svc').forEach((card) => {
         const b = card.getBoundingClientRect();
         const d = Math.max(-1, Math.min(1, (b.left + b.width / 2 - mid) / (window.innerWidth * 0.6)));
-        card.style.scale = (1 - Math.abs(d) * 0.12).toFixed(3);
-        card.style.rotate = `y ${(-d * 14).toFixed(2)}deg`;
+        card.style.scale = (1 - Math.abs(d) * shrink).toFixed(3);
+        card.style.rotate = `y ${(-d * turn).toFixed(2)}deg`;
         card.style.opacity = (1 - Math.abs(d) * 0.25).toFixed(3);
       });
     };
@@ -61,7 +65,14 @@ export default function Why() {
         return;
       }
       r.style.transform = '';
-      dist = Math.max(0, r.scrollWidth - r.clientWidth);
+      /* measured from the last card, not scrollWidth: browsers leave the
+         rail's end padding out of scrollWidth, which let the last card run
+         past the right edge */
+      const lastCard = r.querySelector('.b-svc:last-child');
+      const padEnd = parseFloat(getComputedStyle(r).paddingRight) || 0;
+      dist = lastCard
+        ? Math.max(0, lastCard.offsetLeft - r.offsetLeft + lastCard.offsetWidth + padEnd - r.clientWidth)
+        : Math.max(0, r.scrollWidth - r.clientWidth);
       s.style.height = `${p.offsetHeight + dist}px`;
       update();
     };
