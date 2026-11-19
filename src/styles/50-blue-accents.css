@@ -207,3 +207,11 @@ header .nav{box-shadow:0 6px 18px -14px rgba(20,16,30,.3);}
 
 /* new About artwork (16:9 in a 4:3 frame): keep the phone and the icon cluster in view */
 .b-about-img img{object-position:72% 50%;}
+
+/* About: a landscape frame (the artwork is 16:9) and a wider image column,
+   so the whole picture shows instead of a square crop */
+.b-about{grid-template-columns:minmax(0,6fr) minmax(0,6fr);}
+.b-about-img{aspect-ratio:16/9;}
+.b-about-img img{object-position:50% 50%;}
+@media(max-width:860px){.b-about{grid-template-columns:1fr;}}
+@media(max-width:640px){.b-about-img{aspect-ratio:16/9;}.b-about-img img{aspect-ratio:16/9;}}
