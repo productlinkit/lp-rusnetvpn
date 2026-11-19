@@ -36,4 +36,51 @@
 #servers .state .si{background:rgba(255,255,255,.1);color:#fff;}
 #servers .state h3{color:#fff;}
 
-@media(forced-colors:active){#servers{background:Canvas !important;color:CanvasText;}}
+/* ==========================================================================
+   CARDS — blue that matches the red, by one rule everywhere
+   ==========================================================================
+   Rule 1: every dark card is navy, and carries a faint red glow in a corner.
+   Rule 2: every red card carries a faint blue glow in the opposite corner.
+   Rule 3: light blue tints are soft (#EAF0FB) so they sit next to the blush
+           tints without a jump. Red stays the colour of every action. */
+:root{
+  --n-deep:#0D1E3C; --n-deep-2:#152A52; --n-ink:#08142A; --n-blue:#2563EB; --n-blue-text:#1D4ED8;
+  --n-tint:#EAF0FB; --n-tint-2:#F1F5FC;
+  --navy-card:
+    radial-gradient(70% 60% at 100% 0%,rgba(225,39,48,.20),transparent 65%),
+    linear-gradient(165deg,var(--n-deep-2) 0%,var(--n-deep) 60%,var(--n-ink) 100%);
+  --red-blue-glow:radial-gradient(70% 70% at 100% 100%,rgba(37,99,235,.38),transparent 62%);
+}
+body{background:#F4F3F6;}
+header,main,footer,.sheet,.fab{--b-bg:#F4F3F6;}
+
+/* rule 1 — dark cards */
+.b-live,.b-tile.dark,#faq .qpanel{background:var(--navy-card);}
+.b-phone,.b-notch{background:#050B18;}
+.b-float-card,.b-tilt-card,.b-faces span{background:var(--n-deep);}
+#pricing .seg button.on{background:var(--navy-card);}
+#pricing .seg button.on .segsave{color:#9CC0FF;}
+.b-ic.i2{background:linear-gradient(150deg,#4F7BEA,#1E3A8A);}
+.b-ic.i3{background:linear-gradient(150deg,var(--n-deep-2),var(--n-ink));}
+
+/* rule 2 — red cards */
+.b-tile.red{background:var(--red-blue-glow),var(--b-red);}
+#pricing .trial{background:var(--red-blue-glow),linear-gradient(160deg,var(--b-red) 0%,var(--b-red-2) 45%,var(--b-deep) 100%) !important;}
+.sec-cta .cta{background:var(--red-blue-glow),linear-gradient(135deg,var(--b-red) 0%,var(--b-red-2) 55%,#7A0E18 100%);}
+
+/* rule 3 — soft blue tints, one per group, beside the navy cards */
+.s4 .b-folder{background:var(--n-tint);} .s4 .b-folder h3{color:var(--n-blue-text);}
+.s2 .b-folder{background:var(--n-tint-2);} .s2 .b-folder h3{color:var(--n-deep-2);}
+.t-reach.soft{background:var(--n-tint);}
+.t-reach .b-faces img,.t-reach .b-faces span{border-color:var(--n-tint);}
+.b-ring{background:conic-gradient(var(--b-red) 0 72%,#7FA2F0 72% 86%,#ECEAF0 86%);}
+#pricing .seg button:nth-child(4){background:var(--n-tint);}
+#pricing .seg button:nth-child(2){background:var(--n-tint-2);}
+#apps .appshot{background:linear-gradient(160deg,var(--b-blush) 0%,var(--n-tint) 100%);}
+.auth-side{background:var(--navy-card);}
+.auth-side .auth-veil{background:linear-gradient(180deg,rgba(13,30,60,.2) 0%,rgba(13,30,60,0) 22%,rgba(13,30,60,.7) 52%,var(--n-deep) 66%,var(--n-ink) 100%);}
+
+@media(forced-colors:active){
+  #servers{background:Canvas !important;color:CanvasText;}
+  .b-live,.b-tile.dark,#faq .qpanel,.b-tile.red,.sec-cta .cta{background:Canvas;}
+}
