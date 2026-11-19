@@ -311,7 +311,7 @@ export default function Pricing() {
                       You pay
                     </th>
                     <th scope="col">
-                      Saving
+                      vs 1 month
                     </th>
                     <th scope="col">
                       <span className="sr-only">

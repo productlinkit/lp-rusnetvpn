@@ -375,39 +375,87 @@ header .nav{box-shadow:0 6px 18px -14px rgba(20,16,30,.3);}
 
 /* CTA: the placeholder was white on the white email field */
 .sec-cta .cta .form input::placeholder{color:#8A8F99;opacity:1;}
-
-/* ---------- plan comparison on phones: one card per plan ----------
-   The table had a 520px minimum and scrolled sideways on a phone. Here each
-   row becomes a card: plan + Choose on top, per-month and total side by side,
-   saving underneath. The cells carry their column name in data-label, so the
-   labels the hidden header row gave are still there. Screen readers keep the
-   table semantics (the header row is only visually hidden). */
-@media(max-width:640px){
-  #pricing .cmp-scroll{overflow:visible;}
-  #pricing .cmp table{display:block;min-width:0;}
-  #pricing .cmp caption{display:block;text-align:left;padding:0 2px 12px;}
-  #pricing .cmp thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
-  #pricing .cmp tbody{display:grid;gap:10px;}
-  #pricing .cmp tbody tr{
-    display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"plan pick" "mo tot" "sv sv";
-    gap:12px 14px;padding:16px 16px 14px;border-radius:18px;background:#fff;border:1px solid var(--b-line,rgba(0,0,0,.08));
-  }
-  #pricing .cmp tbody tr.is-best{background:linear-gradient(160deg,#EAF0FB,#fff 70%);border-color:rgba(37,99,235,.35);}
-  #pricing .cmp th,#pricing .cmp td{padding:0;border:0;}
-  #pricing .cmp .plan{grid-area:plan;align-self:center;font-size:17px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
-  #pricing .cmp .plan .ac-tag{margin-left:0 !important;}
-  #pricing .cmp .pick{grid-area:pick;justify-self:end;align-self:center;}
-  #pricing .cmp td.mo{grid-area:mo;}
-  #pricing .cmp td.tot{grid-area:tot;}
-  #pricing .cmp td.save-c{grid-area:sv;padding-top:12px;border-top:1px dashed rgba(0,0,0,.12);}
-  #pricing .cmp td[data-label]::before{content:attr(data-label);display:block;margin-bottom:3px;font-size:12px;font-weight:500;letter-spacing:.02em;color:var(--b-muted,#6b7280);}
-  #pricing .cmp td.save-c .sv br{display:none;}
-  #pricing .cmp td.save-c .sv > span{display:block;margin-top:2px;}
-}
 /* narrow phones: email field on its own row, the button full width under it,
    so the placeholder and what people type are not cut off by the button */
 @media(max-width:520px){
   .sec-cta .cta .form{flex-direction:column;border-radius:26px;padding:8px;gap:8px;width:100%;}
   .sec-cta .cta .form input{width:100%;padding:14px 16px;text-align:center;}
   .sec-cta .cta .form .btn-red{width:100%;justify-content:center;min-height:48px;}
+}
+
+/* ==========================================================================
+   PLAN COMPARISON — a visual compare, not a price list
+   ==========================================================================
+   Rows are separate rounded strips (border-spacing), the monthly price is also
+   a bar measured against the dearest plan (--w from interactions.js), and the
+   badge reads against the 1-month rate: green when cheaper, amber when dearer.
+   The best plan is the navy strip. Phones get the same strips, re-flowed into
+   two lines so nothing scrolls sideways. */
+#pricing .cmp{background:#fff;border:0;border-radius:24px;padding:clamp(14px,2vw,24px);box-shadow:none;}
+#pricing .cmp-scroll{overflow:visible;}
+#pricing .cmp table{min-width:0;border-collapse:separate;border-spacing:0 8px;margin-top:-8px;}
+#pricing .cmp caption{caption-side:bottom;text-align:left;padding:8px 4px 0;font-size:13px;color:var(--b-muted,#6b7280);}
+#pricing .cmp thead th{border:0;padding:6px 18px 2px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--b-muted,#6b7280);background:none;}
+#pricing .cmp tbody th,#pricing .cmp tbody td{border:0;padding:16px 18px;background:#F6F7FA;vertical-align:middle;}
+#pricing .cmp tbody tr > :first-child{border-radius:16px 0 0 16px;}
+#pricing .cmp tbody tr > :last-child{border-radius:0 16px 16px 0;}
+#pricing .cmp tbody tr.is-best{background:none;}
+#pricing .cmp tbody tr.is-best > *{background:#1B3A9C;color:#fff;}
+#pricing .cmp tbody tr.is-best > :first-child{background:#1B3A9C;}
+
+#pricing .cmp .plan{font-weight:700;font-size:16px;white-space:nowrap;}
+#pricing .cmp .best-tag{display:inline-block;margin-left:8px;padding:3px 9px;border-radius:999px;background:var(--b-red,#E12730);color:#fff;font-size:11px;font-weight:700;vertical-align:2px;}
+#pricing .cmp td.mo{width:38%;}
+#pricing .cmp .mo-n{display:flex;align-items:baseline;gap:2px;margin-bottom:8px;}
+#pricing .cmp .mo-n b{font-size:19px;font-weight:700;font-variant-numeric:tabular-nums;}
+#pricing .cmp .per{font-size:13px;color:var(--b-muted,#6b7280);}
+#pricing .cmp .bar{display:block;height:8px;border-radius:8px;background:#E4E7EE;overflow:hidden;}
+#pricing .cmp .bar i{display:block;height:100%;width:var(--w);border-radius:8px;background:linear-gradient(90deg,#E12730,#2F4FC4);}
+#pricing .cmp .tot b{font-weight:600;font-variant-numeric:tabular-nums;}
+#pricing .cmp .once{font-size:13px;color:var(--b-muted,#6b7280);}
+#pricing .cmp td.save-c{white-space:nowrap;}
+#pricing .cmp .sv{display:inline-block;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;}
+#pricing .cmp .sv.down{background:#E3F6EC;color:#087040;}
+#pricing .cmp .sv.dear{background:#FFF0E0;color:#B54708;}
+#pricing .cmp .sv.base{background:#ECEEF3;color:#4B5563;}
+#pricing .cmp .svn{display:block;margin-top:4px;font-size:12px;color:var(--b-muted,#6b7280);}
+#pricing .cmp .pick{text-align:right;}
+#pricing .cmp .pick .btn{border-radius:999px;background:#fff;border:1.5px solid rgba(0,0,0,.12);color:var(--b-ink,#1F1416);}
+
+#pricing .cmp tr.is-best .per,#pricing .cmp tr.is-best .once,#pricing .cmp tr.is-best .svn{color:rgba(255,255,255,.75);}
+#pricing .cmp tr.is-best .bar{background:rgba(255,255,255,.18);}
+#pricing .cmp tr.is-best .bar i{background:#fff;}
+#pricing .cmp tr.is-best .sv.down{background:#5BE39A;color:#06351F;}
+#pricing .cmp tr.is-best .pick .btn{background:var(--b-red,#E12730);border-color:transparent;color:#fff;}
+@media(hover:hover){
+  #pricing .cmp tbody tr:not(.is-best):hover > *{background:#EEF1F7;}
+}
+
+/* phones: each strip folds into two lines — plan + badge, then the bar,
+   then total + Choose — and the header row steps aside */
+@media(max-width:640px){
+  #pricing .cmp{padding:12px;}
+  #pricing .cmp table,#pricing .cmp tbody{display:block;}
+  #pricing .cmp table{margin-top:0;}
+  #pricing .cmp thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+  #pricing .cmp tbody tr{
+    display:grid;grid-template-columns:1fr auto;grid-template-areas:"plan sv" "mo mo" "tot pick";
+    gap:10px 12px;padding:14px 14px 12px;margin-bottom:8px;border-radius:18px;background:#F6F7FA;
+  }
+  #pricing .cmp tbody tr.is-best{background:linear-gradient(140deg,#2149C4 0%,#16307A 55%,#0D1E3C 100%);color:#fff;}
+  #pricing .cmp tbody th,#pricing .cmp tbody td,
+  #pricing .cmp tbody tr > :first-child,#pricing .cmp tbody tr > :last-child,
+  #pricing .cmp tbody tr.is-best > *{padding:0;border-radius:0;background:none;width:auto;}
+  #pricing .cmp .plan{grid-area:plan;align-self:center;}
+  #pricing .cmp td.save-c{grid-area:sv;justify-self:end;text-align:right;}
+  #pricing .cmp .svn{display:none;}
+  #pricing .cmp td.mo{grid-area:mo;}
+  #pricing .cmp .mo-n{margin-bottom:6px;}
+  #pricing .cmp td.tot{grid-area:tot;align-self:center;font-size:14px;}
+  #pricing .cmp .pick{grid-area:pick;}
+  #pricing .cmp .pick .btn{min-height:40px;padding:8px 18px;}
+}
+@media(max-width:640px){
+  #pricing .cmp caption{display:block;width:auto;padding:2px 4px 12px;}
+  #pricing .cmp td.mo{width:auto;}
 }

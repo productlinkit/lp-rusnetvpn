@@ -1161,15 +1161,27 @@ $$('#seg button').forEach(function(b){
    percentage of. */
 var cmpBody = $('#cmp-body'), cmp = $('#cmp'), cmpBtn = $('#cmp-btn'), cmpBtnLabel = $('#cmp-btn-label');
 $('#cmp-base').textContent = PLANS[BASE_PLAN].short.toLowerCase().replace(' ', '-');
+/* A comparison you can see: each plan's monthly price is also drawn as a bar
+   against the dearest plan, and the badge says how it compares with the
+   baseline (1-month) rate, cheaper or dearer, rather than only "Save x%". */
+var CMP_MAX = Math.max.apply(null, PLANS.map(function(p){ return p.perMonth; }));
+var CMP_BASE = PLANS[BASE_PLAN].perMonth;
 cmpBody.innerHTML = PLANS.map(function(p, i){
-  var saving = p.savePct
-    ? '<span class="sv">Save ' + p.savePct + '%<br><span style="font-weight:500;font-size:var(--fs-200)">' + money(p.saveCash) + ' over the term</span></span>'
-    : '<span class="sv none">' + (i === BASE_PLAN ? 'Baseline rate' : '—') + '</span>';
-  return '<tr' + (p === BEST ? ' class="is-best"' : '') + '>' +
-      '<th scope="row" class="plan">' + p.short + (p === BEST ? ' <span class="ac-tag good" style="font-size:10px;padding:4px 8px;margin-left:6px">Best deal</span>' : '') + '</th>' +
-      '<td class="mo" data-label="Per month">' + money(p.perMonth) + '</td>' +
-      '<td class="tot" data-label="You pay">' + money(p.price) + ' <span style="color:var(--muted)">once</span></td>' +
-      '<td class="save-c" data-label="Saving">' + saving + '</td>' +
+  var diff = Math.round((p.perMonth / CMP_BASE - 1) * 100);
+  var badge = i === BASE_PLAN
+    ? '<span class="sv base">Baseline</span>'
+    : diff < 0
+      ? '<span class="sv down">' + diff + '%</span>'
+      : '<span class="sv dear">+' + diff + '%</span>';
+  var note = p.savePct
+    ? money(p.saveCash) + ' saved'
+    : (i === BASE_PLAN ? 'the reference rate' : 'more per month');
+  var cls = (p === BEST ? 'is-best' : '') + (i === BASE_PLAN ? ' is-base' : '');
+  return '<tr class="' + cls.trim() + '" style="--w:' + (p.perMonth / CMP_MAX * 100).toFixed(1) + '%">' +
+      '<th scope="row" class="plan"><span class="pn">' + p.short + '</span>' + (p === BEST ? '<span class="best-tag">Best deal</span>' : '') + '</th>' +
+      '<td class="mo"><span class="mo-n"><b>' + money(p.perMonth) + '</b><span class="per">/mo</span></span><span class="bar" aria-hidden="true"><i></i></span></td>' +
+      '<td class="tot"><b>' + money(p.price) + '</b> <span class="once">once</span></td>' +
+      '<td class="save-c">' + badge + '<span class="svn">' + note + '</span></td>' +
       '<td class="pick"><button type="button" class="btn btn-ghost" data-pick="' + i + '">Choose</button></td>' +
     '</tr>';
 }).join('');
