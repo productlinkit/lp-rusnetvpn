@@ -94,3 +94,87 @@ header,main,footer,.sheet,.fab{--b-bg:#F4F3F6;}
 #faq .qitem::before,#faq .qrow.is-on::before{background:var(--n-blue);}
 #apps .applist .tick{background:var(--n-tint);color:var(--n-blue-text);}
 .b-tile.dark p,.b-live p{color:rgba(255,255,255,.82);}
+
+/* ==========================================================================
+   MESH — the "wow" layer
+   ==========================================================================
+   Flat two-stop gradients replaced by mesh gradients: several soft colour
+   lights (red, magenta, violet, electric blue) melting into each other, a
+   fine film grain so the blends never band, a glassy top edge, and a
+   coloured glow under each card. Positions are pinned with !important because
+   older layers set these backgrounds with !important shorthands. */
+:root{
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --mesh-red:
+radial-gradient(75% 95% at 100% 100%,rgba(52,84,255,.95) 0%,rgba(64,92,255,.6) 30%,transparent 68%),    radial-gradient(50% 65% at 60% 108%,rgba(124,58,237,.6),transparent 66%),    radial-gradient(45% 60% at 82% 10%,rgba(214,32,122,.45),transparent 62%),    radial-gradient(60% 80% at 8% 0%,rgba(255,92,80,.5),transparent 60%),    linear-gradient(135deg,#E12730 0%,#C81E3A 55%,#8E1846 100%);
+  --mesh-navy:
+    radial-gradient(65% 80% at 0% 0%,rgba(59,130,246,.65),transparent 60%),
+    radial-gradient(50% 65% at 100% 0%,rgba(139,92,246,.45),transparent 62%),
+    radial-gradient(60% 70% at 100% 100%,rgba(225,39,48,.38),transparent 65%),
+    linear-gradient(160deg,#1A3A9E 0%,#132B6E 50%,#0A1736 100%);
+  --edge-glass:inset 0 1px 0 rgba(255,255,255,.28),inset 0 0 0 1px rgba(255,255,255,.10);
+}
+
+/* red cards */
+.b-tile.red,#pricing .trial,.sec-cta .cta{
+  background:var(--grain),var(--mesh-red) !important;background-size:auto,135% 135%,135% 135%,135% 135%,135% 135%,100% 100% !important;background-position:0 0,100% 100%,50% 100%,100% 0%,0% 0%,0 0 !important;
+  box-shadow:var(--edge-glass),0 40px 80px -40px rgba(225,39,48,.6),0 30px 70px -45px rgba(64,92,255,.7) !important;
+}
+/* navy cards */
+.b-live,.b-tile.dark,#faq .qpanel,#pricing .seg button.on{
+  background:var(--grain),var(--mesh-navy) !important;background-size:auto,135% 135%,135% 135%,135% 135%,100% 100% !important;background-position:0 0,0% 0%,100% 0%,100% 100%,0 0 !important;
+  box-shadow:var(--edge-glass),0 40px 80px -42px rgba(37,99,235,.65);
+}
+/* the servers band: the same mesh, bigger and slower */
+#servers{
+  background:
+    var(--grain),
+    radial-gradient(45% 55% at 0% 0%,rgba(59,130,246,.7),transparent 62%),
+    radial-gradient(40% 50% at 100% 0%,rgba(225,39,48,.32),transparent 65%),
+    radial-gradient(50% 60% at 85% 100%,rgba(139,92,246,.5),transparent 65%),
+    radial-gradient(45% 55% at 10% 100%,rgba(14,165,233,.35),transparent 65%),
+    linear-gradient(165deg,#1A3A9E 0%,#132B6E 45%,#0A1736 100%) !important;
+  background-size:auto,130% 130%,130% 130%,130% 130%,130% 130%,100% 100% !important;background-position:0 0,0% 0%,100% 0%,100% 100%,0% 100%,0 0 !important;
+  box-shadow:var(--edge-glass),0 60px 120px -60px rgba(37,99,235,.7);
+}
+#servers .rowi{box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 24px 50px -30px rgba(5,10,40,.9);}
+#servers .srch input{background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+
+@keyframes mesh-drift{
+  0%{background-position:0 0,0% 0%,100% 0%,100% 100%,0% 100%,0 0;}
+  100%{background-position:0 0,30% 20%,70% 25%,70% 70%,25% 75%,0 0;}
+}
+
+/* glass chips on the meshes */
+.t-refund .b-tilt-card{
+  background:rgba(10,23,54,.55) !important;border:1px solid rgba(255,255,255,.18);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);
+}
+#pricing .b-refund-card{box-shadow:0 30px 60px -24px rgba(30,20,90,.6);}
+
+/* a gradient word in the headings that carry the blend */
+.sec-cta .cta h2{background:linear-gradient(90deg,#fff 0%,#fff 55%,#C7D7FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+#servers h2{background:linear-gradient(90deg,#fff 0%,#fff 50%,#A8C4FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+/* the light page around them picks up a faint version of the same two lights */
+body{background:
+  radial-gradient(40% 30% at 100% 18%,rgba(59,130,246,.07),transparent 70%),
+  radial-gradient(40% 30% at 0% 55%,rgba(225,39,48,.06),transparent 70%),
+  radial-gradient(40% 30% at 100% 85%,rgba(139,92,246,.06),transparent 70%),
+  #F4F3F6;}
+
+@media(prefers-reduced-motion:reduce){
+  .b-tile.red,#pricing .trial,.sec-cta .cta,.b-live,.b-tile.dark,#faq .qpanel,#pricing .seg button.on,#servers{animation:none;}
+}
+@media(forced-colors:active){
+  .sec-cta .cta h2,#servers h2{background:none;color:CanvasText;}
+}
+.b-float-card{background:var(--n-deep) !important;}
+@keyframes mesh-drift-4{
+  0%{background-position:0 0,0% 0%,100% 0%,100% 100%,0 0;}
+  100%{background-position:0 0,30% 20%,70% 25%,70% 70%,0 0;}
+}
+@keyframes mesh-drift-red{
+  0%{background-position:0 0,100% 100%,50% 100%,100% 0%,0% 0%,0 0;}
+  100%{background-position:0 0,75% 70%,30% 80%,70% 25%,25% 20%,0 0;}
+}
