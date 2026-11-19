@@ -12,8 +12,8 @@
   margin-inline:clamp(8px,1.5vw,24px) !important;border-radius:32px !important;
   background:
     radial-gradient(55% 45% at 100% 0%,rgba(225,39,48,.16),transparent 70%),
-    radial-gradient(60% 50% at 0% 100%,rgba(37,99,235,.30),transparent 70%),
-    linear-gradient(165deg,var(--n-deep-2) 0%,var(--n-deep) 55%,var(--n-ink) 100%) !important;
+    radial-gradient(60% 50% at 0% 100%,rgba(59,130,246,.55),transparent 70%),
+    linear-gradient(165deg,#1E40AF 0%,#16307A 45%,var(--n-deep) 100%) !important;
   color:#fff;
   --ink:#fff;--body:rgba(255,255,255,.78);--muted:rgba(255,255,255,.66);--focus:#fff;
 }
@@ -45,11 +45,11 @@
            tints without a jump. Red stays the colour of every action. */
 :root{
   --n-deep:#0D1E3C; --n-deep-2:#152A52; --n-ink:#08142A; --n-blue:#2563EB; --n-blue-text:#1D4ED8;
-  --n-tint:#EAF0FB; --n-tint-2:#F1F5FC;
+  --n-tint:#DCE7FE; --n-tint-2:#E8EFFE;
   --navy-card:
     radial-gradient(70% 60% at 100% 0%,rgba(225,39,48,.20),transparent 65%),
-    linear-gradient(165deg,var(--n-deep-2) 0%,var(--n-deep) 60%,var(--n-ink) 100%);
-  --red-blue-glow:radial-gradient(70% 70% at 100% 100%,rgba(37,99,235,.38),transparent 62%);
+    linear-gradient(165deg,#1E40AF 0%,#16307A 50%,var(--n-deep) 100%);
+  --red-blue-glow:radial-gradient(70% 70% at 100% 100%,rgba(59,130,246,.65),transparent 62%);
 }
 body{background:#F4F3F6;}
 header,main,footer,.sheet,.fab{--b-bg:#F4F3F6;}
@@ -70,7 +70,7 @@ header,main,footer,.sheet,.fab{--b-bg:#F4F3F6;}
 
 /* rule 3 — soft blue tints, one per group, beside the navy cards */
 .s4 .b-folder{background:var(--n-tint);} .s4 .b-folder h3{color:var(--n-blue-text);}
-.s2 .b-folder{background:var(--n-tint-2);} .s2 .b-folder h3{color:var(--n-deep-2);}
+.s2 .b-folder{background:var(--n-tint-2);} .s2 .b-folder h3{color:var(--n-blue-text);}
 .t-reach.soft{background:var(--n-tint);}
 .t-reach .b-faces img,.t-reach .b-faces span{border-color:var(--n-tint);}
 .b-ring{background:conic-gradient(var(--b-red) 0 72%,#7FA2F0 72% 86%,#ECEAF0 86%);}
@@ -84,3 +84,12 @@ header,main,footer,.sheet,.fab{--b-bg:#F4F3F6;}
   #servers{background:Canvas !important;color:CanvasText;}
   .b-live,.b-tile.dark,#faq .qpanel,.b-tile.red,.sec-cta .cta{background:Canvas;}
 }
+
+/* ---------- more visible blue: a few small marks that were still red-only ---------- */
+.b-hero .stats .st:nth-child(2) .n em,.b-hero .stats .st:nth-child(4) .n em{color:var(--n-blue);}
+.b-hero .conn{background:rgba(13,30,80,.6);border-color:rgba(147,180,255,.35);}
+#faq .qrow.is-on{background:var(--n-tint);}
+#faq .qrow.is-on .qn,#faq .qrow.is-on .qc{color:var(--n-blue-text);}
+#faq .qitem::before,#faq .qrow.is-on::before{background:var(--n-blue);}
+#apps .applist .tick{background:var(--n-tint);color:var(--n-blue-text);}
+.b-tile.dark p,.b-live p{color:rgba(255,255,255,.82);}
